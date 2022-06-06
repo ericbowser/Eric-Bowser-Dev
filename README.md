@@ -1,3 +1,11 @@
 # Eric-Bowser-Dev
-Just some stuff about myself and my development career as well as a web page link to download a document
+ 
+CV and my career aspirations
+
+
+App:
+	react-create-app
+	npm run start
+		runs on port localhost:3000:x
+
 
