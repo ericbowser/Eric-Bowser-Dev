@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import head from "./images/head.jpg";
-import penHolder from "./images/penHolder.jpg";
 import styled from "styled-components";
 import { Container, Button } from "react-bootstrap";
 
 const ImgWrapper = styled.span`
-  padding: 50px 20px 20px 0;
+  padding: 30px 20px 20px 0;
+  margin-left: 50px;
 `;
 const ContentContainer = styled.div`
   padding-top: 10px;
@@ -14,7 +14,6 @@ const ContentContainer = styled.div`
 const TextWrapper = styled.div`
   margin: 5px 0 0 10px;
   font-size: 12pt;
-  font-family: "New Times Roman";
 `;
 const JustifyDiv = styled.div`
   text-align: justify;
@@ -22,10 +21,16 @@ const JustifyDiv = styled.div`
 
 const GridWrapper = styled.span`
   display: grid;
-  grid-gap: 100px;
+  grid-gap: 50px;
   row-gap: 20px;
   grid-template-columns: 50% 50%;
-  text-overflow: word-wrap;
+  @media only screen and (max-width: 500px) {
+    ul {
+      padding: 5px 15px 10px 10px;
+    }
+    display: inline;
+    line-height: 1;
+  }
 `;
 const GridCol1Row1 = styled.span`
   grid-column-start: 1;
@@ -76,23 +81,24 @@ function App() {
         {addText("Role: Full-stack Developer / Engineer")}
         {addText("React JS Front-End and C# / .NET back-end")}
         <ul>{addText("Private healthcare exhange website")}</ul>
+        <ul>Micro-services and RESTFull APIs</ul>
+        <ul>Healthcare standards from complaince standpoint</ul>
+        <ul>Carrier file transformations and delivery</ul>
       </>
     );
   }
 
   const addText = (text = "", bold = false) => {
     return (
-      <JustifyDiv>
-        <ul>
-          {bold ? (
-            <strong>
-              <ul>{text}</ul>
-            </strong>
-          ) : (
-            <li>{text}</li>
-          )}
-        </ul>
-      </JustifyDiv>
+      <ul>
+        {bold ? (
+          <strong>
+            <ul>{text}</ul>
+          </strong>
+        ) : (
+          <li>{text}</li>
+        )}
+      </ul>
     );
   };
   const addLink = (href = "", linkText = "", alt = "") => {
@@ -111,7 +117,7 @@ function App() {
   }
 
   return (
-    <Container className="fluid center">
+    <Container className="fluid">
       <h2 style={{ color: "indigo", margin: "25px 0px 50px 50px" }}>
         Eric Bowser - Software Engineer
       </h2>
@@ -119,23 +125,25 @@ function App() {
         <GridCol2Row1>
           <ContentContainer>
             <ImgWrapper>
-              <img src={head} alt="Eric Bowser" className="img-fluid rounded" />
-              <div>Contact Information:</div>
-              <div>Mobile: 435-494-8030</div>
-              <div>
+              <Container style={{ "margin-left": "50px" }}>
+                <img
+                  src={head}
+                  alt="Eric Bowser"
+                  className="img-fluid rounded"
+                />
+                <div>Contact Information:</div>
+                <div>Mobile: 435-494-8030</div>
                 {addLink(
                   "mailto:ericryanbowser@gmail.com",
                   "ericryanbowser@gmail.com",
                   "Eric's Email Address"
                 )}
-              </div>
-              <div>
                 {addLink(
                   "https://github.com/ericbowser",
                   "Github",
                   "Github for Eric Bowser"
                 )}
-              </div>
+              </Container>
             </ImgWrapper>
           </ContentContainer>
         </GridCol2Row1>
