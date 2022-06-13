@@ -27,7 +27,7 @@ function App() {
 
   function goldPointInfo() {
     return (
-      <Alert key={"418"} variant={"info"}>
+      <Alert key={"418"} variant={"success"}>
         <Alert.Heading>GoldPoint Systems: 2013-2015</Alert.Heading>
         <ul>
           <li>Role: C# back-end developer and SQL data analyst</li>
@@ -43,7 +43,7 @@ function App() {
 
   function getAspirations() {
     return (
-      <Alert key="98" variant="info">
+      <Alert key="98" variant="success">
         <ul>
           <li>
             Find a career opportunity to further invoke my passion to write code
@@ -57,7 +57,7 @@ function App() {
 
   function wtwInfo() {
     return (
-      <Alert key={"22"} variant={"info"}>
+      <Alert key={"22"} variant={"success"}>
         <Alert.Heading>2016 - Present</Alert.Heading>
         <ul>
           <li>Willis Towers Watson</li>
@@ -74,7 +74,7 @@ function App() {
 
   function toolsAndLibraries() {
     return (
-      <Alert key={"99"} variant={"info"}>
+      <Alert key={"99"} variant={"success"}>
         <Alert.Heading>Tools</Alert.Heading>
         <ul>
           <li>NET Framework, .NET core, C#</li>
@@ -99,7 +99,7 @@ function App() {
 
   function getProjectInfo() {
     return (
-      <Alert key="123" variant="info">
+      <Alert key="123" variant="success">
         <ul>
           <li>
             Implemented SumoLogic as factory pattern to log seperate instances
@@ -110,6 +110,11 @@ function App() {
             components
           </li>
           <li>Migrated from postgresSQL to Cosmos or a NoSql database</li>
+          <li>
+            Worked on internal tools for building dynamic applications /
+            configurations
+          </li>
+          <li>Boostrap micro-service as Kestrel or IIS</li>
           <li style={{ color: "red" }}>Ask for more information</li>
         </ul>
       </Alert>
@@ -204,7 +209,7 @@ function App() {
                 onClick={() => setShowProjects(!showProjects)}
               >
                 <strong>
-                  {explandCollapse(showProjects)} Worthy of note work projects
+                  {explandCollapse(showProjects)}Worthy of note work projects
                 </strong>
               </Button>
               {showProjects ? (
@@ -224,8 +229,6 @@ function App() {
               </Button>
               {showAspirations ? getAspirations() : null}
             </ul>
-          </React.Fragment>
-          <React.Fragment>
             <ul>
               <Button
                 key={687}
@@ -238,13 +241,15 @@ function App() {
                 </strong>
               </Button>
               {showHobbies ? (
-                <ul>
-                  <li>3D Printing</li>
-                  <li>Raspberri Pi</li>
-                  <li>Rockclimbing</li>
-                  <li>Snowbarding / Skiing</li>
-                  <li>Hiking and Camping</li>
-                </ul>
+                <Alert key="33" variant="info">
+                  <ul>
+                    <li>3D Printing</li>
+                    <li>Raspberri Pi</li>
+                    <li>Rockclimbing</li>
+                    <li>Snowbarding / Skiing</li>
+                    <li>Hiking and Camping</li>
+                  </ul>
+                </Alert>
               ) : null}
             </ul>
           </React.Fragment>
