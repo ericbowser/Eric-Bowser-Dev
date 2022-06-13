@@ -25,11 +25,11 @@ function App() {
     showHobbies,
   ]);
 
-  function GoldPointInfo() {
+  function goldPointInfo() {
     return (
-      <Alert key={"success"} variant={"success"}>
+      <Alert key={"418"} variant={"info"}>
+        <Alert.Heading>GoldPoint Systems: 2013-2015</Alert.Heading>
         <ul>
-          <li>GoldPoint Systems: 2013-2015", true</li>
           <li>Role: C# back-end developer and SQL data analyst</li>
           <li>SQL Server reports for financial data for origination clients</li>
           <li>
@@ -40,26 +40,59 @@ function App() {
       </Alert>
     );
   }
-  function WTWInfo() {
+
+  function getAspirations() {
     return (
-      <Alert key={"info"} variant={"info"}>
-        <li>2016 - Present</li>
-        <li>Willis Towers Watson</li>
-        <li>Role: Full-stack Developer / Engineer</li>
-        <li>React JS Front-End and C# / .NET back-end</li>
-        <li>Private healthcare exhange website</li>
-        <li>Micro-services and RESTFull APIs</li>
-        <li>Healthcare standards from complaince standpoint</li>
-        <li>Carrier file transformations and delivery</li>
+      <Alert key="98" variant="info">
+        <ul>
+          <li>
+            Find a career opportunity to further invoke my passion to write code
+          </li>
+          <li>Enabled to be creative and innovative</li>
+          <li>Advance career</li>
+        </ul>
       </Alert>
     );
   }
+
+  function wtwInfo() {
+    return (
+      <Alert key={"22"} variant={"info"}>
+        <Alert.Heading>2016 - Present</Alert.Heading>
+        <ul>
+          <li>Willis Towers Watson</li>
+          <li>Role: Full-stack Developer / Engineer</li>
+          <li>React JS Front-End and C# / .NET back-end</li>
+          <li>Private healthcare exhange website</li>
+          <li>Micro-services and RESTFull APIs</li>
+          <li>Healthcare standards from complaince standpoint</li>
+          <li>Carrier file transformations and delivery</li>
+        </ul>
+      </Alert>
+    );
+  }
+
   function toolsAndLibraries() {
     return (
       <Alert key={"99"} variant={"info"}>
-        NET Framework, .NET core, C# Visual Studio 2019/2022 Visual Studio Code
-        Microsoft SQL Server Github Source Control JetBrains Rider Postman / API
-        Requests
+        <Alert.Heading>Tools</Alert.Heading>
+        <ul>
+          <li>NET Framework, .NET core, C#</li>
+          <li>Visual Studio 2019/2022</li>
+          <li>Visual Studio Code</li>
+          <li>Microsoft SQL Server</li>
+          <li>Github Source Control</li>
+          <li>JetBrains Rider</li>
+          <li>Postman / API Requests</li>
+        </ul>
+        <Alert.Heading>Libraries</Alert.Heading>
+        <ul>
+          <li>React JS / JSX</li>
+          <li>Webpack</li>
+          <li>Babel</li>
+          <li>Jest Testing Framework</li>
+          <li>React Testing Library</li>
+        </ul>
       </Alert>
     );
   }
@@ -67,25 +100,22 @@ function App() {
   function getProjectInfo() {
     return (
       <Alert key="123" variant="info">
-        {`Implemented SumoLogic as factory pattern to log seperate instances of multi-threaded application
-      Contributed to a company sourced library of reusable React components
-      Migrated from postgresSQL to Cosmos or a NoSql database`}
+        <ul>
+          <li>
+            Implemented SumoLogic as factory pattern to log seperate instances
+            of multi-threaded application
+          </li>
+          <li>
+            Contributed to a company sourced library of reusable React
+            components
+          </li>
+          <li>Migrated from postgresSQL to Cosmos or a NoSql database</li>
+          <li style={{ color: "red" }}>Ask for more information</li>
+        </ul>
       </Alert>
     );
   }
-  // const addText = (text = "", bold = false, color = "black") => {
-  //   return (
-  //     <ul style={{ fontFamily: "monospace", color }}>
-  //       {bold ? (
-  //         <strong>
-  //           <ul>{text}</ul>
-  //         </strong>
-  //       ) : (
-  //         <li>{text}</li>
-  //       )}
-  //     </ul>
-  //   );
-  // };
+
   const addLink = (href = "", linkText = "", alt = "") => {
     return (
       <JustifyDiv>
@@ -138,10 +168,10 @@ function App() {
               {showExperience ? (
                 <React.Fragment>
                   <div>
-                    <TextWrapper>{GoldPointInfo()}</TextWrapper>
+                    <TextWrapper>{goldPointInfo()}</TextWrapper>
                   </div>
                   <div>
-                    <TextWrapper>{WTWInfo()}</TextWrapper>
+                    <TextWrapper>{wtwInfo()}</TextWrapper>
                   </div>
                 </React.Fragment>
               ) : null}
@@ -178,8 +208,21 @@ function App() {
                 </strong>
               </Button>
               {showProjects ? (
-                <React.Fragment>{getProjectInfo()}</React.Fragment>
+                <TextWrapper>{getProjectInfo()}</TextWrapper>
               ) : null}
+            </ul>
+          </React.Fragment>
+          <React.Fragment>
+            <ul>
+              <Button
+                key={687}
+                variant="outline"
+                size={"sm"}
+                onClick={() => setShowAspirations(!showAspirations)}
+              >
+                <strong>{explandCollapse(showAspirations)} Aspirations</strong>
+              </Button>
+              {showAspirations ? getAspirations() : null}
             </ul>
           </React.Fragment>
           <React.Fragment>
