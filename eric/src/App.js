@@ -1,47 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import head from "./images/head.jpg";
-import styled from "styled-components";
-import { Container, Button } from "react-bootstrap";
-
-const ImgWrapper = styled.span`
-  padding: 30px 20px 20px 0;
-  margin-left: 50px;
-`;
-const ContentContainer = styled.div`
-  padding-top: 10px;
-`;
-const TextWrapper = styled.div`
-  margin: 5px 0 0 10px;
-  font-size: 12pt;
-`;
-const JustifyDiv = styled.div`
-  text-align: justify;
-`;
-
-const GridWrapper = styled.span`
-  display: grid;
-  grid-gap: 50px;
-  row-gap: 20px;
-  grid-template-columns: 50% 50%;
-  @media only screen and (max-width: 500px) {
-    ul {
-      padding: 5px 15px 10px 10px;
-    }
-    display: inline;
-    line-height: 1;
-  }
-`;
-const GridCol1Row1 = styled.span`
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row: 1;
-`;
-const GridCol2Row1 = styled.span`
-  grid-row: 1;
-  grid-column-start: 2;
-  grid-column-end: 3;
-`;
+import { Container, Button, Alert } from "react-bootstrap";
+import {
+  GridCol1Row1,
+  GridCol2Row1,
+  JustifyDiv,
+  GridWrapper,
+  TextWrapper,
+} from "./styles";
 
 function App() {
   const [showExperience, setShowExperience] = useState(false);
@@ -55,52 +22,70 @@ function App() {
     showDevelopment,
     showAspirations,
     showExperience,
-    showExperience,
+    showHobbies,
   ]);
 
   function GoldPointInfo() {
     return (
-      <div>
-        {addText("GoldPoint Systems: 2013-2015", true)}
-        {addText("Role: C# back-end developer and SQL data analyst")}
-        {addText(
-          "SQL Server reports for financial data for origination clients"
-        )}
-        {addText(
-          "System.Drawing library for rendering unique reports for clients"
-        )}
-        {addText("Worked on some internal tools to build up client database")}
-      </div>
+      <Alert key={"success"} variant={"success"}>
+        <ul>
+          <li>GoldPoint Systems: 2013-2015", true</li>
+          <li>Role: C# back-end developer and SQL data analyst</li>
+          <li>SQL Server reports for financial data for origination clients</li>
+          <li>
+            System.Drawing library for rendering unique reports for clients
+          </li>
+          <li>Worked on some internal tools to build up client database</li>
+        </ul>
+      </Alert>
     );
   }
   function WTWInfo() {
     return (
-      <>
-        {addText("2016 - Present", true)}
-        {addText("Willis Towers Watson")}
-        {addText("Role: Full-stack Developer / Engineer")}
-        {addText("React JS Front-End and C# / .NET back-end")}
-        <ul>{addText("Private healthcare exhange website")}</ul>
-        <ul>Micro-services and RESTFull APIs</ul>
-        <ul>Healthcare standards from complaince standpoint</ul>
-        <ul>Carrier file transformations and delivery</ul>
-      </>
+      <Alert key={"info"} variant={"info"}>
+        <li>2016 - Present</li>
+        <li>Willis Towers Watson</li>
+        <li>Role: Full-stack Developer / Engineer</li>
+        <li>React JS Front-End and C# / .NET back-end</li>
+        <li>Private healthcare exhange website</li>
+        <li>Micro-services and RESTFull APIs</li>
+        <li>Healthcare standards from complaince standpoint</li>
+        <li>Carrier file transformations and delivery</li>
+      </Alert>
+    );
+  }
+  function toolsAndLibraries() {
+    return (
+      <Alert key={"99"} variant={"info"}>
+        NET Framework, .NET core, C# Visual Studio 2019/2022 Visual Studio Code
+        Microsoft SQL Server Github Source Control JetBrains Rider Postman / API
+        Requests
+      </Alert>
     );
   }
 
-  const addText = (text = "", bold = false) => {
+  function getProjectInfo() {
     return (
-      <ul>
-        {bold ? (
-          <strong>
-            <ul>{text}</ul>
-          </strong>
-        ) : (
-          <li>{text}</li>
-        )}
-      </ul>
+      <Alert key="123" variant="info">
+        {`Implemented SumoLogic as factory pattern to log seperate instances of multi-threaded application
+      Contributed to a company sourced library of reusable React components
+      Migrated from postgresSQL to Cosmos or a NoSql database`}
+      </Alert>
     );
-  };
+  }
+  // const addText = (text = "", bold = false, color = "black") => {
+  //   return (
+  //     <ul style={{ fontFamily: "monospace", color }}>
+  //       {bold ? (
+  //         <strong>
+  //           <ul>{text}</ul>
+  //         </strong>
+  //       ) : (
+  //         <li>{text}</li>
+  //       )}
+  //     </ul>
+  //   );
+  // };
   const addLink = (href = "", linkText = "", alt = "") => {
     return (
       <JustifyDiv>
@@ -117,38 +102,31 @@ function App() {
   }
 
   return (
-    <Container className="fluid">
-      <h2 style={{ color: "indigo", margin: "25px 0px 50px 50px" }}>
-        Eric Bowser - Software Engineer
-      </h2>
+    <Container className="container-fluid">
       <GridWrapper>
         <GridCol2Row1>
-          <ContentContainer>
-            <ImgWrapper>
-              <Container style={{ "margin-left": "50px" }}>
-                <img
-                  src={head}
-                  alt="Eric Bowser"
-                  className="img-fluid rounded"
-                />
-                <div>Contact Information:</div>
-                <div>Mobile: 435-494-8030</div>
-                {addLink(
-                  "mailto:ericryanbowser@gmail.com",
-                  "ericryanbowser@gmail.com",
-                  "Eric's Email Address"
-                )}
-                {addLink(
-                  "https://github.com/ericbowser",
-                  "Github",
-                  "Github for Eric Bowser"
-                )}
-              </Container>
-            </ImgWrapper>
-          </ContentContainer>
+          <h6 style={{ color: "indigo", margin: "25px 0px 50px 50px" }}>
+            Eric Bowser - Software Engineer
+            {addLink(
+              "mailto:ericryanbowser@gmail.com",
+              "ericryanbowser@gmail.com",
+              "Eric's email address",
+              true
+            )}
+            {addLink(
+              "https://github.com/ericbowser",
+              "Github",
+              "Github for Eric Bowser",
+              true
+            )}
+            <img src={head} alt="Eric Bowser" className="img-fluid thumbnail" />
+            <div>Contact Information:</div>
+            <div>Mobile: 435-494-8030</div>
+          </h6>
         </GridCol2Row1>
+
         <GridCol1Row1>
-          <ContentContainer>
+          <React.Fragment>
             <ul>
               <Button
                 variant="outline"
@@ -158,38 +136,39 @@ function App() {
                 <strong>{explandCollapse(showExperience)} Experience</strong>
               </Button>
               {showExperience ? (
-                <div>
-                  <TextWrapper>{GoldPointInfo()}</TextWrapper>
-                  <TextWrapper>{WTWInfo()}</TextWrapper>
-                </div>
+                <React.Fragment>
+                  <div>
+                    <TextWrapper>{GoldPointInfo()}</TextWrapper>
+                  </div>
+                  <div>
+                    <TextWrapper>{WTWInfo()}</TextWrapper>
+                  </div>
+                </React.Fragment>
               ) : null}
             </ul>
-          </ContentContainer>
-          <ContentContainer>
+          </React.Fragment>
+          <React.Fragment>
             <ul>
               <Button
+                key={123}
                 variant="outline"
                 size={"sm"}
                 onClick={() => setShowDevelpment(!showDevelopment)}
               >
                 <strong>
-                  {explandCollapse(showDevelopment)} Tools, libraries, and
+                  {explandCollapse(showDevelopment)} Tools, libraries and
                   Platforms
                 </strong>
               </Button>
               {showDevelopment ? (
-                <TextWrapper>
-                  {addText("NET Framework, .NET core, C#")}
-                  {addText("Visual Studio 2019/2022")}
-                  {addText("Visual Studio Code")}
-                  {addText("Microsoft SQL Server & Management Studio")}
-                </TextWrapper>
+                <TextWrapper>{toolsAndLibraries()}</TextWrapper>
               ) : null}
             </ul>
-          </ContentContainer>
-          <ContentContainer>
+          </React.Fragment>
+          <React.Fragment>
             <ul>
               <Button
+                key={456}
                 variant="outline"
                 size={"sm"}
                 onClick={() => setShowProjects(!showProjects)}
@@ -199,23 +178,14 @@ function App() {
                 </strong>
               </Button>
               {showProjects ? (
-                <TextWrapper>
-                  {addText(
-                    "Implemented SumoLogic as factory pattern to log seperate instances of multi-threaded application"
-                  )}
-                  {addText(
-                    "Contributed to a company sourced library of reusable React components"
-                  )}
-                  {addText(
-                    "Migrated from postgresSQL to Cosmos or a NoSql database"
-                  )}
-                </TextWrapper>
+                <React.Fragment>{getProjectInfo()}</React.Fragment>
               ) : null}
             </ul>
-          </ContentContainer>
-          <ContentContainer>
+          </React.Fragment>
+          <React.Fragment>
             <ul>
               <Button
+                key={687}
                 variant="outline"
                 size={"sm"}
                 onClick={() => setShowHobbies(!showHobbies)}
@@ -226,15 +196,15 @@ function App() {
               </Button>
               {showHobbies ? (
                 <ul>
-                  {addText("3D Printing")}
-                  {addText("Raspberri Pi")}
-                  {addText("Rockclimbing")}
-                  {addText("Snowbarding / Skiing")}
-                  {addText("Hiking and Camping")}
+                  <li>3D Printing</li>
+                  <li>Raspberri Pi</li>
+                  <li>Rockclimbing</li>
+                  <li>Snowbarding / Skiing</li>
+                  <li>Hiking and Camping</li>
                 </ul>
               ) : null}
             </ul>
-          </ContentContainer>
+          </React.Fragment>
         </GridCol1Row1>
       </GridWrapper>
     </Container>
