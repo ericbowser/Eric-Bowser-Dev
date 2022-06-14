@@ -99,6 +99,27 @@ function App() {
     );
   }
 
+  function proEdgeInfo() {
+    return (
+      <Alert key="420" variant="light">
+        <Alert.Heading>Pro Edge Tec, LLC: 2013-2015</Alert.Heading>
+        <AlertSubHeader>IT Technician</AlertSubHeader>
+        <ul>
+          <li>Troublshoot client hardware and configure network</li>
+          <li>Inventory Tracking</li>
+          <li>Nagios Server Monitoring Health</li>
+          <li>Help install network bridge and help with infrastructure</li>
+          <li>
+            Networking and some IEEE exposure / Network Security practices
+          </li>
+          <li>Prepare Engineering employees computers for `Kihomac`</li>
+          <li>
+            Install Engineering software: SolidWorks, CNC Tooling software, etc
+          </li>
+        </ul>
+      </Alert>
+    );
+  }
   function goldPointInfo() {
     return (
       <Alert key="418" variant="light">
@@ -187,7 +208,7 @@ function App() {
         <Alert key="99" variant="light">
           <Alert.Heading>Tools</Alert.Heading>
           <ul>
-            <li>NET Framework / .NET core / .NET Standard / C#</li>
+            <li>NET Framework / dotnet core / .NET Standard / C#</li>
             <li>Visual Studio 2019/2022</li>
             <li>Visual Studio Code</li>
             <li>Microsoft SQL Server</li>
@@ -216,6 +237,7 @@ function App() {
             <li>Shouldly / Assert</li>
             <li>SumoLogic / Serilog</li>
             <li>Dapper ORM</li>
+            <li>Cake Build</li>
           </ul>
           <Alert.Heading style={{ paddingTop: "15px" }}>
             Scripting / CLI
@@ -232,6 +254,8 @@ function App() {
             <li>Docker</li>
             <li>PostgresSql</li>
             <li>NoSql Document Database</li>
+            <li>Octopus Deploy</li>
+            <li>Team City Build</li>
           </ul>
         </Alert>
       </React.Fragment>
@@ -425,14 +449,16 @@ function App() {
                           />
                         </JustifyDiv>
                       ) : null}
-                      <Button
-                        key={6}
-                        variant="info"
-                        size={"sm"}
-                        onClick={() => setShowRaspi(!showRaspi)}
-                      >
-                        {explandCollapse(!showRaspi)} Raspberri Pi
-                      </Button>
+                      <JustifyDiv>
+                        <Button
+                          key={6}
+                          variant="info"
+                          size={"sm"}
+                          onClick={() => setShowRaspi(!showRaspi)}
+                        >
+                          {explandCollapse(!showRaspi)} Raspberri Pi
+                        </Button>
+                      </JustifyDiv>
                       {showRaspi ? (
                         <JustifyDiv>
                           <img src={raspbi} alt="raspi" className="img-fluid" />
