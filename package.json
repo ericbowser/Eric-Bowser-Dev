@@ -12,7 +12,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "ci": "react-scripts build -p",
+    "ci": "npm install && react-scripts build -p",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
