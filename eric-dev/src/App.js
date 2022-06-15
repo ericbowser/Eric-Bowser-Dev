@@ -112,7 +112,9 @@ function App() {
           <li>
             Networking and some IEEE exposure / Network Security practices
           </li>
-          <li>Prepare Engineering employees computers for `Kihomac`</li>
+          <li>
+            Prepare Engineering employees computers for <strong>Kihomac</strong>
+          </li>
           <li>
             Install Engineering software: SolidWorks, CNC Tooling software, etc
           </li>
@@ -370,6 +372,7 @@ function App() {
                 </Button>
                 {showExperience ? (
                   <React.Fragment>
+                    <TextWrapper>{proEdgeInfo()}</TextWrapper>
                     <TextWrapper>{goldPointInfo()}</TextWrapper>
                     <TextWrapper>{tekSystemsInfo()}</TextWrapper>
                     <TextWrapper>{wtwInfo()}</TextWrapper>
