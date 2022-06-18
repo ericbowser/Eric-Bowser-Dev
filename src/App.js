@@ -145,12 +145,9 @@ function App() {
     return (
       <Alert key="411" variant="light">
         <Alert.Heading>2015-2016: Contract To Hire</Alert.Heading>
-        <AlertSubHeader>Software Developer</AlertSubHeader>
-        <div>
-          Worked as a contract to hire through TEKSystems for ExtendHealth
-          before merger to Towers Watson which later merged again to become
-          Willis Towers Watson
-        </div>
+        <AlertSubHeader>
+          Contract to Hire
+        </AlertSubHeader>
       </Alert>
     );
   }
@@ -159,38 +156,23 @@ function App() {
     return (
       <Alert key="22" variant="light">
         <Alert.Heading>Willis Towers Watson: 2016 - Present</Alert.Heading>
-        <AlertSubHeader>Role: Full-stack Developer / Engineer</AlertSubHeader>
+        <AlertSubHeader>
+          <div>Full Stack Software Engineer</div>
+          <div>React JS Front-End and C# / .NET back-end</div>
+        </AlertSubHeader>
         <ul>
-          <li>React JS Front-End and C# / .NET back-end</li>
-          <li>
-            Work primarily done for private healthcare exhange website and
-            internal tools
-          </li>
           <li>Bounded Contexts</li>
-          <li>
-            SQL Server Stored Procedures, User Defined Functions, TVPs, Data
-            Modeling, Relational Data Mapping and Normalization
-          </li>
-          <li>Micro-services</li>
-          <li>RESTFull APIs</li>
-          <li>
-            Healthcare standards from complaince standpoint: (CMS) as well as
-            HIPAA standards
-          </li>
-          <li>Annual security trainings in OWASP Top 10</li>
+          <li>Healthcare exhange website</li>
+          <li>Dynamic applications / configuration</li>
+          <li>Microservices and Microfrontends</li>
+          <li>REST API</li>
+          <li>Pub / Sub</li>
           <ul>
+          <li>
+            Healthcare standards and HIPAA
+          </li>
             <li>Carrier file transformations and delivery</li>
-            <li>
-              worked on 'early days' application used to build dynamic carrier
-              applications
-            </li>
-            <li>ground-level micro-service architecture from monolithic</li>
-            <li>Both micro front-end and micro-service exposure</li>
-            <li>
-              worked on migrating PostgresSQL Document Database to Azure
-              CosmosDB
-            </li>
-            <li>configurations for carrier specific file transformations</li>
+            <li>NoSql on Azure platform</li>
           </ul>
         </ul>
         <AlertSubHeader>Organization Style: Scrum</AlertSubHeader>
@@ -263,30 +245,6 @@ function App() {
       </React.Fragment>
     );
   }
-
-  // function getProjectInfo() {
-  //   return (
-  //     <Alert key="123" variant="light">
-  //       <ul>
-  //         <li>
-  //           Implemented SumoLogic as factory pattern to log seperate instances
-  //           of multi-threaded application
-  //         </li>
-  //         <li>
-  //           Contributed to a company sourced library of reusable React
-  //           components
-  //         </li>
-  //         <li>Migrated from postgresSQL to Cosmos or a NoSql database</li>
-  //         <li>
-  //           Worked on internal tools for building dynamic applications /
-  //           configurations
-  //         </li>
-  //         <li>Boostrap micro-service as Kestrel or IIS</li>
-  //         <li style={{ color: "red" }}>Ask for more information</li>
-  //       </ul>
-  //     </Alert>
-  //   );
-  // }
 
   const addLink = (href = "", linkText = "", alt = "") => {
     return (
