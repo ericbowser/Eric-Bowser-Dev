@@ -1,4 +1,14 @@
 {
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "pmneo.tsimporter"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.eslintIntegration": true,
+  "prettier.parser": "babel-ts",
+  "prettier.stylelintIntegration": true,
+  "prettier.tslintIntegration": true,
 }

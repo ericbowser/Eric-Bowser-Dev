@@ -1,9 +1,11 @@
 import React, { useMemo } from "react";
 import { useState, useEffect } from "react";
-import head from "./images/head.jpg";
+// import head from "./images/head.jpg";
+import head2 from "./images/head2.jpg";
+import head4 from "./images/head4.jpg";
 import plus from "./images/expand.png";
 import minus from "./images/collapse.png";
-import { Container, Button, Alert } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 import {
   GridCol1Row1,
   GridCol2Row1,
@@ -11,9 +13,10 @@ import {
   GridWrapper,
   TextWrapper,
   AlertSubHeader,
+  StyledContainer,
 } from "./styles";
 import { PlusMinusDirection } from "./common";
-import randomColor from './images/randomColor.png';
+import randomColor from "./images/randomColor.png";
 
 function App() {
   const [showExperience, setShowExperience] = useState(false);
@@ -21,8 +24,7 @@ function App() {
   const [showProjects, setShowProjects] = useState(false);
   const [showAspirations, setShowAspirations] = useState(false);
   const [showHobbies, setShowHobbies] = useState(false);
-  const [show3DPlug, setShow3DPlug] = useState(false);
-  const [showRaspi, setShowRaspi] = useState(false);
+  const [showEducation, setShowEducation] = useState(false);
 
   // Expand and collapse all
   const [allState, setAllState] = useState(PlusMinusDirection.None);
@@ -41,15 +43,9 @@ function App() {
     showDevelopment,
     showExperience,
     showProjects,
+    showHobbies,
+    showEducation,
   ]);
-  useEffect(() => {
-    if (!showHobbies && show3DPlug) {
-      setShow3DPlug(false);
-    }
-    if (!showHobbies && showRaspi) {
-      setShowRaspi(false);
-    }
-  }, [showHobbies, show3DPlug, showRaspi]);
 
   function setAllCollapse() {
     setShowExperience(false);
@@ -57,8 +53,7 @@ function App() {
     setShowHobbies(false);
     setShowAspirations(false);
     setShowProjects(false);
-    setShow3DPlug(false);
-    setShowRaspi(false);
+    setShowEducation(false);
   }
 
   function setAllExpand() {
@@ -67,8 +62,7 @@ function App() {
     setShowHobbies(true);
     setShowAspirations(true);
     setShowProjects(true);
-    setShow3DPlug(true);
-    setShowRaspi(true);
+    setShowEducation(true);
   }
 
   function setExpandCollapse(direction = PlusMinusDirection.Collapse) {
@@ -80,6 +74,19 @@ function App() {
       setAllState(PlusMinusDirection.None);
     }
   }
+
+  // Arrow function - executes later or when invoked
+  const getEducationDetails = () => {
+    return (
+      <Alert key="99" variant="light">
+        <AlertSubHeader>Weber State University: 2011-2013</AlertSubHeader>
+        {/* <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader> */}
+        <ul>
+          <li>Bachelors Computer Science and Network Security</li>
+        </ul>
+      </Alert>
+    );
+  };
 
   function getAspirations() {
     return (
@@ -99,7 +106,7 @@ function App() {
 
   function proEdgeInfo() {
     return (
-      <Alert key="420" variant="light">
+      <Alert key="421" variant="light">
         <Alert.Heading>Pro Edge Tec, LLC: 2013-2015</Alert.Heading>
         <AlertSubHeader>IT Technician</AlertSubHeader>
         <ul>
@@ -120,6 +127,7 @@ function App() {
       </Alert>
     );
   }
+
   function goldPointInfo() {
     return (
       <Alert key="418" variant="light">
@@ -145,9 +153,7 @@ function App() {
     return (
       <Alert key="411" variant="light">
         <Alert.Heading>2015-2016: Contract To Hire</Alert.Heading>
-        <AlertSubHeader>
-          Contract to Hire
-        </AlertSubHeader>
+        <AlertSubHeader>Contract to Hire</AlertSubHeader>
       </Alert>
     );
   }
@@ -168,9 +174,7 @@ function App() {
           <li>REST API</li>
           <li>Pub / Sub</li>
           <ul>
-          <li>
-            Healthcare standards and HIPAA
-          </li>
+            <li>Healthcare standards and HIPAA</li>
             <li>Carrier file transformations and delivery</li>
             <li>NoSql on Azure platform</li>
           </ul>
@@ -287,15 +291,23 @@ function App() {
 
   return (
     <React.Fragment>
-      <Container className="container-fluid">
-      <header>
-        <img src={randomColor} alt='header bg' className="container-fluid" style={{marginTop: '20px', marginBottom: '100px'}}/>
+      <StyledContainer>
+        <header>
+          <img src={randomColor} alt="header bg" className="container-fluid" />
           {plusMinusImgRoleButton()} <strong>Expand / Collapse</strong>
-      </header>
+        </header>
         <GridWrapper>
           <GridCol2Row1>
             <h6 style={{ margin: "25px 0px 50px 50px" }}>
-              Eric Bowser - Software Engineer
+              <AlertSubHeader>Eric Bowser - Software Engineer</AlertSubHeader>
+              <img
+                src={head4}
+                alt="Eric Bowser"
+                className="img-fluid"
+                style={{ width: "75%" }}
+              />
+              <div>Contact Information:</div>
+              <div>Mobile: 435-494-8030</div>
               {addLink(
                 "mailto:ericryanbowser@gmail.com",
                 "ericryanbowser@gmail.com",
@@ -308,13 +320,28 @@ function App() {
                 "Github for Eric Bowser",
                 true
               )}
-              <img src={head} alt="Eric Bowser" className="img-fluid" />
-              <div>Contact Information:</div>
-              <div>Mobile: 435-494-8030</div>
             </h6>
           </GridCol2Row1>
 
           <GridCol1Row1>
+            <React.Fragment>
+              <ul>
+                <Button
+                  variant="outline"
+                  size={"lg"}
+                  onClick={() => setShowEducation(!showEducation)}
+                >
+                  <div>
+                    <strong>{explandCollapse(showEducation)} Education</strong>
+                  </div>
+                </Button>
+                {showEducation ? (
+                  <React.Fragment>
+                    <TextWrapper>{getEducationDetails()}</TextWrapper>
+                  </React.Fragment>
+                ) : null}
+              </ul>
+            </React.Fragment>
             <React.Fragment>
               <ul>
                 <Button
@@ -384,26 +411,25 @@ function App() {
                 </Button>
                 {showHobbies ? (
                   <Alert key="33" variant="light">
-                      <TextWrapper>
-                        <ul>
-                          <li>Rockclimbing</li>
-                          <li>3D Printing</li>
-                          <li>MTG</li>
-                          <li>Raspberri Pi</li>
-
-                        </ul>
-                      </TextWrapper>
+                    <TextWrapper>
+                      <ul>
+                        <li>Rockclimbing</li>
+                        <li>3D Printing</li>
+                        <li>MTG</li>
+                        <li>Raspberri Pi</li>
+                      </ul>
+                    </TextWrapper>
                   </Alert>
-                ): null}
+                ) : null}
               </ul>
             </React.Fragment>
           </GridCol1Row1>
         </GridWrapper>
-      <footer style={{marginTop: '150px'}}>
-        <img src={randomColor} alt='header bg' className="container-fluid" />
-      </footer>
-      </Container>
-      </React.Fragment>
+        <footer style={{ marginTop: "50px" }}>
+          <img src={randomColor} alt="header bg" className="container-fluid" />
+        </footer>
+      </StyledContainer>
+    </React.Fragment>
   );
 }
 
