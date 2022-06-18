@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 
 const StyledContainer = styled(Container)`
-  max-width: 800px;
+  max-width: 900px;
 `;
 
 const TextWrapper = styled.div`
   margin: 3px;
-  font-size: 11pt;
+  font-size: 12pt;
 `;
 const JustifyDiv = styled.div`
   text-align: justify;
@@ -22,7 +22,7 @@ const GridWrapper = styled.span`
   box-sizing: border-box;
   display: grid;
   row-gap: 20px;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 42% 58%;
   word-wrap: break-word;
   header {
     margin: 10px 0 100px 0px;

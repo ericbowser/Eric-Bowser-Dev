@@ -47,7 +47,6 @@ function App() {
     setShowAspirations(true);
     setShowProjects(true);
     setShowEducation(true);
-    setShowCalendy(true);
   }
 
   const [allState, setAllState] = useState(PlusMinusDirection.None);
