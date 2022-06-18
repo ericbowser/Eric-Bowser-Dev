@@ -442,7 +442,7 @@ function App() {
         </GridCol2Row1>
         <GridCol1Row1>
           <React.Fragment>
-            <Card style={{ width: "50%", height: "auto" }}>
+            <Card style={{ width: "66%", height: "auto" }}>
               <Card.Title style={{ backgroundColor: "aliceblue" }}>
                 <AlertSubHeader>
                   Eric Ryan Bowser - Software Engineer
