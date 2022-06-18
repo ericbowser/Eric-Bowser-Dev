@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const TextWrapper = styled.div`
   margin: 5px;
-  font-size: 11pt;
-  border: 2px outset azure;
+  font-size: 12pt;
+  border: 2px inset azure;
 `;
 const JustifyDiv = styled.div`
   text-align: justify;
@@ -18,7 +18,6 @@ const AlertSubHeader = styled.h6`
 const GridWrapper = styled.span`
   box-sizing: border-box;
   display: grid;
-  grid-gap: 20px;
   row-gap: 20px;
   grid-template-columns: 50% 50%;
   word-wrap: break-word;

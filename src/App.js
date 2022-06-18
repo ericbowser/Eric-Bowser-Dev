@@ -3,9 +3,6 @@ import { useState, useEffect } from "react";
 import head from "./images/head.jpg";
 import plus from "./images/expand.png";
 import minus from "./images/collapse.png";
-import penHolder from "./images/penHolder.jpg";
-import collage from "./images/collage.png";
-import raspbi from "./images/raspberriPi.jpg";
 import { Container, Button, Alert } from "react-bootstrap";
 import {
   GridCol1Row1,
@@ -16,6 +13,7 @@ import {
   AlertSubHeader,
 } from "./styles";
 import { PlusMinusDirection } from "./common";
+import randomColor from './images/randomColor.png';
 
 function App() {
   const [showExperience, setShowExperience] = useState(false);
@@ -130,12 +128,14 @@ function App() {
           C# back-end developer and SQL data analyst
         </AlertSubHeader>
         <ul>
-          <li>SQL Server reports for financial data for origination clients</li>
+          <li></li>
+          <li>SQL Server & SSRS Reporting</li>
           <li>
             System.Drawing library for rendering unique reports for clients
           </li>
-          <li>Worked on some internal tools to build up client database</li>
-          <li>SSRS Sql Data Reporting</li>
+          <li>SQL Scripting and Automation for Deployments</li>
+          <li>Microsoft Extensibility Framework</li>
+          <li>MSTest</li>
         </ul>
       </Alert>
     );
@@ -227,10 +227,9 @@ function App() {
             Scripting / CLI
           </Alert.Heading>
           <ul>
-            <li>Git Bash - source control cli</li>
+            <li>Git Bash</li>
             <li>Linux</li>
             <li>Powershell</li>
-            <li>Bash</li>
           </ul>
           <Alert.Heading style={{ paddingTop: "15px" }}>Misc</Alert.Heading>
           <ul>
@@ -240,6 +239,7 @@ function App() {
             <li>NoSql Document Database</li>
             <li>Octopus Deploy</li>
             <li>Team City Build</li>
+            <li>Azure</li>
           </ul>
         </Alert>
       </React.Fragment>
@@ -263,7 +263,7 @@ function App() {
 
   function plusMinusImgRoleButton() {
     return (
-      <React.Fragment>
+      <div>
         <img
           src={plus}
           className="img-fluid"
@@ -281,17 +281,17 @@ function App() {
           role="button"
           onClick={() => setExpandCollapse(PlusMinusDirection.Collapse)}
         />
-      </React.Fragment>
+      </div>
     );
   }
 
   return (
-    <>
-      <Alert key="1" variant="warning">
-        <strong>Not an exhaustive list -+ Under Contruction</strong>
-      </Alert>
+    <React.Fragment>
       <Container className="container-fluid">
-        {plusMinusImgRoleButton()}
+      <header>
+        <img src={randomColor} alt='header bg' className="container-fluid" style={{marginTop: '20px', marginBottom: '100px'}}/>
+          {plusMinusImgRoleButton()} <strong>Expand / Collapse</strong>
+      </header>
         <GridWrapper>
           <GridCol2Row1>
             <h6 style={{ margin: "25px 0px 50px 50px" }}>
@@ -347,7 +347,7 @@ function App() {
                   onClick={() => setShowDevelpment(!showDevelopment)}
                 >
                   <strong>
-                    {explandCollapse(showDevelopment)} Tools and libraries
+                    {explandCollapse(showDevelopment)} Tools / libraries
                   </strong>
                 </Button>
                 {showDevelopment ? (
@@ -384,66 +384,26 @@ function App() {
                 </Button>
                 {showHobbies ? (
                   <Alert key="33" variant="light">
-                    <ul>
-                      <JustifyDiv>
-                        <Button
-                          key={6}
-                          variant="info"
-                          size={"sm"}
-                          style={{ marginRight: "15px" }}
-                          onClick={() => setShow3DPlug(!show3DPlug)}
-                        >
-                          {explandCollapse(!show3DPlug)} 3D Printing
-                        </Button>
-                      </JustifyDiv>
-                      {show3DPlug ? (
-                        <JustifyDiv>
-                          <img
-                            src={penHolder}
-                            alt="3d printed pen holder"
-                            className="img-fluid"
-                          />
-                          <img
-                            src={collage}
-                            alt="3d printed pen holder"
-                            className="img-fluid"
-                          />
-                        </JustifyDiv>
-                      ) : null}
-                      <JustifyDiv>
-                        <Button
-                          key={6}
-                          variant="info"
-                          size={"sm"}
-                          onClick={() => setShowRaspi(!showRaspi)}
-                        >
-                          {explandCollapse(!showRaspi)} Raspberri Pi
-                        </Button>
-                      </JustifyDiv>
-                      {showRaspi ? (
-                        <JustifyDiv>
-                          <img src={raspbi} alt="raspi" className="img-fluid" />
-                        </JustifyDiv>
-                      ) : null}
-                      <JustifyDiv>
+                      <TextWrapper>
                         <ul>
                           <li>Rockclimbing</li>
-                          <li>Snowbarding</li>
-                          <li>Hiking</li>
-                          <li>Camping</li>
+                          <li>3D Printing</li>
+                          <li>MTG</li>
+                          <li>Raspberri Pi</li>
+
                         </ul>
-                      </JustifyDiv>
-                    </ul>
+                      </TextWrapper>
                   </Alert>
-                ) : (
-                  () => setShow3DPlug(!show3DPlug)
-                )}
+                ): null}
               </ul>
             </React.Fragment>
           </GridCol1Row1>
         </GridWrapper>
+      <footer style={{marginTop: '150px'}}>
+        <img src={randomColor} alt='header bg' className="container-fluid" />
+      </footer>
       </Container>
-    </>
+      </React.Fragment>
   );
 }
 
