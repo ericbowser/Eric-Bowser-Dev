@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 
 const StyledContainer = styled(Container)`
-  max-width: 1600px;
+  max-width: 800px;
 `;
 
 const TextWrapper = styled.div`
-  margin: 5px;
+  margin: 3px;
   font-size: 11pt;
 `;
 const JustifyDiv = styled.div`
@@ -15,7 +15,6 @@ const JustifyDiv = styled.div`
 `;
 
 const AlertSubHeader = styled.h6`
-  margin-top: 10px;
   color: saddleBrown;
 `;
 
@@ -53,7 +52,7 @@ const GridWrapper = styled.span`
   }
 `;
 const GridCol1Row1 = styled.div`
-  padding-top: 50px;
+  /* padding-top: 50px; */
   grid-row: 1;
   grid-column-start: 1;
   grid-column-end: 2;

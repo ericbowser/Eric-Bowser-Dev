@@ -1,11 +1,10 @@
+//#region imports
 import React, { useMemo } from "react";
 import { useState, useEffect } from "react";
-// import head from "./images/head.jpg";
-import head2 from "./images/head2.jpg";
 import head4 from "./images/head4.jpg";
 import plus from "./images/expand.png";
 import minus from "./images/collapse.png";
-import { Button, Alert } from "react-bootstrap";
+import { Button, Alert, Card } from "react-bootstrap";
 import {
   GridCol1Row1,
   GridCol2Row1,
@@ -16,19 +15,54 @@ import {
   StyledContainer,
 } from "./styles";
 import { PlusMinusDirection } from "./common";
-import randomColor from "./images/randomColor.png";
+import { InlineWidget } from "react-calendly";
+//#endregion
 
 function App() {
+  //#region local state react hook
   const [showExperience, setShowExperience] = useState(false);
   const [showDevelopment, setShowDevelpment] = useState(false);
   const [showProjects, setShowProjects] = useState(false);
   const [showAspirations, setShowAspirations] = useState(false);
   const [showHobbies, setShowHobbies] = useState(false);
   const [showEducation, setShowEducation] = useState(false);
+  const [showCalendy, setShowCalendy] = useState(false);
+  //#endregion
 
-  // Expand and collapse all
+  //#region Collapse / Expand Toggle
+  function setAllCollapse() {
+    setShowExperience(false);
+    setShowDevelpment(false);
+    setShowHobbies(false);
+    setShowAspirations(false);
+    setShowProjects(false);
+    setShowEducation(false);
+    setShowCalendy(false);
+  }
+
+  function setAllExpand() {
+    setShowExperience(true);
+    setShowDevelpment(true);
+    setShowHobbies(true);
+    setShowAspirations(true);
+    setShowProjects(true);
+    setShowEducation(true);
+    setShowCalendy(true);
+  }
+
   const [allState, setAllState] = useState(PlusMinusDirection.None);
+  function setExpandCollapse(direction = PlusMinusDirection.Collapse) {
+    if (direction === PlusMinusDirection.Collapse) {
+      setAllState(PlusMinusDirection.Collapse);
+    } else if (PlusMinusDirection.Expand) {
+      setAllState(PlusMinusDirection.Expand);
+    } else {
+      setAllState(PlusMinusDirection.None);
+    }
+  }
+  //#endregion
 
+  //#region React Hooks
   useMemo(() => {
     if (allState === PlusMinusDirection.Collapse) {
       setAllCollapse();
@@ -45,49 +79,35 @@ function App() {
     showProjects,
     showHobbies,
     showEducation,
+    showCalendy,
   ]);
+  //#endregion
 
-  function setAllCollapse() {
-    setShowExperience(false);
-    setShowDevelpment(false);
-    setShowHobbies(false);
-    setShowAspirations(false);
-    setShowProjects(false);
-    setShowEducation(false);
-  }
-
-  function setAllExpand() {
-    setShowExperience(true);
-    setShowDevelpment(true);
-    setShowHobbies(true);
-    setShowAspirations(true);
-    setShowProjects(true);
-    setShowEducation(true);
-  }
-
-  function setExpandCollapse(direction = PlusMinusDirection.Collapse) {
-    if (direction === PlusMinusDirection.Collapse) {
-      setAllState(PlusMinusDirection.Collapse);
-    } else if (PlusMinusDirection.Expand) {
-      setAllState(PlusMinusDirection.Expand);
-    } else {
-      setAllState(PlusMinusDirection.None);
-    }
-  }
-
+  //#region Education
   // Arrow function - executes later or when invoked
   const getEducationDetails = () => {
     return (
-      <Alert key="99" variant="light">
-        <AlertSubHeader>Weber State University: 2011-2013</AlertSubHeader>
-        {/* <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader> */}
-        <ul>
-          <li>Bachelors Computer Science and Network Security</li>
-        </ul>
-      </Alert>
+      <React.Fragment>
+        <Alert key="995" variant="light">
+          <AlertSubHeader>Weber State University: 2011-2013</AlertSubHeader>
+          {/* <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader> */}
+          <ul>
+            <li>Bachelors Computer Science and Network Security</li>
+          </ul>
+        </Alert>
+        <Alert key="990" variant="light">
+          <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader>
+          {/* <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader> */}
+          <ul>
+            <li>Associate Of Arts: IT</li>
+          </ul>
+        </Alert>
+      </React.Fragment>
     );
   };
+  //#endregion
 
+  //#region Aspirations
   function getAspirations() {
     return (
       <Alert key="98" variant="light">
@@ -103,7 +123,9 @@ function App() {
       </Alert>
     );
   }
+  //#endregion
 
+  //#region Pro Edge
   function proEdgeInfo() {
     return (
       <Alert key="421" variant="light">
@@ -127,7 +149,9 @@ function App() {
       </Alert>
     );
   }
+  //#endregion
 
+  //#region GOLDPoint Info
   function goldPointInfo() {
     return (
       <Alert key="418" variant="light">
@@ -148,7 +172,9 @@ function App() {
       </Alert>
     );
   }
+  //#endregion
 
+  //#region TEK Systems
   function tekSystemsInfo() {
     return (
       <Alert key="411" variant="light">
@@ -157,7 +183,9 @@ function App() {
       </Alert>
     );
   }
+  //#endregion
 
+  //#region WTW
   function wtwInfo() {
     return (
       <Alert key="22" variant="light">
@@ -189,11 +217,13 @@ function App() {
       </Alert>
     );
   }
+  //#endregion
 
+  //#region Tools and Libraries
   function toolsAndLibraries() {
     return (
       <React.Fragment>
-        <Alert key="99" variant="light">
+        <Alert key="8" variant="light">
           <Alert.Heading>Tools</Alert.Heading>
           <ul>
             <li>NET Framework / dotnet core / .NET Standard / C#</li>
@@ -249,10 +279,11 @@ function App() {
       </React.Fragment>
     );
   }
+  //#endregion
 
   const addLink = (href = "", linkText = "", alt = "") => {
     return (
-      <JustifyDiv>
+      <JustifyDiv key={href}>
         <a alt={alt} href={href}>
           {linkText}
         </a>
@@ -289,148 +320,167 @@ function App() {
     );
   }
 
+  //#region render method
   return (
-    <React.Fragment>
-      <StyledContainer>
-        <header>
-          <img src={randomColor} alt="header bg" className="container-fluid" />
-          {plusMinusImgRoleButton()} <strong>Expand / Collapse</strong>
-        </header>
-        <GridWrapper>
-          <GridCol2Row1>
-            <h6 style={{ margin: "25px 0px 50px 50px" }}>
-              <AlertSubHeader>Eric Bowser - Software Engineer</AlertSubHeader>
-              <img
-                src={head4}
-                alt="Eric Bowser"
-                className="img-fluid"
-                style={{ width: "75%" }}
-              />
-              <div>Contact Information:</div>
-              <div>Mobile: 435-494-8030</div>
-              {addLink(
-                "mailto:ericryanbowser@gmail.com",
-                "ericryanbowser@gmail.com",
-                "Email address",
-                true
-              )}
-              {addLink(
-                "https://github.com/ericbowser",
-                "Github",
-                "Github for Eric Bowser",
-                true
-              )}
-            </h6>
-          </GridCol2Row1>
-
-          <GridCol1Row1>
-            <React.Fragment>
-              <ul>
-                <Button
-                  variant="outline"
-                  size={"lg"}
-                  onClick={() => setShowEducation(!showEducation)}
-                >
+    <StyledContainer>
+      <header style={{ paddingBottom: "15px" }}>
+        {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
+        {plusMinusImgRoleButton()} <strong>Expand / Collapse</strong>
+      </header>
+      <GridWrapper>
+        <GridCol2Row1>
+          <React.Fragment>
+            <ul>
+              <Button
+                variant="outline"
+                size={"lg"}
+                onClick={() => setShowEducation(!showEducation)}
+              >
+                <div>
+                  <strong>{explandCollapse(showEducation)} Education</strong>
+                </div>
+              </Button>
+              {showEducation ? (
+                <React.Fragment>
+                  <TextWrapper>{getEducationDetails()}</TextWrapper>
+                </React.Fragment>
+              ) : null}
+            </ul>
+          </React.Fragment>
+          <React.Fragment>
+            <ul>
+              <Button
+                variant="outline"
+                size={"lg"}
+                onClick={() => setShowExperience(!showExperience)}
+              >
+                <div>
+                  <strong>{explandCollapse(showExperience)} Experience</strong>
+                </div>
+              </Button>
+              {showExperience ? (
+                <React.Fragment>
+                  <TextWrapper>{proEdgeInfo()}</TextWrapper>
+                  <TextWrapper>{goldPointInfo()}</TextWrapper>
+                  <TextWrapper>{tekSystemsInfo()}</TextWrapper>
+                  <TextWrapper>{wtwInfo()}</TextWrapper>
+                </React.Fragment>
+              ) : null}
+            </ul>
+          </React.Fragment>
+          <React.Fragment>
+            <ul>
+              <Button
+                key={123}
+                variant="outline"
+                size={"lg"}
+                onClick={() => setShowDevelpment(!showDevelopment)}
+              >
+                <strong>
+                  {explandCollapse(showDevelopment)} Tools / libraries
+                </strong>
+              </Button>
+              {showDevelopment ? (
+                <TextWrapper>{toolsAndLibraries()}</TextWrapper>
+              ) : null}
+            </ul>
+            <ul>
+              <Button
+                key={687}
+                variant="outline"
+                size={"lg"}
+                onClick={() => setShowAspirations(!showAspirations)}
+              >
+                <strong>{explandCollapse(showAspirations)} Aspirations</strong>
+              </Button>
+              {showAspirations ? (
+                <TextWrapper>{getAspirations()}</TextWrapper>
+              ) : null}
+            </ul>
+            <ul>
+              <Button
+                key={687}
+                variant="outline"
+                size={"lg"}
+                onClick={() => setShowHobbies(!showHobbies)}
+              >
+                <strong>
+                  {explandCollapse(showHobbies)} Extra Curricular / Hobbies
+                </strong>
+              </Button>
+              {showHobbies ? (
+                <Alert key="33" variant="light">
+                  <TextWrapper>
+                    <ul>
+                      <li>Rockclimbing</li>
+                      <li>3D Printing</li>
+                      <li>MTG</li>
+                      <li>Raspberri Pi</li>
+                    </ul>
+                  </TextWrapper>
+                </Alert>
+              ) : null}
+            </ul>
+            <ul>
+              <Button
+                key={687}
+                variant="outline"
+                size={"lg"}
+                onClick={() => setShowCalendy(!showCalendy)}
+              >
+                <strong>
+                  {explandCollapse(showCalendy)} Calendy Scheduler
+                </strong>
+              </Button>
+              {showCalendy ? (
+                <TextWrapper>
+                  <InlineWidget url="https://calendly.com/ericryanbowser"></InlineWidget>
+                </TextWrapper>
+              ) : null}
+            </ul>
+          </React.Fragment>
+        </GridCol2Row1>
+        <GridCol1Row1>
+          <React.Fragment>
+            <Card style={{ width: "50%", height: "auto" }}>
+              <Card.Title style={{ backgroundColor: "aliceblue" }}>
+                <AlertSubHeader>
+                  Eric Ryan Bowser - Software Engineer
+                </AlertSubHeader>
+              </Card.Title>
+              <Card.Body>
+                <Card.Img variant="top" src={head4} />
+                <Card.Text>
+                  <TextWrapper>
+                    <div>Contact Information:</div>
+                    <div>Mobile: 435-494-8030</div>
+                  </TextWrapper>
                   <div>
-                    <strong>{explandCollapse(showEducation)} Education</strong>
+                    {addLink(
+                      "mailto:ericryanbowser@gmail.com",
+                      "ericryanbowser@gmail.com",
+                      "Email address",
+                      true
+                    )}
                   </div>
-                </Button>
-                {showEducation ? (
-                  <React.Fragment>
-                    <TextWrapper>{getEducationDetails()}</TextWrapper>
-                  </React.Fragment>
-                ) : null}
-              </ul>
-            </React.Fragment>
-            <React.Fragment>
-              <ul>
-                <Button
-                  variant="outline"
-                  size={"lg"}
-                  onClick={() => setShowExperience(!showExperience)}
-                >
                   <div>
-                    <strong>
-                      {explandCollapse(showExperience)} Experience
-                    </strong>
+                    {addLink(
+                      "https://github.com/ericbowser",
+                      "Github",
+                      "Github for Eric Bowser",
+                      true
+                    )}
                   </div>
-                </Button>
-                {showExperience ? (
-                  <React.Fragment>
-                    <TextWrapper>{proEdgeInfo()}</TextWrapper>
-                    <TextWrapper>{goldPointInfo()}</TextWrapper>
-                    <TextWrapper>{tekSystemsInfo()}</TextWrapper>
-                    <TextWrapper>{wtwInfo()}</TextWrapper>
-                  </React.Fragment>
-                ) : null}
-              </ul>
-            </React.Fragment>
-            <React.Fragment>
-              <ul>
-                <Button
-                  key={123}
-                  variant="outline"
-                  size={"lg"}
-                  onClick={() => setShowDevelpment(!showDevelopment)}
-                >
-                  <strong>
-                    {explandCollapse(showDevelopment)} Tools / libraries
-                  </strong>
-                </Button>
-                {showDevelopment ? (
-                  <TextWrapper>{toolsAndLibraries()}</TextWrapper>
-                ) : null}
-              </ul>
-            </React.Fragment>
-            <React.Fragment>
-              <ul>
-                <Button
-                  key={687}
-                  variant="outline"
-                  size={"lg"}
-                  onClick={() => setShowAspirations(!showAspirations)}
-                >
-                  <strong>
-                    {explandCollapse(showAspirations)} Aspirations
-                  </strong>
-                </Button>
-                {showAspirations ? (
-                  <TextWrapper>{getAspirations()}</TextWrapper>
-                ) : null}
-              </ul>
-              <ul>
-                <Button
-                  key={687}
-                  variant="outline"
-                  size={"lg"}
-                  onClick={() => setShowHobbies(!showHobbies)}
-                >
-                  <strong>
-                    {explandCollapse(showHobbies)} Extra Curricular / Hobbies
-                  </strong>
-                </Button>
-                {showHobbies ? (
-                  <Alert key="33" variant="light">
-                    <TextWrapper>
-                      <ul>
-                        <li>Rockclimbing</li>
-                        <li>3D Printing</li>
-                        <li>MTG</li>
-                        <li>Raspberri Pi</li>
-                      </ul>
-                    </TextWrapper>
-                  </Alert>
-                ) : null}
-              </ul>
-            </React.Fragment>
-          </GridCol1Row1>
-        </GridWrapper>
-        <footer style={{ marginTop: "50px" }}>
-          <img src={randomColor} alt="header bg" className="container-fluid" />
-        </footer>
-      </StyledContainer>
-    </React.Fragment>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </React.Fragment>
+        </GridCol1Row1>
+      </GridWrapper>
+      <footer></footer>
+    </StyledContainer>
   );
 }
+//#endregion
 
 export default App;
