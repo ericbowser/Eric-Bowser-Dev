@@ -4,7 +4,6 @@ import { Container } from "react-bootstrap";
 const StyledContainer = styled(Container)`
   max-width: 900px;
 `;
-
 const TextWrapper = styled.div`
   margin: 3px;
   font-size: 12pt;
@@ -21,19 +20,11 @@ const AlertSubHeader = styled.h6`
 const GridWrapper = styled.span`
   box-sizing: border-box;
   display: grid;
-  row-gap: 20px;
   grid-template-columns: 42% 58%;
   word-wrap: break-word;
-  header {
-    margin: 10px 0 100px 0px;
-  }
   @media only screen and (max-width: 600px) {
     ul {
-      padding: 5px 15px 10px 10px;
-    }
-    header {
-      margin: 0;
-      padding: 0;
+      padding: 5px 15px 0px 3px;
     }
     display: inline;
     lineheight: 1;

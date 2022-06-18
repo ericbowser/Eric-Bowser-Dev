@@ -88,18 +88,12 @@ function App() {
     return (
       <React.Fragment>
         <Alert key="995" variant="light">
-          <AlertSubHeader>Weber State University: 2011-2013</AlertSubHeader>
-          {/* <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader> */}
-          <ul>
-            <li>Bachelors Computer Science and Network Security</li>
-          </ul>
-        </Alert>
-        <Alert key="990" variant="light">
-          <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader>
-          {/* <AlertSubHeader>University Of Pheonix: 2010-2011</AlertSubHeader> */}
-          <ul>
-            <li>Associate Of Arts: IT</li>
-          </ul>
+          <AlertSubHeader>
+            Weber State University: 2011-2013 - BA Computer Science
+          </AlertSubHeader>
+          <AlertSubHeader>
+            University Of Pheonix: 2010-2011 - Associates of Art
+          </AlertSubHeader>
         </Alert>
       </React.Fragment>
     );
@@ -339,11 +333,7 @@ function App() {
                   <strong>{explandCollapse(showEducation)} Education</strong>
                 </div>
               </Button>
-              {showEducation ? (
-                <React.Fragment>
-                  <TextWrapper>{getEducationDetails()}</TextWrapper>
-                </React.Fragment>
-              ) : null}
+              {showEducation ? <div>{getEducationDetails()}</div> : null}
             </ul>
           </React.Fragment>
           <React.Fragment>
@@ -443,7 +433,7 @@ function App() {
           <React.Fragment>
             <Card style={{ width: "66%", height: "auto" }}>
               <Card.Title style={{ backgroundColor: "aliceblue" }}>
-                <AlertSubHeader>
+                <AlertSubHeader style={{ textAlign: "center" }}>
                   Eric Ryan Bowser - Software Engineer
                 </AlertSubHeader>
               </Card.Title>
