@@ -1,9 +1,11 @@
 //#region imports
-import React, { useMemo } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
-import head4 from "./images/head4.jpg";
-import plus from "./images/expand.png";
-import minus from "./images/collapse.png";
+import head3 from "./images/head3.jpg";
+import pdfIcon from "./images/pdf.png";
+import docx from "./images/docx.png";
+import ericPdf from "./files/Eric-Bowser-Resume-2022.pdf";
+import ericDocx from "./files/Eric-Bowser-Resume.docx";
 import { Button, Alert, Card } from "react-bootstrap";
 import {
   GridCol1Row1,
@@ -15,7 +17,7 @@ import {
   StyledContainer,
 } from "./styles";
 import { PlusMinusDirection } from "./common";
-import { InlineWidget } from "react-calendly";
+// import { InlineWidget } from "react-calendly";
 //#endregion
 
 function App() {
@@ -26,60 +28,58 @@ function App() {
   const [showAspirations, setShowAspirations] = useState(false);
   const [showHobbies, setShowHobbies] = useState(false);
   const [showEducation, setShowEducation] = useState(false);
-  const [showCalendy, setShowCalendy] = useState(false);
+  // const [showCalendly, setShowCalendly] = useState(false);
+  const [allState, setAllState] = useState(PlusMinusDirection.None);
   //#endregion
 
   //#region Collapse / Expand Toggle
   function setAllCollapse() {
+    console.log("set all collapse");
     setShowExperience(false);
     setShowDevelpment(false);
     setShowHobbies(false);
     setShowAspirations(false);
     setShowProjects(false);
     setShowEducation(false);
-    setShowCalendy(false);
+    // setShowCalendly(false);
   }
 
   function setAllExpand() {
+    console.log("set all expand");
     setShowExperience(true);
     setShowDevelpment(true);
     setShowHobbies(true);
     setShowAspirations(true);
     setShowProjects(true);
     setShowEducation(true);
+    // setShowCalendly(true);
   }
 
-  const [allState, setAllState] = useState(PlusMinusDirection.None);
-  function setExpandCollapse(direction = PlusMinusDirection.Collapse) {
-    if (direction === PlusMinusDirection.Collapse) {
-      setAllState(PlusMinusDirection.Collapse);
-    } else if (PlusMinusDirection.Expand) {
-      setAllState(PlusMinusDirection.Expand);
-    } else {
-      setAllState(PlusMinusDirection.None);
-    }
-  }
   //#endregion
 
   //#region React Hooks
-  useMemo(() => {
-    if (allState === PlusMinusDirection.Collapse) {
-      setAllCollapse();
-    }
-    if (allState === PlusMinusDirection.Expand) {
-      setAllExpand();
-    }
-  }, [allState]);
-
-  useEffect(() => {}, [
+  useEffect(() => {
+    setAllState(PlusMinusDirection.None);
+  }, [
     showAspirations,
     showDevelopment,
     showExperience,
     showProjects,
     showHobbies,
     showEducation,
-    showCalendy,
+    // showCalendly,
   ]);
+
+  useEffect(() => {
+    if (allState === PlusMinusDirection.Expand) {
+      setAllExpand();
+    } else if (allState === PlusMinusDirection.Collapse) {
+      setAllCollapse();
+    } else {
+      setAllState(PlusMinusDirection.None);
+    }
+  }, [allState]);
+
   //#endregion
 
   //#region Education
@@ -125,18 +125,19 @@ function App() {
         <Alert.Heading>Pro Edge Tec, LLC: 2013-2015</Alert.Heading>
         <AlertSubHeader>IT Technician</AlertSubHeader>
         <ul>
-          <li>Troublshoot client hardware and configure network</li>
-          <li>Inventory Tracking</li>
-          <li>Nagios Server Monitoring Health</li>
+          <li>Troublshoot client hardware</li>
+          <li>Network configuration</li>
+          <li>Inventory tracking</li>
+          <li>Nagios server health monitoring</li>
           <li>Help install network bridge and help with infrastructure</li>
           <li>
-            Networking and some IEEE exposure / Network Security practices
+            Networking and some IEEE exposure / Network security practices
           </li>
           <li>
-            Prepare Engineering employees computers for <strong>Kihomac</strong>
+            Prepare engineering employees computers for <strong>Kihomac</strong>
           </li>
           <li>
-            Install Engineering software: SolidWorks, CNC Tooling software, etc
+            Install engineering software: SolidWorks, CNC Tooling software, etc
           </li>
         </ul>
       </Alert>
@@ -150,14 +151,11 @@ function App() {
       <Alert key="418" variant="light">
         <Alert.Heading>GoldPoint Systems: 2013-2015</Alert.Heading>
         <AlertSubHeader>
-          C# back-end developer and SQL data analyst
+          C# backend developer and SQL data analyst
         </AlertSubHeader>
         <ul>
-          <li></li>
           <li>SQL Server & SSRS Reporting</li>
-          <li>
-            System.Drawing library for rendering unique reports for clients
-          </li>
+          <li>Render unique reports for clients</li>
           <li>SQL Scripting and Automation for Deployments</li>
           <li>Microsoft Extensibility Framework</li>
           <li>MSTest</li>
@@ -189,23 +187,23 @@ function App() {
         </AlertSubHeader>
         <ul>
           <li>Bounded Contexts</li>
-          <li>Healthcare exhange website</li>
-          <li>Dynamic applications / configuration</li>
-          <li>Microservices and Microfrontends</li>
+          <li>Dynamic applications / configurations</li>
+          <li>Microservices and Microfrontend</li>
           <li>REST API</li>
           <li>Pub / Sub</li>
+          <li>NoSql on Azure platform</li>
           <ul>
             <li>Healthcare standards and HIPAA</li>
             <li>Carrier file transformations and delivery</li>
-            <li>NoSql on Azure platform</li>
           </ul>
         </ul>
+        <br />
         <AlertSubHeader>Organization Style: Scrum</AlertSubHeader>
         <ul>
           <li>Scrum and Sprints</li>
           <li>Kanban</li>
           <li>Jira Ticket Management</li>
-          <li>Work vetted by Quality Assurance</li>
+          <li>Quality Assurance</li>
         </ul>
       </Alert>
     );
@@ -274,6 +272,18 @@ function App() {
   }
   //#endregion
 
+  //#region functions
+  function setExpandCollapse(direction) {
+    if (!direction) return;
+    if (direction === PlusMinusDirection.Collapse) {
+      setAllState(PlusMinusDirection.Collapse);
+    } else if (PlusMinusDirection.Expand) {
+      setAllState(PlusMinusDirection.Expand);
+    } else {
+      setAllState(PlusMinusDirection.None);
+    }
+  }
+
   const addLink = (href = "", linkText = "", alt = "") => {
     return (
       <JustifyDiv key={href}>
@@ -289,37 +299,37 @@ function App() {
     return sign;
   }
 
-  function plusMinusImgRoleButton() {
+  function plusMinusButtons() {
     return (
       <div>
-        <img
-          src={plus}
-          className="img-fluid"
+        <Button
+          key="2895"
+          variant="outlineButton"
+          size="lg"
           alt="plus"
           style={{ paddingTop: "20px" }}
-          role="button"
           onClick={() => setExpandCollapse(PlusMinusDirection.Expand)}
-        />
-        <img
-          src={minus}
-          key={minus}
-          className="img-fluid"
+        >
+          <span style={{ fontSize: "42pt" }}>+</span>
+        </Button>
+        <Button
+          key="88997"
+          variant="OulineButton"
+          size="lg"
           alt="minus"
           style={{ paddingTop: "20px" }}
-          role="button"
           onClick={() => setExpandCollapse(PlusMinusDirection.Collapse)}
-        />
+        >
+          <span style={{ fontSize: "42pt" }}>-</span>
+        </Button>
       </div>
     );
   }
+  //#endregion
 
   //#region render method
   return (
     <StyledContainer>
-      <header style={{ paddingBottom: "15px" }}>
-        {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
-        {plusMinusImgRoleButton()} <strong>Expand / Collapse</strong>
-      </header>
       <GridWrapper>
         <GridCol2Row1>
           <React.Fragment>
@@ -391,7 +401,10 @@ function App() {
                 key={687}
                 variant="outline"
                 size={"lg"}
-                onClick={() => setShowHobbies(!showHobbies)}
+                onClick={() => {
+                  setShowHobbies(!showHobbies);
+                  setAllState(PlusMinusDirection.None);
+                }}
               >
                 <strong>
                   {explandCollapse(showHobbies)} Extra Curricular / Hobbies
@@ -404,29 +417,29 @@ function App() {
                       <li>Rockclimbing</li>
                       <li>3D Printing</li>
                       <li>MTG</li>
-                      <li>Raspberri Pi</li>
+                      <li>Raspberri Pi Projects and Tinkering</li>
                     </ul>
                   </TextWrapper>
                 </Alert>
               ) : null}
             </ul>
-            <ul>
+            {/* <ul>
               <Button
                 key={687}
                 variant="outline"
                 size={"lg"}
-                onClick={() => setShowCalendy(!showCalendy)}
+                onClick={() => setShowCalendly(!showCalendly)}
               >
                 <strong>
-                  {explandCollapse(showCalendy)} Calendy Scheduler
+                  {explandCollapse(showCalendly)} Calendly Scheduler
                 </strong>
               </Button>
-              {showCalendy ? (
+              {showCalendly ? (
                 <TextWrapper>
-                  <InlineWidget url="https://calendly.com/ericryanbowser"></InlineWidget>
+                  <InlineWidget url="https://calendly.com/ericryanbowser" />
                 </TextWrapper>
               ) : null}
-            </ul>
+            </ul> */}
           </React.Fragment>
         </GridCol2Row1>
         <GridCol1Row1>
@@ -434,11 +447,13 @@ function App() {
             <Card style={{ width: "66%", height: "auto" }}>
               <Card.Title style={{ backgroundColor: "aliceblue" }}>
                 <AlertSubHeader style={{ textAlign: "center" }}>
-                  Eric Ryan Bowser - Software Engineer
+                  <TextWrapper>
+                    Eric Ryan Bowser - Software Engineer
+                  </TextWrapper>
                 </AlertSubHeader>
               </Card.Title>
               <Card.Body>
-                <Card.Img variant="top" src={head4} />
+                <Card.Img variant="top" src={head3} />
                 <Card.Text>
                   <TextWrapper>
                     <div>Contact Information:</div>
@@ -460,9 +475,37 @@ function App() {
                       true
                     )}
                   </div>
+                  <div>
+                    <Card.Text>Eric Bowser Resume</Card.Text>
+
+                    <a href={ericPdf} download>
+                      <Card.Img
+                        variant="top"
+                        src={pdfIcon}
+                        style={{ width: "25%", height: "25%" }}
+                      />
+                    </a>
+                    <a href={ericDocx} download>
+                      <Card.Img
+                        variant="top"
+                        src={docx}
+                        style={{ width: "25%", height: "25%" }}
+                      />
+                    </a>
+                  </div>
                 </Card.Text>
               </Card.Body>
             </Card>
+            <div
+              style={{
+                padding: "0 50px 0 0",
+                position: "sticky",
+                top: 0,
+              }}
+            >
+              {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
+              {plusMinusButtons()} <strong>Expand / Collapse</strong>
+            </div>
           </React.Fragment>
         </GridCol1Row1>
       </GridWrapper>

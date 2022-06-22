@@ -3,10 +3,13 @@ import { Container } from "react-bootstrap";
 
 const StyledContainer = styled(Container)`
   max-width: 900px;
+  padding: 20px;
 `;
 const TextWrapper = styled.div`
   margin: 3px;
   font-size: 12pt;
+  font-weight: bold;
+  line-height: 1.5;
 `;
 const JustifyDiv = styled.div`
   text-align: justify;
@@ -20,30 +23,16 @@ const AlertSubHeader = styled.h6`
 const GridWrapper = styled.span`
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 42% 58%;
+  grid-template-columns: 50% 50%;
   word-wrap: break-word;
   @media only screen and (max-width: 600px) {
     ul {
       padding: 5px 15px 0px 3px;
     }
     display: inline;
-    lineheight: 1;
-    boxsizing: content-box;
-  }
-  @media only screen and (max-width: 250px) {
-    ul {
-      padding: 0;
-    }
-    header {
-      margin: 0;
-      padding: 0;
-    }
-    display: inline;
-    lineheight: 1;
   }
 `;
 const GridCol1Row1 = styled.div`
-  /* padding-top: 50px; */
   grid-row: 1;
   grid-column-start: 1;
   grid-column-end: 2;
