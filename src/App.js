@@ -17,7 +17,7 @@ import {
   StyledContainer,
 } from "./styles";
 import { PlusMinusDirection } from "./common";
-// import { InlineWidget } from "react-calendly";
+import { InlineWidget } from "react-calendly";
 //#endregion
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
   const [showAspirations, setShowAspirations] = useState(false);
   const [showHobbies, setShowHobbies] = useState(false);
   const [showEducation, setShowEducation] = useState(false);
-  // const [showCalendly, setShowCalendly] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
   const [allState, setAllState] = useState(PlusMinusDirection.None);
   //#endregion
 
@@ -41,7 +41,7 @@ function App() {
     setShowAspirations(false);
     setShowProjects(false);
     setShowEducation(false);
-    // setShowCalendly(false);
+    setShowCalendly(false);
   }
 
   function setAllExpand() {
@@ -52,7 +52,7 @@ function App() {
     setShowAspirations(true);
     setShowProjects(true);
     setShowEducation(true);
-    // setShowCalendly(true);
+    setShowCalendly(true);
   }
 
   //#endregion
@@ -67,7 +67,7 @@ function App() {
     showProjects,
     showHobbies,
     showEducation,
-    // showCalendly,
+    showCalendly,
   ]);
 
   useEffect(() => {
@@ -423,7 +423,7 @@ function App() {
                 </Alert>
               ) : null}
             </ul>
-            {/* <ul>
+            <ul>
               <Button
                 key={687}
                 variant="outline"
@@ -439,7 +439,7 @@ function App() {
                   <InlineWidget url="https://calendly.com/ericryanbowser" />
                 </TextWrapper>
               ) : null}
-            </ul> */}
+            </ul>
           </React.Fragment>
         </GridCol2Row1>
         <GridCol1Row1>
