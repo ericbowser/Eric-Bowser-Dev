@@ -34,7 +34,6 @@ function App() {
 
   //#region Collapse / Expand Toggle
   function setAllCollapse() {
-    console.log("set all collapse");
     setShowExperience(false);
     setShowDevelpment(false);
     setShowHobbies(false);
@@ -42,17 +41,18 @@ function App() {
     setShowProjects(false);
     setShowEducation(false);
     setShowCalendly(false);
+    window.scrollTo(0, window.screen.height);
   }
 
   function setAllExpand() {
-    console.log("set all expand");
     setShowExperience(true);
     setShowDevelpment(true);
     setShowHobbies(true);
     setShowAspirations(true);
     setShowProjects(true);
     setShowEducation(true);
-    setShowCalendly(true);
+    setShowCalendly(false);
+    window.scrollTo(0, 0);
   }
 
   //#endregion
@@ -332,6 +332,14 @@ function App() {
     <StyledContainer>
       <GridWrapper>
         <GridCol2Row1>
+          <div
+            style={{
+              padding: "0 50px 0 0",
+            }}
+          >
+            {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
+            {plusMinusButtons()} <strong>Expand / Collapse</strong>
+          </div>
           <React.Fragment>
             <ul>
               <Button
@@ -496,16 +504,6 @@ function App() {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <div
-              style={{
-                padding: "0 50px 0 0",
-                position: "sticky",
-                top: 0,
-              }}
-            >
-              {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
-              {plusMinusButtons()} <strong>Expand / Collapse</strong>
-            </div>
           </React.Fragment>
         </GridCol1Row1>
       </GridWrapper>

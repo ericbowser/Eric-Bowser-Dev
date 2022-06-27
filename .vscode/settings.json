@@ -11,4 +11,5 @@
   "prettier.parser": "babel-ts",
   "prettier.stylelintIntegration": true,
   "prettier.tslintIntegration": true,
+  "iisexpress.openInBrowser": "chrome"
 }
