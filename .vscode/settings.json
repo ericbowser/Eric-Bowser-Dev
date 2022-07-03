@@ -2,7 +2,7 @@
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "svipas.prettier-plus"
   },
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
@@ -11,5 +11,6 @@
   "prettier.parser": "babel-ts",
   "prettier.stylelintIntegration": true,
   "prettier.tslintIntegration": true,
-  "iisexpress.openInBrowser": "chrome"
+  "iisexpress.openInBrowser": "chrome",
+  "editor.formatOnSave": true
 }

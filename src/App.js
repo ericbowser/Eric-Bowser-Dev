@@ -5,16 +5,17 @@ import head3 from "./images/head3.jpg";
 import pdfIcon from "./images/pdf.png";
 import docx from "./images/docx.png";
 import ericPdf from "./files/Eric-Bowser-Resume-2022.pdf";
-import ericDocx from "./files/Eric-Bowser-Resume.docx";
+import ericDocx from "./files/Eric-Bowser-Resume-2022.docx";
 import { Button, Alert, Card } from "react-bootstrap";
 import {
   GridCol1Row1,
   GridCol2Row1,
+  GridCol3Row1,
   JustifyDiv,
   GridWrapper,
   TextWrapper,
   AlertSubHeader,
-  StyledContainer,
+  StyledContainer
 } from "./styles";
 import { PlusMinusDirection } from "./common";
 import { InlineWidget } from "react-calendly";
@@ -86,16 +87,22 @@ function App() {
   // Arrow function - executes later or when invoked
   const getEducationDetails = () => {
     return (
-      <React.Fragment>
         <Alert key="995" variant="light">
-          <AlertSubHeader>
-            Weber State University: 2011-2013 - BA Computer Science
+          <AlertSubHeader fontSize='10pt'>
+            <ul>
+              <li>
+                Weber State University: 2011-2013 - BA Computer Science
+              </li>
+              </ul>
           </AlertSubHeader>
-          <AlertSubHeader>
-            University Of Pheonix: 2010-2011 - Associates of Art
-          </AlertSubHeader>
+            <AlertSubHeader fontSize='10pt'>
+              <ul>
+              <li>
+                University Of Pheonix: 2010-2011 - Associates of Art
+                </li>
+            </ul>
+            </AlertSubHeader>
         </Alert>
-      </React.Fragment>
     );
   };
   //#endregion
@@ -104,6 +111,8 @@ function App() {
   function getAspirations() {
     return (
       <Alert key="98" variant="light">
+        <AlertSubHeader fontSize="10pt">
+
         <ul>
           <li>Find career growth</li>
           <li>Increase passion</li>
@@ -113,6 +122,7 @@ function App() {
           <li>More experience</li>
           <li>Trusting and engaging culture</li>
         </ul>
+        </AlertSubHeader>
       </Alert>
     );
   }
@@ -122,8 +132,8 @@ function App() {
   function proEdgeInfo() {
     return (
       <Alert key="421" variant="light">
-        <Alert.Heading>Pro Edge Tec, LLC: 2013-2015</Alert.Heading>
-        <AlertSubHeader>IT Technician</AlertSubHeader>
+        <AlertSubHeader color='grey'>Pro Edge Tec, LLC: 2013-2015</AlertSubHeader>
+        <AlertSubHeader color='purple' fontSize='12pt'>IT Technician</AlertSubHeader>
         <ul>
           <li>Troublshoot client hardware</li>
           <li>Network configuration</li>
@@ -149,8 +159,8 @@ function App() {
   function goldPointInfo() {
     return (
       <Alert key="418" variant="light">
-        <Alert.Heading>GoldPoint Systems: 2013-2015</Alert.Heading>
-        <AlertSubHeader>
+        <AlertSubHeader color='grey' >GoldPoint Systems: 2013-2015</AlertSubHeader>
+        <AlertSubHeader color='purple' fontSize='12pt'>
           C# backend developer and SQL data analyst
         </AlertSubHeader>
         <ul>
@@ -169,8 +179,8 @@ function App() {
   function tekSystemsInfo() {
     return (
       <Alert key="411" variant="light">
-        <Alert.Heading>2015-2016: Contract To Hire</Alert.Heading>
-        <AlertSubHeader>Contract to Hire</AlertSubHeader>
+        <AlertSubHeader color='grey'>2015-2016: Contract To Hire</AlertSubHeader>
+        <AlertSubHeader  fontSize='12pt'>Contract to Hire</AlertSubHeader>
       </Alert>
     );
   }
@@ -180,11 +190,17 @@ function App() {
   function wtwInfo() {
     return (
       <Alert key="22" variant="light">
-        <Alert.Heading>Willis Towers Watson: 2016 - Present</Alert.Heading>
-        <AlertSubHeader>
-          <div>Full Stack Software Engineer</div>
-          <div>React JS Front-End and C# / .NET back-end</div>
+        <AlertSubHeader fontSize="12pt">
+          Willis Towers Watson: 2016 - 06/2022
         </AlertSubHeader>
+        <AlertSubHeader fontSize='12pt' color='purple'>
+          <span>Full Stack Software Engineer</span>
+        </AlertSubHeader>
+        <AlertSubHeader fontSize='10pt'>
+          <div>React.js Front-End </div>
+          <div>C# / .NET back-end</div>
+        </AlertSubHeader>
+        <AlertSubHeader fontSize='10pt'>
         <ul>
           <li>Bounded Contexts</li>
           <li>Dynamic applications / configurations</li>
@@ -192,13 +208,15 @@ function App() {
           <li>REST API</li>
           <li>Pub / Sub</li>
           <li>NoSql on Azure platform</li>
-          <ul>
+          <br/>
+          <div className="text-muted">
             <li>Healthcare standards and HIPAA</li>
             <li>Carrier file transformations and delivery</li>
-          </ul>
+          </div>
         </ul>
+        </AlertSubHeader>
         <br />
-        <AlertSubHeader>Organization Style: Scrum</AlertSubHeader>
+        <AlertSubHeader color='grey'>Organization Style: Scrum</AlertSubHeader>
         <ul>
           <li>Scrum and Sprints</li>
           <li>Kanban</li>
@@ -215,57 +233,79 @@ function App() {
     return (
       <React.Fragment>
         <Alert key="8" variant="light">
-          <Alert.Heading>Tools</Alert.Heading>
-          <ul>
-            <li>NET Framework / dotnet core / .NET Standard / C#</li>
-            <li>Visual Studio 2019/2022</li>
-            <li>Visual Studio Code</li>
-            <li>Microsoft SQL Server</li>
-            <li>Github Source Control</li>
-            <li>JetBrains Rider</li>
-            <li>Postman / API Requests</li>
-          </ul>
-          <Alert.Heading style={{ paddingTop: "15px" }}>
-            Some JavaScript Libraries
-          </Alert.Heading>
+          <AlertSubHeader fontSize='12pt' color='purple'>
+            Tools
+          </AlertSubHeader>
+          <AlertSubHeader fontSize="10pt">
+            <ul>
+              <li>NET Framework / dotnet core / .NET Standard / C#</li>
+              <li>Visual Studio 2019/2022</li>
+              <li>Visual Studio Code</li>
+              <li>Microsoft SQL Server</li>
+              <li>Github Source Control</li>
+              <li>JetBrains Rider</li>
+              <li>Postman / API Requests</li>
+            </ul>
+
+          </AlertSubHeader>
+          <AlertSubHeader fontSize='12pt' color='purple'>
+            JS Libraries / Modules
+          </AlertSubHeader>
+          <AlertSubHeader fontSize="10pt">
           <ul>
             <li>React</li>
-            <li>ECMAScript</li>
-            <li>Webpack / Babel Transformation</li>
             <li>Jest Testing Framework</li>
             <li>React Testing Library</li>
+            <li>Webpack / Babel</li>
           </ul>
-          <Alert.Heading style={{ paddingTop: "15px" }}>
-            Some .NET Libraries
-          </Alert.Heading>
+          </AlertSubHeader>
+          <AlertSubHeader fontSize='12pt' color='purple'>
+            .NET Libraries / Nuget packages
+          </AlertSubHeader>
+          <AlertSubHeader fontSize="10pt">
           <ul>
             <li>xUnit Testing Framework</li>
             <li>Moq / NSubstitute / (mocking libraries)</li>
-            <li>Jest Testing Framework</li>
             <li>React Testing Library</li>
             <li>Shouldly / Assert</li>
             <li>SumoLogic / Serilog</li>
             <li>Dapper ORM</li>
-            <li>Cake Build</li>
           </ul>
-          <Alert.Heading style={{ paddingTop: "15px" }}>
+          </AlertSubHeader>
+          <AlertSubHeader fontSize='12pt' color='purple'>
             Scripting / CLI
-          </Alert.Heading>
+          </AlertSubHeader>
+          
+          <AlertSubHeader fontSize="10pt">
           <ul>
             <li>Git Bash</li>
             <li>Linux</li>
             <li>Powershell</li>
+            <li>Cake Build</li>
           </ul>
-          <Alert.Heading style={{ paddingTop: "15px" }}>Misc</Alert.Heading>
+          </AlertSubHeader>
+          <AlertSubHeader fontSize='12pt' color='purple'>
+            Data
+          </AlertSubHeader>
+          <AlertSubHeader fontSize='10pt'>
           <ul>
-            <li>TypeScript</li>
-            <li>Docker</li>
-            <li>PostgresSql</li>
-            <li>NoSql Document Database</li>
+            <li>PostgreSQL</li>
+            <li>Cosmos DB</li>
+            <li>Sql Server</li>
+          </ul>
+          </AlertSubHeader>
+          <AlertSubHeader fontSize='12pt' color='purple'>
+            Misc
+          </AlertSubHeader>
+          <AlertSubHeader fontSize='10pt'>
+          <ul>
+            <li>TypeScript (learning..)</li>
+            <li>Docker (learning..)</li>
             <li>Octopus Deploy</li>
             <li>Team City Build</li>
             <li>Azure</li>
           </ul>
+          </AlertSubHeader>
         </Alert>
       </React.Fragment>
     );
@@ -332,14 +372,6 @@ function App() {
     <StyledContainer>
       <GridWrapper>
         <GridCol2Row1>
-          <div
-            style={{
-              padding: "0 50px 0 0",
-            }}
-          >
-            {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
-            {plusMinusButtons()} <strong>Expand / Collapse</strong>
-          </div>
           <React.Fragment>
             <ul>
               <Button
@@ -347,11 +379,11 @@ function App() {
                 size={"lg"}
                 onClick={() => setShowEducation(!showEducation)}
               >
-                <div>
-                  <strong>{explandCollapse(showEducation)} Education</strong>
-                </div>
+                <AlertSubHeader fontSize="12pt">
+                  {explandCollapse(showEducation)} Education
+                </AlertSubHeader>
               </Button>
-              {showEducation ? <div>{getEducationDetails()}</div> : null}
+              {showEducation ? <React.Fragment>{getEducationDetails()}</React.Fragment> : null}
             </ul>
           </React.Fragment>
           <React.Fragment>
@@ -361,16 +393,16 @@ function App() {
                 size={"lg"}
                 onClick={() => setShowExperience(!showExperience)}
               >
-                <div>
-                  <strong>{explandCollapse(showExperience)} Experience</strong>
-                </div>
+                <AlertSubHeader fontSize="12pt">
+                  {explandCollapse(showExperience)} Experience
+                </AlertSubHeader>
               </Button>
               {showExperience ? (
                 <React.Fragment>
-                  <TextWrapper>{proEdgeInfo()}</TextWrapper>
-                  <TextWrapper>{goldPointInfo()}</TextWrapper>
-                  <TextWrapper>{tekSystemsInfo()}</TextWrapper>
                   <TextWrapper>{wtwInfo()}</TextWrapper>
+                  <TextWrapper>{tekSystemsInfo()}</TextWrapper>
+                  <TextWrapper>{goldPointInfo()}</TextWrapper>
+                  <TextWrapper>{proEdgeInfo()}</TextWrapper>
                 </React.Fragment>
               ) : null}
             </ul>
@@ -383,9 +415,9 @@ function App() {
                 size={"lg"}
                 onClick={() => setShowDevelpment(!showDevelopment)}
               >
-                <strong>
+                <AlertSubHeader fontSize="12pt">
                   {explandCollapse(showDevelopment)} Tools / libraries
-                </strong>
+                </AlertSubHeader>
               </Button>
               {showDevelopment ? (
                 <TextWrapper>{toolsAndLibraries()}</TextWrapper>
@@ -398,10 +430,13 @@ function App() {
                 size={"lg"}
                 onClick={() => setShowAspirations(!showAspirations)}
               >
-                <strong>{explandCollapse(showAspirations)} Aspirations</strong>
+                <AlertSubHeader fontSize="12pt">
+
+                  {explandCollapse(showAspirations)} Aspirations
+                </AlertSubHeader>
               </Button>
               {showAspirations ? (
-                <TextWrapper>{getAspirations()}</TextWrapper>
+                <React.Fragment>{getAspirations()}</React.Fragment>
               ) : null}
             </ul>
             <ul>
@@ -414,20 +449,21 @@ function App() {
                   setAllState(PlusMinusDirection.None);
                 }}
               >
-                <strong>
+                <AlertSubHeader fontSize="12pt">
+
                   {explandCollapse(showHobbies)} Extra Curricular / Hobbies
-                </strong>
+                </AlertSubHeader>
               </Button>
               {showHobbies ? (
                 <Alert key="33" variant="light">
-                  <TextWrapper>
+                  <AlertSubHeader fontSize="10pt">
                     <ul>
                       <li>Rockclimbing</li>
                       <li>3D Printing</li>
                       <li>MTG</li>
                       <li>Raspberri Pi Projects and Tinkering</li>
                     </ul>
-                  </TextWrapper>
+                  </AlertSubHeader>
                 </Alert>
               ) : null}
             </ul>
@@ -438,9 +474,9 @@ function App() {
                 size={"lg"}
                 onClick={() => setShowCalendly(!showCalendly)}
               >
-                <strong>
+                <AlertSubHeader fontSize="12pt">
                   {explandCollapse(showCalendly)} Calendly Scheduler
-                </strong>
+                </AlertSubHeader>
               </Button>
               {showCalendly ? (
                 <TextWrapper>
@@ -450,8 +486,20 @@ function App() {
             </ul>
           </React.Fragment>
         </GridCol2Row1>
+        <GridCol3Row1>
+          <div
+            style={{
+              padding: "0 50px 0 0",
+              position: "fixed",
+            }}
+            
+          >
+            {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
+            {plusMinusButtons()} <strong>Expand / Collapse</strong>
+          </div>
+
+        </GridCol3Row1>
         <GridCol1Row1>
-          <React.Fragment>
             <Card style={{ width: "66%", height: "auto" }}>
               <Card.Title style={{ backgroundColor: "aliceblue" }}>
                 <AlertSubHeader style={{ textAlign: "center" }}>
@@ -504,10 +552,8 @@ function App() {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </React.Fragment>
         </GridCol1Row1>
       </GridWrapper>
-      <footer></footer>
     </StyledContainer>
   );
 }
