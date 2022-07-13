@@ -1,6 +1,6 @@
 {
   "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "numso.prettier-standard-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "svipas.prettier-plus"
   },
@@ -12,5 +12,18 @@
   "prettier.stylelintIntegration": true,
   "prettier.tslintIntegration": true,
   "iisexpress.openInBrowser": "chrome",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "amVim.mimicVimSearchBehavior": false,
+  "amVim.bindCtrlCommands": false,
+  "npm.oldKeybindings.enable": true,
+  "docker.languageserver.formatter.ignoreMultilineInstructions": true,
+  "editor.formatOnPaste": false,
+  "eslint.format.enable": true,
+  "cloudcode.yaml.format.enable": true,
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "ReactComponentContainerGenerator.componentFile.js": "js",
+  "vsintellicode.features.apiExamplests": "enabled"
 }

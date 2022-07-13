@@ -5,33 +5,39 @@ const StyledContainer = styled(Container)`
   max-width: 1600px;
   padding: 20px;
 `;
-const TextWrapper = styled.div`
-  margin: 3px;
-  font-weight: bold;
-  line-height: 1.5;
+
+const CalendarStyle = styled.button`
+  color: blue;
 `;
+
 const JustifyDiv = styled.div`
   text-align: justify;
   padding: 0 0 10px 0;
 `;
 
+const AlertHeader = styled.h1`
+  font-size: 11pt;
+  color: ${props => props?.color ?? 'black'};
+`;
 const AlertSubHeader = styled.h1`
-  padding: 10px 0px 0px 2px;
-  font-size: ${props => props?.fontSize ?? '18pt'};
+  font-size: 10pt;
   color: ${props => props?.color ?? 'black'};
 `;
 
 const GridWrapper = styled.span`
-  font-size: 14pt;
-  color: black;
+  font-size: 10pt;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 30% 60% 10%;
+  grid-template-columns: 40% 60%;
   word-wrap: break-word;
+  ul {
+    color: black;
+  }
   @media only screen and (max-width: 600px) {
     ul {
       padding: 0px;
     }
+    font-size: 9pt;
     display: inline;
   }
 `;
@@ -45,19 +51,14 @@ const GridCol2Row1 = styled.div`
   grid-column-start: 2;
   grid-column-end: 3;
 `;
-const GridCol3Row1 = styled.div`
-  grid-row: 1;
-  grid-column-start: 3;
-  grid-column-end: -1;
-`;
 
 export {
   AlertSubHeader,
   GridCol1Row1,
   GridCol2Row1,
-  GridCol3Row1,
   GridWrapper,
-  TextWrapper,
+  AlertHeader,
   JustifyDiv,
   StyledContainer,
+  CalendarStyle
 };

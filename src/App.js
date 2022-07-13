@@ -1,85 +1,86 @@
 //#region imports
-import React from "react";
-import { useState, useEffect } from "react";
-import head3 from "./images/head3.jpg";
-import pdfIcon from "./images/pdf.png";
-import docx from "./images/docx.png";
-import ericPdf from "./files/Eric-Bowser-Resume-2022.pdf";
-import ericDocx from "./files/Eric-Bowser-Resume-2022.docx";
-import { Button, Alert, Card } from "react-bootstrap";
+import React, { Fragment } from 'react'
+import { useState, useEffect } from 'react'
+import head3 from './images/head3.jpg'
+import pdfIcon from './images/pdf.png'
+import docx from './images/docx.png'
+import ericPdf from './files/Eric-Bowser-Resume-2022.pdf'
+import ericDocx from './files/Eric-Bowser-Resume-2022.docx'
+import { Button, Alert, Card, Container } from 'react-bootstrap'
 import {
   GridCol1Row1,
   GridCol2Row1,
-  GridCol3Row1,
   JustifyDiv,
   GridWrapper,
-  TextWrapper,
+  AlertHeader,
   AlertSubHeader,
   StyledContainer
-} from "./styles";
-import { PlusMinusDirection } from "./common";
-import { InlineWidget } from "react-calendly";
+  // CalendarStyle
+} from './styles'
+import { PlusMinusDirection } from './common'
+// import Calendar from 'react-calendar';
 //#endregion
 
-function App() {
+function App () {
   //#region local state react hook
-  const [showExperience, setShowExperience] = useState(false);
-  const [showDevelopment, setShowDevelpment] = useState(false);
-  const [showProjects, setShowProjects] = useState(false);
-  const [showAspirations, setShowAspirations] = useState(false);
-  const [showHobbies, setShowHobbies] = useState(false);
-  const [showEducation, setShowEducation] = useState(false);
-  const [showCalendly, setShowCalendly] = useState(false);
-  const [allState, setAllState] = useState(PlusMinusDirection.None);
+  const [showExperience, setShowExperience] = useState(false)
+  const [showDevelopment, setShowDevelpment] = useState(false)
+  const [showProjects, setShowProjects] = useState(false)
+  const [showAspirations, setShowAspirations] = useState(false)
+  const [showHobbies, setShowHobbies] = useState(false)
+  const [showEducation, setShowEducation] = useState(false)
+  const [allState, setAllState] = useState(PlusMinusDirection.None)
+  const todaysDate = new Date()
+  console.log(todaysDate)
+  // const [calendarState, setCalendarState] = useState(todaysDate);
   //#endregion
 
   //#region Collapse / Expand Toggle
-  function setAllCollapse() {
-    setShowExperience(false);
-    setShowDevelpment(false);
-    setShowHobbies(false);
-    setShowAspirations(false);
-    setShowProjects(false);
-    setShowEducation(false);
-    setShowCalendly(false);
-    window.scrollTo(0, window.screen.height);
+  function setAllCollapse () {
+    setShowExperience(false)
+    setShowDevelpment(false)
+    setShowHobbies(false)
+    setShowAspirations(false)
+    setShowProjects(false)
+    setShowEducation(false)
   }
 
-  function setAllExpand() {
-    setShowExperience(true);
-    setShowDevelpment(true);
-    setShowHobbies(true);
-    setShowAspirations(true);
-    setShowProjects(true);
-    setShowEducation(true);
-    setShowCalendly(false);
-    window.scrollTo(0, 0);
+  function setAllExpand () {
+    setShowExperience(true)
+    setShowDevelpment(true)
+    setShowHobbies(true)
+    setShowAspirations(true)
+    setShowProjects(true)
+    setShowEducation(true)
   }
 
   //#endregion
 
   //#region React Hooks
   useEffect(() => {
-    setAllState(PlusMinusDirection.None);
+    setAllState(PlusMinusDirection.None)
   }, [
     showAspirations,
     showDevelopment,
     showExperience,
     showProjects,
     showHobbies,
-    showEducation,
-    showCalendly,
-  ]);
+    showEducation
+  ])
+
+  // useEffect(() => {
+
+  // }, [calendarState])
 
   useEffect(() => {
     if (allState === PlusMinusDirection.Expand) {
-      setAllExpand();
+      setAllExpand()
     } else if (allState === PlusMinusDirection.Collapse) {
-      setAllCollapse();
+      setAllCollapse()
     } else {
-      setAllState(PlusMinusDirection.None);
+      setAllState(PlusMinusDirection.None)
     }
-  }, [allState]);
+  }, [allState])
 
   //#endregion
 
@@ -87,447 +88,434 @@ function App() {
   // Arrow function - executes later or when invoked
   const getEducationDetails = () => {
     return (
-        <Alert key="995" variant="light">
-          <AlertSubHeader fontSize='10pt'>
-            <ul>
-              <li>
-                Weber State University: 2011-2013 - BA Computer Science
-              </li>
-              </ul>
-          </AlertSubHeader>
-            <AlertSubHeader fontSize='10pt'>
-              <ul>
-              <li>
-                University Of Pheonix: 2010-2011 - Associates of Art
-                </li>
-            </ul>
-            </AlertSubHeader>
-        </Alert>
-    );
-  };
+      <Alert key='995' variant='light'>
+        <AlertSubHeader fontSize='10pt'>
+          <ul className='list-group'>
+            <li className='list-group-item'>
+              Weber State University: 2011-2013 - BA Computer Science
+            </li>
+          </ul>
+        </AlertSubHeader>
+        <AlertSubHeader fontSize='10pt'>
+          <ul className='list-group'>
+            <li className='list-group-item'>
+              University Of Pheonix: 2010-2011 - Associates of Art
+            </li>
+          </ul>
+        </AlertSubHeader>
+      </Alert>
+    )
+  }
   //#endregion
 
   //#region Aspirations
-  function getAspirations() {
+  function getAspirations () {
     return (
-      <Alert key="98" variant="light">
-        <AlertSubHeader fontSize="10pt">
-
-        <ul>
-          <li>Find career growth</li>
-          <li>Increase passion</li>
-          <li>Learn new things</li>
-          <li>Networking</li>
-          <li>Advance career</li>
-          <li>More experience</li>
-          <li>Trusting and engaging culture</li>
+      <Fragment>
+        <ul className='list-group'>
+          <li className='list-group-item'>Find career growth</li>
+          <li className='list-group-item'>Increase passion</li>
+          <li className='list-group-item'>Learn new things</li>
+          <li className='list-group-item'>Networking</li>
+          <li className='list-group-item'>Advance career</li>
+          <li className='list-group-item'>More experience</li>
+          <li className='list-group-item'>Trusting and engaging culture</li>
         </ul>
-        </AlertSubHeader>
-      </Alert>
-    );
+      </Fragment>
+    )
   }
   //#endregion
 
   //#region Pro Edge
-  function proEdgeInfo() {
+  function proEdgeInfo () {
     return (
-      <Alert key="421" variant="light">
-        <AlertSubHeader color='grey'>Pro Edge Tec, LLC: 2013-2015</AlertSubHeader>
-        <AlertSubHeader color='purple' fontSize='12pt'>IT Technician</AlertSubHeader>
-        <ul>
-          <li>Troublshoot client hardware</li>
-          <li>Network configuration</li>
-          <li>Inventory tracking</li>
-          <li>Nagios server health monitoring</li>
-          <li>Help install network bridge and help with infrastructure</li>
-          <li>
+      <Fragment>
+        <AlertSubHeader color='purple'>
+          Pro Edge Tec, LLC: 2013-2015
+        </AlertSubHeader>
+        <AlertSubHeader color='purple'>IT Technician</AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>Troublshoot client hardware</li>
+          <li className='list-group-item'>Network configuration</li>
+          <li className='list-group-item'>Inventory tracking</li>
+          <li className='list-group-item'>Nagios server health monitoring</li>
+          <li className='list-group-item'>
+            Help install network bridge and help with infrastructure
+          </li>
+          <li className='list-group-item'>
             Networking and some IEEE exposure / Network security practices
           </li>
-          <li>
+          <li className='list-group-item'>
             Prepare engineering employees computers for <strong>Kihomac</strong>
           </li>
-          <li>
+          <li className='list-group-item'>
             Install engineering software: SolidWorks, CNC Tooling software, etc
           </li>
         </ul>
-      </Alert>
-    );
+      </Fragment>
+    )
   }
   //#endregion
 
   //#region GOLDPoint Info
-  function goldPointInfo() {
+  function goldPointInfo () {
     return (
-      <Alert key="418" variant="light">
-        <AlertSubHeader color='grey' >GoldPoint Systems: 2013-2015</AlertSubHeader>
-        <AlertSubHeader color='purple' fontSize='12pt'>
+      <Fragment>
+        <AlertSubHeader color='purple'>
+          GoldPoint Systems: 2013-2015
+        </AlertSubHeader>
+        <AlertSubHeader color='purple'>
           C# backend developer and SQL data analyst
         </AlertSubHeader>
-        <ul>
-          <li>SQL Server & SSRS Reporting</li>
-          <li>Render unique reports for clients</li>
-          <li>SQL Scripting and Automation for Deployments</li>
-          <li>Microsoft Extensibility Framework</li>
-          <li>MSTest</li>
+        <ul className='list-group'>
+          <li className='list-group-item'>SQL Server & SSRS Reporting</li>
+          <li className='list-group-item'>Render unique reports for clients</li>
+          <li className='list-group-item'>
+            SQL Scripting and Automation for Deployments
+          </li>
+          <li className='list-group-item'>Microsoft Extensibility Framework</li>
+          <li className='list-group-item'>MSTest</li>
         </ul>
-      </Alert>
-    );
+      </Fragment>
+    )
   }
   //#endregion
 
   //#region TEK Systems
-  function tekSystemsInfo() {
+  function tekSystemsInfo () {
     return (
-      <Alert key="411" variant="light">
-        <AlertSubHeader color='grey'>2015-2016: Contract To Hire</AlertSubHeader>
-        <AlertSubHeader  fontSize='12pt'>Contract to Hire</AlertSubHeader>
-      </Alert>
-    );
+      <Fragment>
+        <AlertSubHeader color='purple'>
+          2015-2016: Contract To Hire
+        </AlertSubHeader>
+        <AlertSubHeader>Contract to Hire</AlertSubHeader>
+      </Fragment>
+    )
   }
   //#endregion
 
   //#region WTW
-  function wtwInfo() {
+  function wtwInfo () {
     return (
-      <Alert key="22" variant="light">
-        <AlertSubHeader fontSize="12pt">
-          Willis Towers Watson: 2016 - 06/2022
-        </AlertSubHeader>
-        <AlertSubHeader fontSize='12pt' color='purple'>
+      <Fragment>
+        <AlertSubHeader>Willis Towers Watson: 2016 - 06/2022</AlertSubHeader>
+        <AlertSubHeader color='purple'>
           <span>Full Stack Software Engineer</span>
         </AlertSubHeader>
-        <AlertSubHeader fontSize='10pt'>
+        <AlertSubHeader color='purple'>
           <div>React.js Front-End </div>
           <div>C# / .NET back-end</div>
         </AlertSubHeader>
-        <AlertSubHeader fontSize='10pt'>
-        <ul>
-          <li>Bounded Contexts</li>
-          <li>Dynamic applications / configurations</li>
-          <li>Microservices and Microfrontend</li>
-          <li>REST API</li>
-          <li>Pub / Sub</li>
-          <li>NoSql on Azure platform</li>
-          <br/>
-          <div className="text-muted">
-            <li>Healthcare standards and HIPAA</li>
-            <li>Carrier file transformations and delivery</li>
-          </div>
+        <ul className='list-group'>
+          <li className='list-group-item'>Bounded Contexts</li>
+          <li className='list-group-item'>
+            Dynamic applications / configurations
+          </li>
+          <li className='list-group-item'>Microservices and Microfrontend</li>
+          <li className='list-group-item'>REST API</li>
+          <li className='list-group-item'>Pub / Sub</li>
+          <li className='list-group-item'>NoSql on Azure platform</li>
         </ul>
-        </AlertSubHeader>
         <br />
-        <AlertSubHeader color='grey'>Organization Style: Scrum</AlertSubHeader>
-        <ul>
-          <li>Scrum and Sprints</li>
-          <li>Kanban</li>
-          <li>Jira Ticket Management</li>
-          <li>Quality Assurance</li>
+        <AlertSubHeader color='purple'>
+          Organization Style: Scrum
+        </AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>Scrum and Sprints</li>
+          <li className='list-group-item'>Kanban</li>
+          <li className='list-group-item'>Jira Ticket Management</li>
+          <li className='list-group-item'>Quality Assurance</li>
         </ul>
-      </Alert>
-    );
+      </Fragment>
+    )
   }
   //#endregion
 
   //#region Tools and Libraries
-  function toolsAndLibraries() {
+  function toolsAndLibraries () {
     return (
-      <React.Fragment>
-        <Alert key="8" variant="light">
-          <AlertSubHeader fontSize='12pt' color='purple'>
-            Tools
-          </AlertSubHeader>
-          <AlertSubHeader fontSize="10pt">
-            <ul>
-              <li>NET Framework / dotnet core / .NET Standard / C#</li>
-              <li>Visual Studio 2019/2022</li>
-              <li>Visual Studio Code</li>
-              <li>Microsoft SQL Server</li>
-              <li>Github Source Control</li>
-              <li>JetBrains Rider</li>
-              <li>Postman / API Requests</li>
-            </ul>
+      <Fragment>
+        <AlertSubHeader color='purple'>Tools</AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>
+            NET Framework / dotnet core / .NET Standard / C#
+          </li>
+          <li className='list-group-item'>Visual Studio 2019/2022</li>
+          <li className='list-group-item'>Visual Studio Code</li>
+          <li className='list-group-item'>Microsoft SQL Server</li>
+          <li className='list-group-item'>Github Source Control</li>
+          <li className='list-group-item'>JetBrains Rider</li>
+          <li className='list-group-item'>Postman / API Requests</li>
+        </ul>
+        <br />
+        <AlertSubHeader color='purple'>JS Libraries / Modules</AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>React</li>
+          <li className='list-group-item'>Jest Testing Framework</li>
+          <li className='list-group-item'>React Testing Library</li>
+          <li className='list-group-item'>Webpack / Babel</li>
+        </ul>
+        <br />
+        <AlertSubHeader color='purple'>
+          .NET Libraries / Nuget packages
+        </AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>xUnit Testing Framework</li>
+          <li className='list-group-item'>
+            Moq / NSubstitute / (mocking libraries)
+          </li>
+          <li className='list-group-item'>React Testing Library</li>
+          <li className='list-group-item'>Shouldly / Assert</li>
+          <li className='list-group-item'>SumoLogic / Serilog</li>
+          <li className='list-group-item'>Dapper ORM</li>
+        </ul>
+        <br />
+        <AlertSubHeader color='purple'>Scripting / CLI</AlertSubHeader>
 
-          </AlertSubHeader>
-          <AlertSubHeader fontSize='12pt' color='purple'>
-            JS Libraries / Modules
-          </AlertSubHeader>
-          <AlertSubHeader fontSize="10pt">
-          <ul>
-            <li>React</li>
-            <li>Jest Testing Framework</li>
-            <li>React Testing Library</li>
-            <li>Webpack / Babel</li>
-          </ul>
-          </AlertSubHeader>
-          <AlertSubHeader fontSize='12pt' color='purple'>
-            .NET Libraries / Nuget packages
-          </AlertSubHeader>
-          <AlertSubHeader fontSize="10pt">
-          <ul>
-            <li>xUnit Testing Framework</li>
-            <li>Moq / NSubstitute / (mocking libraries)</li>
-            <li>React Testing Library</li>
-            <li>Shouldly / Assert</li>
-            <li>SumoLogic / Serilog</li>
-            <li>Dapper ORM</li>
-          </ul>
-          </AlertSubHeader>
-          <AlertSubHeader fontSize='12pt' color='purple'>
-            Scripting / CLI
-          </AlertSubHeader>
-          
-          <AlertSubHeader fontSize="10pt">
-          <ul>
-            <li>Git Bash</li>
-            <li>Linux</li>
-            <li>Powershell</li>
-            <li>Cake Build</li>
-          </ul>
-          </AlertSubHeader>
-          <AlertSubHeader fontSize='12pt' color='purple'>
-            Data
-          </AlertSubHeader>
-          <AlertSubHeader fontSize='10pt'>
-          <ul>
-            <li>PostgreSQL</li>
-            <li>Cosmos DB</li>
-            <li>Sql Server</li>
-          </ul>
-          </AlertSubHeader>
-          <AlertSubHeader fontSize='12pt' color='purple'>
-            Misc
-          </AlertSubHeader>
-          <AlertSubHeader fontSize='10pt'>
-          <ul>
-            <li>TypeScript (learning..)</li>
-            <li>Docker (learning..)</li>
-            <li>Octopus Deploy</li>
-            <li>Team City Build</li>
-            <li>Azure</li>
-          </ul>
-          </AlertSubHeader>
-        </Alert>
-      </React.Fragment>
-    );
+        <ul className='list-group'>
+          <li className='list-group-item'>Git Bash</li>
+          <li className='list-group-item'>Linux</li>
+          <li className='list-group-item'>Powershell</li>
+          <li className='list-group-item'>Cake Build</li>
+        </ul>
+        <br />
+        <AlertSubHeader color='purple'>Data</AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>PostgreSQL</li>
+          <li className='list-group-item'>Cosmos DB</li>
+          <li className='list-group-item'>Sql Server</li>
+        </ul>
+        <br />
+        <AlertSubHeader color='purple'>Misc</AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>TypeScript (learning..)</li>
+          <li className='list-group-item'>Docker (learning..)</li>
+          <li className='list-group-item'>Octopus Deploy</li>
+          <li className='list-group-item'>Team City Build</li>
+          <li className='list-group-item'>Azure</li>
+        </ul>
+      </Fragment>
+    )
   }
   //#endregion
 
   //#region functions
-  function setExpandCollapse(direction) {
-    if (!direction) return;
+  function setExpandCollapse (direction) {
+    if (!direction) return
     if (direction === PlusMinusDirection.Collapse) {
-      setAllState(PlusMinusDirection.Collapse);
+      setAllState(PlusMinusDirection.Collapse)
     } else if (PlusMinusDirection.Expand) {
-      setAllState(PlusMinusDirection.Expand);
+      setAllState(PlusMinusDirection.Expand)
     } else {
-      setAllState(PlusMinusDirection.None);
+      setAllState(PlusMinusDirection.None)
     }
   }
 
-  const addLink = (href = "", linkText = "", alt = "") => {
+  const addLink = (href = '', linkText = '', alt = '') => {
     return (
       <JustifyDiv key={href}>
         <a alt={alt} href={href}>
           {linkText}
         </a>
       </JustifyDiv>
-    );
-  };
-
-  function explandCollapse(state) {
-    const sign = state ? "-" : "+";
-    return sign;
+    )
   }
 
-  function plusMinusButtons() {
+  function explandCollapse (state) {
+    const sign = state ? '-' : '+'
+    return sign
+  }
+
+  function plusMinusButtons () {
     return (
       <div>
         <Button
-          key="2895"
-          variant="outlineButton"
-          size="lg"
-          alt="plus"
-          style={{ paddingTop: "20px" }}
+          key='2895'
+          variant=''
+          size='sm'
+          alt='plus'
           onClick={() => setExpandCollapse(PlusMinusDirection.Expand)}
         >
-          <span style={{ fontSize: "42pt" }}>+</span>
+          <span style={{ fontSize: '21pt' }}>+</span>
         </Button>
         <Button
-          key="88997"
-          variant="OulineButton"
-          size="lg"
-          alt="minus"
-          style={{ paddingTop: "20px" }}
+          key='88997'
+          variant=''
+          size='sm'
+          alt='minus'
           onClick={() => setExpandCollapse(PlusMinusDirection.Collapse)}
         >
-          <span style={{ fontSize: "42pt" }}>-</span>
+          <span style={{ fontSize: '21pt' }}>-</span>
         </Button>
       </div>
-    );
+    )
+  }
+  //#endregion
+
+  //#region Extra Curricular / Hobbies
+  function getExtraCurricularHobbies () {
+    return (
+      <Fragment>
+        <ul className='list-group'>
+          <li className='list-group-item'>Rockclimbing</li>
+          <li className='list-group-item'>3D Printing</li>
+          <li className='list-group-item'>MTG</li>
+          <li className='list-group-item'>
+            Raspberri Pi Projects and Tinkering
+          </li>
+        </ul>
+      </Fragment>
+    )
   }
   //#endregion
 
   //#region render method
+
   return (
-    <StyledContainer>
-      <GridWrapper>
-        <GridCol2Row1>
-          <React.Fragment>
+    <Fragment>
+      <StyledContainer>
+        <GridWrapper>
+          <GridCol2Row1>
+            <Container style={{paddingBottom: '50px'}}>
+              {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
+              <span style={{ fontSize: '10pt' }}>
+                {plusMinusButtons()} <strong>Expand / Collapse</strong>
+              </span>
+            </Container>
+            <Container>
+
             <ul>
               <Button
-                variant="outline"
-                size={"lg"}
+                variant='outline'
+                size={'lg'}
                 onClick={() => setShowEducation(!showEducation)}
               >
-                <AlertSubHeader fontSize="12pt">
+                <AlertSubHeader fontSize='12pt'>
                   {explandCollapse(showEducation)} Education
                 </AlertSubHeader>
               </Button>
-              {showEducation ? <React.Fragment>{getEducationDetails()}</React.Fragment> : null}
+              {showEducation ? (
+                <React.Fragment>{getEducationDetails()}</React.Fragment>
+              ) : null}
             </ul>
-          </React.Fragment>
-          <React.Fragment>
             <ul>
               <Button
-                variant="outline"
-                size={"lg"}
+                variant='outline'
+                size={'lg'}
                 onClick={() => setShowExperience(!showExperience)}
               >
-                <AlertSubHeader fontSize="12pt">
+                <AlertHeader>
                   {explandCollapse(showExperience)} Experience
-                </AlertSubHeader>
+                </AlertHeader>
               </Button>
               {showExperience ? (
-                <React.Fragment>
-                  <TextWrapper>{wtwInfo()}</TextWrapper>
-                  <TextWrapper>{tekSystemsInfo()}</TextWrapper>
-                  <TextWrapper>{goldPointInfo()}</TextWrapper>
-                  <TextWrapper>{proEdgeInfo()}</TextWrapper>
-                </React.Fragment>
-              ) : null}
-            </ul>
-          </React.Fragment>
-          <React.Fragment>
-            <ul>
-              <Button
-                key={123}
-                variant="outline"
-                size={"lg"}
-                onClick={() => setShowDevelpment(!showDevelopment)}
-              >
-                <AlertSubHeader fontSize="12pt">
-                  {explandCollapse(showDevelopment)} Tools / libraries
-                </AlertSubHeader>
-              </Button>
-              {showDevelopment ? (
-                <TextWrapper>{toolsAndLibraries()}</TextWrapper>
-              ) : null}
-            </ul>
-            <ul>
-              <Button
-                key={687}
-                variant="outline"
-                size={"lg"}
-                onClick={() => setShowAspirations(!showAspirations)}
-              >
-                <AlertSubHeader fontSize="12pt">
-
-                  {explandCollapse(showAspirations)} Aspirations
-                </AlertSubHeader>
-              </Button>
-              {showAspirations ? (
-                <React.Fragment>{getAspirations()}</React.Fragment>
-              ) : null}
-            </ul>
-            <ul>
-              <Button
-                key={687}
-                variant="outline"
-                size={"lg"}
-                onClick={() => {
-                  setShowHobbies(!showHobbies);
-                  setAllState(PlusMinusDirection.None);
-                }}
-              >
-                <AlertSubHeader fontSize="12pt">
-
-                  {explandCollapse(showHobbies)} Extra Curricular / Hobbies
-                </AlertSubHeader>
-              </Button>
-              {showHobbies ? (
-                <Alert key="33" variant="light">
-                  <AlertSubHeader fontSize="10pt">
-                    <ul>
-                      <li>Rockclimbing</li>
-                      <li>3D Printing</li>
-                      <li>MTG</li>
-                      <li>Raspberri Pi Projects and Tinkering</li>
-                    </ul>
-                  </AlertSubHeader>
+                <Alert variant='light'>
+                  {wtwInfo()}
+                  <br />
+                  {tekSystemsInfo()}
+                  <br />
+                  {goldPointInfo()}
+                  <br />
+                  {proEdgeInfo()}
+                  <br />
                 </Alert>
               ) : null}
             </ul>
             <ul>
               <Button
-                key={687}
-                variant="outline"
-                size={"lg"}
-                onClick={() => setShowCalendly(!showCalendly)}
+                key={123}
+                variant='outline'
+                size={'lg'}
+                onClick={() => setShowDevelpment(!showDevelopment)}
               >
-                <AlertSubHeader fontSize="12pt">
-                  {explandCollapse(showCalendly)} Calendly Scheduler
-                </AlertSubHeader>
+                <AlertHeader>
+                  {explandCollapse(showDevelopment)} Tools / libraries
+                </AlertHeader>
               </Button>
-              {showCalendly ? (
-                <TextWrapper>
-                  <InlineWidget url="https://calendly.com/ericryanbowser" />
-                </TextWrapper>
-              ) : null}
             </ul>
-          </React.Fragment>
-        </GridCol2Row1>
-        <GridCol3Row1>
-          <div
-            style={{
-              padding: "0 50px 0 0",
-              position: "fixed",
-            }}
-            
-          >
-            {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
-            {plusMinusButtons()} <strong>Expand / Collapse</strong>
-          </div>
+            {showDevelopment ? (
+              <Alert variant='light'>{toolsAndLibraries()}</Alert>
+            ) : null}
+            <ul>
+              <Button
+                key={687}
+                variant='outline'
+                size={'lg'}
+                onClick={() => setShowAspirations(!showAspirations)}
+              >
+                <AlertHeader>
+                  {explandCollapse(showAspirations)} Aspirations
+                </AlertHeader>
+              </Button>
+            </ul>
+            {showAspirations ? (
+              <Alert variant='light'>{getAspirations()}</Alert>
+            ) : null}
+            <ul>
+              <Button
+                key={687}
+                variant='outline'
+                size={'lg'}
+                onClick={() => {
+                  setShowHobbies(!showHobbies)
+                  setAllState(PlusMinusDirection.None)
+                }}
+              >
+                <AlertHeader>
+                  {explandCollapse(showHobbies)} Extra Curricular / Hobbies
+                </AlertHeader>
+              </Button>
+            </ul>
+            {showHobbies ? (
+              <Alert variant='light'>{getExtraCurricularHobbies()}</Alert>
+            ) : null}
+            {/* <ul>
+                <Button
+                  key={687}
+                  variant="outline"
+                  size={"lg"}
+                  onClick={() => setShowCalendly(!showCalendly)}
+                >
+                  <AlertSubHeader fontSize="12pt">
+                    {explandCollapse(showCalendly)} Calendly Scheduler
+                  </AlertSubHeader>
+                </Button>
+                {showCalendly ? (
+                  <AlertSubHeader>
+                    <InlineWidget url="https://calendly.com/ericryanbowser" />
+                  </AlertSubHeader>
+                ) : null}
+              </ul> */}
+            </Container>
+          </GridCol2Row1>
 
-        </GridCol3Row1>
-        <GridCol1Row1>
-            <Card style={{ width: "66%", height: "auto" }}>
-              <Card.Title style={{ backgroundColor: "aliceblue" }}>
-                <AlertSubHeader style={{ textAlign: "center" }}>
-                  <TextWrapper>
-                    Eric Ryan Bowser - Software Engineer
-                  </TextWrapper>
-                </AlertSubHeader>
+          <GridCol1Row1>
+            <Card style={{ width: '66%', height: 'auto' }}>
+              <Card.Title style={{ backgroundColor: 'aliceblue' }}>
+                <AlertHeader color='purple'>
+                  Eric Ryan Bowser - Software Engineer
+                </AlertHeader>
               </Card.Title>
               <Card.Body>
-                <Card.Img variant="top" src={head3} />
+                <Card.Img variant='top' src={head3}></Card.Img>
                 <Card.Text>
-                  <TextWrapper>
+                  <AlertHeader color='purple'>
                     <div>Contact Information:</div>
                     <div>Mobile: 435-494-8030</div>
-                  </TextWrapper>
+                  </AlertHeader>
                   <div>
                     {addLink(
-                      "mailto:ericryanbowser@gmail.com",
-                      "ericryanbowser@gmail.com",
-                      "Email address",
+                      'mailto:ericryanbowser@gmail.com',
+                      'ericryanbowser@gmail.com',
+                      'Email address',
                       true
                     )}
                   </div>
                   <div>
                     {addLink(
-                      "https://github.com/ericbowser",
-                      "Github",
-                      "Github for Eric Bowser",
+                      'https://github.com/ericbowser',
+                      'Github',
+                      'Github for Eric Bowser',
                       true
                     )}
                   </div>
@@ -536,27 +524,28 @@ function App() {
 
                     <a href={ericPdf} download>
                       <Card.Img
-                        variant="top"
+                        variant='top'
                         src={pdfIcon}
-                        style={{ width: "25%", height: "25%" }}
+                        style={{ width: '25%', height: '25%' }}
                       />
                     </a>
                     <a href={ericDocx} download>
                       <Card.Img
-                        variant="top"
+                        variant='top'
                         src={docx}
-                        style={{ width: "25%", height: "25%" }}
+                        style={{ width: '25%', height: '25%' }}
                       />
                     </a>
                   </div>
                 </Card.Text>
               </Card.Body>
             </Card>
-        </GridCol1Row1>
-      </GridWrapper>
-    </StyledContainer>
-  );
+          </GridCol1Row1>
+        </GridWrapper>
+      </StyledContainer>
+    </Fragment>
+  )
 }
 //#endregion
 
-export default App;
+export default App
