@@ -363,7 +363,7 @@ function App () {
   }
   //#endregion
 
-  //#region render method
+ // #region render method
 
   return (
       <StyledContainer>
@@ -401,103 +401,8 @@ function App () {
              {getExtraCurricularHobbies()}
          </Tab>
         </Tabs>
-            {/*<Container style={{paddingBottom: '50px'}}>*/}
-            {/*  /!* <img src={randomColor} alt="header bg" className="container-fluid" /> *!/*/}
-            {/*  <span style={{ fontSize: '10pt' }}>*/}
-            {/*    {plusMinusButtons()} <strong>Expand / Collapse</strong>*/}
-            {/*  </span>*/}
-            {/*</Container>*/}
-            {/*<Container>*/}
-            
-            {/*<ul>*/}
-            {/*  <Button*/}
-            {/*    variant='outline'*/}
-            {/*    size={'lg'}*/}
-            {/*    onClick={() => setShowEducation(!showEducation)}*/}
-            {/*  >*/}
-            {/*    <AlertSubHeader fontSize='12pt'>*/}
-            {/*      {explandCollapse(showEducation)} Education*/}
-            {/*    </AlertSubHeader>*/}
-            {/*  </Button>*/}
-            {/*  {showEducation ? (*/}
-            {/*    <React.Fragment>{getEducationDetails()}</React.Fragment>*/}
-            {/*  ) : null}*/}
-            {/*</ul>*/}
-            {/*<ul>*/}
-            {/*  <Button*/}
-            {/*    variant='outline'*/}
-            {/*    size={'lg'}*/}
-            {/*    onClick={() => setShowExperience(!showExperience)}*/}
-            {/*  >*/}
-            {/*    <AlertHeader>*/}
-            {/*      {explandCollapse(showExperience)} Experience*/}
-            {/*    </AlertHeader>*/}
-            {/*  </Button>*/}
-            {/*  {showExperience ? (*/}
-            {/*    <Alert variant='light'>*/}
-            {/*      {wtwInfo()}*/}
-            {/*      <br />*/}
-            {/*      {tekSystemsInfo()}*/}
-            {/*      <br />*/}
-            {/*      {goldPointInfo()}*/}
-            {/*      <br />*/}
-            {/*      {proEdgeInfo()}*/}
-            {/*      <br />*/}
-            {/*    </Alert>*/}
-            {/*  ) : null}*/}
-            {/*</ul>*/}
-            {/*<ul>*/}
-            {/*  <Button*/}
-            {/*    key={123}*/}
-            {/*    variant='outline'*/}
-            {/*    size={'lg'}*/}
-            {/*    onClick={() => setShowDevelopment(!showDevelopment)}*/}
-            {/*  >*/}
-            {/*    <AlertHeader>*/}
-            {/*      {explandCollapse(showDevelopment)} Tools / libraries*/}
-            {/*    </AlertHeader>*/}
-            {/*  </Button>*/}
-            {/*</ul>*/}
-            {/*{showDevelopment ? (*/}
-            {/*  <Alert variant='light'>{toolsAndLibraries()}</Alert>*/}
-            {/*) : null}*/}
-            {/*<ul>*/}
-            {/*  <Button*/}
-            {/*    key={687}*/}
-            {/*    variant='outline'*/}
-            {/*    size={'lg'}*/}
-            {/*    onClick={() => setShowAspirations(!showAspirations)}*/}
-            {/*  >*/}
-            {/*    <AlertHeader>*/}
-            {/*      {explandCollapse(showAspirations)} Aspirations*/}
-            {/*    </AlertHeader>*/}
-            {/*  </Button>*/}
-            {/*</ul>*/}
-            {/*{showAspirations ? (*/}
-            {/*  <Alert variant='light'>{getAspirations()}</Alert>*/}
-            {/*) : null}*/}
-            {/*<ul>*/}
-            {/*  <Button*/}
-            {/*    key={687}*/}
-            {/*    variant='outline'*/}
-            {/*    size={'lg'}*/}
-            {/*    onClick={() => {*/}
-            {/*      setShowHobbies(!showHobbies)*/}
-            {/*      setAllState(PlusMinusDirection.None)*/}
-            {/*    }}*/}
-            {/*  >*/}
-            {/*    <AlertHeader>*/}
-            {/*      {explandCollapse(showHobbies)} Extra Curricular / Hobbies*/}
-            {/*    </AlertHeader>*/}
-            {/*  </Button>*/}
-            {/*</ul>*/}
-            {/*{showHobbies ? (*/}
-            {/*  <Alert variant='light'>{getExtraCurricularHobbies()}</Alert>*/}
-            {/*) : null}*/}
-            {/*</Container>*/}
           </GridCol2Row1>
-
-          <GridCol1Row1>
+          <GridCol1Row1 style={{marginTop: '15px'}}>
             <Card style={{ width: '66%', height: 'auto' }}>
               <Card.Title style={{ backgroundColor: 'aliceblue' }}>
                 <AlertHeader color='purple'>
