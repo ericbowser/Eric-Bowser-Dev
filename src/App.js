@@ -1,86 +1,81 @@
 //#region imports
-import React, { Fragment } from 'react'
-import { useState, useEffect } from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import head3 from './images/head3.jpg'
 import pdfIcon from './images/pdf.png'
 import docx from './images/docx.png'
 import ericPdf from './files/Eric-Bowser-Resume-2022.pdf'
 import ericDocx from './files/Eric-Bowser-Resume-2022.docx'
-import { Button, Alert, Card, Container } from 'react-bootstrap'
+import {Alert, Card, Tab, Tabs} from 'react-bootstrap'
 import {
-  GridCol1Row1,
-  GridCol2Row1,
-  JustifyDiv,
-  GridWrapper,
   AlertHeader,
   AlertSubHeader,
+  GridCol1Row1,
+  GridCol2Row1,
+  GridWrapper,
+  JustifyDiv,
   StyledContainer
-  // CalendarStyle
 } from './styles'
-import { PlusMinusDirection } from './common'
-// import Calendar from 'react-calendar';
+
 //#endregion
 
 function App () {
   //#region local state react hook
-  const [showExperience, setShowExperience] = useState(false)
-  const [showDevelopment, setShowDevelpment] = useState(false)
-  const [showProjects, setShowProjects] = useState(false)
-  const [showAspirations, setShowAspirations] = useState(false)
-  const [showHobbies, setShowHobbies] = useState(false)
-  const [showEducation, setShowEducation] = useState(false)
-  const [allState, setAllState] = useState(PlusMinusDirection.None)
-  const todaysDate = new Date()
-  console.log(todaysDate)
-  // const [calendarState, setCalendarState] = useState(todaysDate);
+  // const [showExperience, setShowExperience] = useState(false)
+  // const [showDevelopment, setShowDevelopment] = useState(false)
+  // const [showProjects, setShowProjects] = useState(false)
+  // const [showAspirations, setShowAspirations] = useState(false)
+  // const [showHobbies, setShowHobbies] = useState(false)
+  // const [showEducation, setShowEducation] = useState(false)
+  // const [allState, setAllState] = useState(PlusMinusDirection.None);
+  const [tabbedKey, setTabbedKey] = useState('None');
   //#endregion
 
   //#region Collapse / Expand Toggle
-  function setAllCollapse () {
-    setShowExperience(false)
-    setShowDevelpment(false)
-    setShowHobbies(false)
-    setShowAspirations(false)
-    setShowProjects(false)
-    setShowEducation(false)
-  }
-
-  function setAllExpand () {
-    setShowExperience(true)
-    setShowDevelpment(true)
-    setShowHobbies(true)
-    setShowAspirations(true)
-    setShowProjects(true)
-    setShowEducation(true)
-  }
+  // function setAllCollapse () {
+  //   setShowExperience(false)
+  //   setShowDevelopment(false)
+  //   setShowHobbies(false)
+  //   setShowAspirations(false)
+  //   setShowProjects(false)
+  //   setShowEducation(false)
+  // }
+  //
+  // function setAllExpand () {
+  //   setShowExperience(true)
+  //   setShowDevelopment(true)
+  //   setShowHobbies(true)
+  //   setShowAspirations(true)
+  //   setShowProjects(true)
+  //   setShowEducation(true)
+  // }
 
   //#endregion
 
   //#region React Hooks
-  useEffect(() => {
-    setAllState(PlusMinusDirection.None)
-  }, [
-    showAspirations,
-    showDevelopment,
-    showExperience,
-    showProjects,
-    showHobbies,
-    showEducation
-  ])
+  // useEffect(() => {
+  //   setAllState(PlusMinusDirection.None)
+  // }, [
+  //   showAspirations,
+  //   showDevelopment,
+  //   showExperience,
+  //   showProjects,
+  //   showHobbies,
+  //   showEducation
+  // ])
 
   // useEffect(() => {
-
-  // }, [calendarState])
-
+  //   if (allState === PlusMinusDirection.Expand) {
+  //     setAllExpand()
+  //   } else if (allState === PlusMinusDirection.Collapse) {
+  //     setAllCollapse()
+  //   } else {
+  //     setAllState(PlusMinusDirection.None)
+  //   }
+  // }, [allState])
+  
   useEffect(() => {
-    if (allState === PlusMinusDirection.Expand) {
-      setAllExpand()
-    } else if (allState === PlusMinusDirection.Collapse) {
-      setAllCollapse()
-    } else {
-      setAllState(PlusMinusDirection.None)
-    }
-  }, [allState])
+    
+  }, [tabbedKey])
 
   //#endregion
 
@@ -299,17 +294,17 @@ function App () {
   }
   //#endregion
 
-  //#region functions
-  function setExpandCollapse (direction) {
-    if (!direction) return
-    if (direction === PlusMinusDirection.Collapse) {
-      setAllState(PlusMinusDirection.Collapse)
-    } else if (PlusMinusDirection.Expand) {
-      setAllState(PlusMinusDirection.Expand)
-    } else {
-      setAllState(PlusMinusDirection.None)
-    }
-  }
+  //#region Functions
+  // function setExpandCollapse (direction) {
+  //   if (!direction) return
+  //   if (direction === PlusMinusDirection.Collapse) {
+  //     setAllState(PlusMinusDirection.Collapse)
+  //   } else if (PlusMinusDirection.Expand) {
+  //     setAllState(PlusMinusDirection.Expand)
+  //   } else {
+  //     setAllState(PlusMinusDirection.None)
+  //   }
+  // }
 
   const addLink = (href = '', linkText = '', alt = '') => {
     return (
@@ -321,35 +316,34 @@ function App () {
     )
   }
 
-  function explandCollapse (state) {
-    const sign = state ? '-' : '+'
-    return sign
-  }
+  // function explandCollapse (state) {
+  //   return state ? '-' : '+'
+  // }
 
-  function plusMinusButtons () {
-    return (
-      <div>
-        <Button
-          key='2895'
-          variant=''
-          size='sm'
-          alt='plus'
-          onClick={() => setExpandCollapse(PlusMinusDirection.Expand)}
-        >
-          <span style={{ fontSize: '21pt' }}>+</span>
-        </Button>
-        <Button
-          key='88997'
-          variant=''
-          size='sm'
-          alt='minus'
-          onClick={() => setExpandCollapse(PlusMinusDirection.Collapse)}
-        >
-          <span style={{ fontSize: '21pt' }}>-</span>
-        </Button>
-      </div>
-    )
-  }
+  // function plusMinusButtons () {
+  //   return (
+  //     <div>
+  //       <Button
+  //         key='2895'
+  //         variant=''
+  //         size='sm'
+  //         alt='plus'
+  //         onClick={() => setExpandCollapse(PlusMinusDirection.Expand)}
+  //       >
+  //         <span style={{ fontSize: '21pt' }}>+</span>
+  //       </Button>
+  //       <Button
+  //         key='88997'
+  //         variant=''
+  //         size='sm'
+  //         alt='minus'
+  //         onClick={() => setExpandCollapse(PlusMinusDirection.Collapse)}
+  //       >
+  //         <span style={{ fontSize: '21pt' }}>-</span>
+  //       </Button>
+  //     </div>
+  //   )
+  // }
   //#endregion
 
   //#region Extra Curricular / Hobbies
@@ -372,121 +366,135 @@ function App () {
   //#region render method
 
   return (
-    <Fragment>
       <StyledContainer>
         <GridWrapper>
           <GridCol2Row1>
-            <Container style={{paddingBottom: '50px'}}>
-              {/* <img src={randomColor} alt="header bg" className="container-fluid" /> */}
-              <span style={{ fontSize: '10pt' }}>
-                {plusMinusButtons()} <strong>Expand / Collapse</strong>
-              </span>
-            </Container>
-            <Container>
-
-            <ul>
-              <Button
-                variant='outline'
-                size={'lg'}
-                onClick={() => setShowEducation(!showEducation)}
-              >
-                <AlertSubHeader fontSize='12pt'>
-                  {explandCollapse(showEducation)} Education
-                </AlertSubHeader>
-              </Button>
-              {showEducation ? (
-                <React.Fragment>{getEducationDetails()}</React.Fragment>
-              ) : null}
-            </ul>
-            <ul>
-              <Button
-                variant='outline'
-                size={'lg'}
-                onClick={() => setShowExperience(!showExperience)}
-              >
-                <AlertHeader>
-                  {explandCollapse(showExperience)} Experience
-                </AlertHeader>
-              </Button>
-              {showExperience ? (
-                <Alert variant='light'>
-                  {wtwInfo()}
-                  <br />
-                  {tekSystemsInfo()}
-                  <br />
-                  {goldPointInfo()}
-                  <br />
-                  {proEdgeInfo()}
-                  <br />
-                </Alert>
-              ) : null}
-            </ul>
-            <ul>
-              <Button
-                key={123}
-                variant='outline'
-                size={'lg'}
-                onClick={() => setShowDevelpment(!showDevelopment)}
-              >
-                <AlertHeader>
-                  {explandCollapse(showDevelopment)} Tools / libraries
-                </AlertHeader>
-              </Button>
-            </ul>
-            {showDevelopment ? (
-              <Alert variant='light'>{toolsAndLibraries()}</Alert>
-            ) : null}
-            <ul>
-              <Button
-                key={687}
-                variant='outline'
-                size={'lg'}
-                onClick={() => setShowAspirations(!showAspirations)}
-              >
-                <AlertHeader>
-                  {explandCollapse(showAspirations)} Aspirations
-                </AlertHeader>
-              </Button>
-            </ul>
-            {showAspirations ? (
-              <Alert variant='light'>{getAspirations()}</Alert>
-            ) : null}
-            <ul>
-              <Button
-                key={687}
-                variant='outline'
-                size={'lg'}
-                onClick={() => {
-                  setShowHobbies(!showHobbies)
-                  setAllState(PlusMinusDirection.None)
-                }}
-              >
-                <AlertHeader>
-                  {explandCollapse(showHobbies)} Extra Curricular / Hobbies
-                </AlertHeader>
-              </Button>
-            </ul>
-            {showHobbies ? (
-              <Alert variant='light'>{getExtraCurricularHobbies()}</Alert>
-            ) : null}
-            {/* <ul>
-                <Button
-                  key={687}
-                  variant="outline"
-                  size={"lg"}
-                  onClick={() => setShowCalendly(!showCalendly)}
-                >
-                  <AlertSubHeader fontSize="12pt">
-                    {explandCollapse(showCalendly)} Calendly Scheduler
-                  </AlertSubHeader>
-                </Button>
-                {showCalendly ? (
-                  <AlertSubHeader>
-                    <InlineWidget url="https://calendly.com/ericryanbowser" />
-                  </AlertSubHeader>
-                ) : null}
-              </ul> */}
-            </Container>
+             <Tabs
+              id="resume-tabs"
+              activeKey={tabbedKey}
+              onSelect={k => setTabbedKey(k)}
+              className="mb-3"
+              fill
+            >
+          <Tab eventKey="education" title="Education">
+            {getEducationDetails()}
+          </Tab>
+          <Tab eventKey="experience" title="Experience">
+            <Alert variant='light'>
+              {wtwInfo()}
+              <br />
+              {tekSystemsInfo()}
+              <br />
+              {goldPointInfo()}
+              <br />
+              {proEdgeInfo()}
+              <br />
+            </Alert>
+          </Tab>
+          <Tab eventKey="toolsAndFrameworks" title="Tools and Frameworks">
+            {toolsAndLibraries()}
+          </Tab>
+           <Tab eventKey="aspirations" title="Aspirations">
+             {getAspirations()}
+           </Tab>
+         <Tab eventKey="hobbies" title="Hobbies">
+             {getExtraCurricularHobbies()}
+         </Tab>
+        </Tabs>
+            {/*<Container style={{paddingBottom: '50px'}}>*/}
+            {/*  /!* <img src={randomColor} alt="header bg" className="container-fluid" /> *!/*/}
+            {/*  <span style={{ fontSize: '10pt' }}>*/}
+            {/*    {plusMinusButtons()} <strong>Expand / Collapse</strong>*/}
+            {/*  </span>*/}
+            {/*</Container>*/}
+            {/*<Container>*/}
+            
+            {/*<ul>*/}
+            {/*  <Button*/}
+            {/*    variant='outline'*/}
+            {/*    size={'lg'}*/}
+            {/*    onClick={() => setShowEducation(!showEducation)}*/}
+            {/*  >*/}
+            {/*    <AlertSubHeader fontSize='12pt'>*/}
+            {/*      {explandCollapse(showEducation)} Education*/}
+            {/*    </AlertSubHeader>*/}
+            {/*  </Button>*/}
+            {/*  {showEducation ? (*/}
+            {/*    <React.Fragment>{getEducationDetails()}</React.Fragment>*/}
+            {/*  ) : null}*/}
+            {/*</ul>*/}
+            {/*<ul>*/}
+            {/*  <Button*/}
+            {/*    variant='outline'*/}
+            {/*    size={'lg'}*/}
+            {/*    onClick={() => setShowExperience(!showExperience)}*/}
+            {/*  >*/}
+            {/*    <AlertHeader>*/}
+            {/*      {explandCollapse(showExperience)} Experience*/}
+            {/*    </AlertHeader>*/}
+            {/*  </Button>*/}
+            {/*  {showExperience ? (*/}
+            {/*    <Alert variant='light'>*/}
+            {/*      {wtwInfo()}*/}
+            {/*      <br />*/}
+            {/*      {tekSystemsInfo()}*/}
+            {/*      <br />*/}
+            {/*      {goldPointInfo()}*/}
+            {/*      <br />*/}
+            {/*      {proEdgeInfo()}*/}
+            {/*      <br />*/}
+            {/*    </Alert>*/}
+            {/*  ) : null}*/}
+            {/*</ul>*/}
+            {/*<ul>*/}
+            {/*  <Button*/}
+            {/*    key={123}*/}
+            {/*    variant='outline'*/}
+            {/*    size={'lg'}*/}
+            {/*    onClick={() => setShowDevelopment(!showDevelopment)}*/}
+            {/*  >*/}
+            {/*    <AlertHeader>*/}
+            {/*      {explandCollapse(showDevelopment)} Tools / libraries*/}
+            {/*    </AlertHeader>*/}
+            {/*  </Button>*/}
+            {/*</ul>*/}
+            {/*{showDevelopment ? (*/}
+            {/*  <Alert variant='light'>{toolsAndLibraries()}</Alert>*/}
+            {/*) : null}*/}
+            {/*<ul>*/}
+            {/*  <Button*/}
+            {/*    key={687}*/}
+            {/*    variant='outline'*/}
+            {/*    size={'lg'}*/}
+            {/*    onClick={() => setShowAspirations(!showAspirations)}*/}
+            {/*  >*/}
+            {/*    <AlertHeader>*/}
+            {/*      {explandCollapse(showAspirations)} Aspirations*/}
+            {/*    </AlertHeader>*/}
+            {/*  </Button>*/}
+            {/*</ul>*/}
+            {/*{showAspirations ? (*/}
+            {/*  <Alert variant='light'>{getAspirations()}</Alert>*/}
+            {/*) : null}*/}
+            {/*<ul>*/}
+            {/*  <Button*/}
+            {/*    key={687}*/}
+            {/*    variant='outline'*/}
+            {/*    size={'lg'}*/}
+            {/*    onClick={() => {*/}
+            {/*      setShowHobbies(!showHobbies)*/}
+            {/*      setAllState(PlusMinusDirection.None)*/}
+            {/*    }}*/}
+            {/*  >*/}
+            {/*    <AlertHeader>*/}
+            {/*      {explandCollapse(showHobbies)} Extra Curricular / Hobbies*/}
+            {/*    </AlertHeader>*/}
+            {/*  </Button>*/}
+            {/*</ul>*/}
+            {/*{showHobbies ? (*/}
+            {/*  <Alert variant='light'>{getExtraCurricularHobbies()}</Alert>*/}
+            {/*) : null}*/}
+            {/*</Container>*/}
           </GridCol2Row1>
 
           <GridCol1Row1>
@@ -497,7 +505,7 @@ function App () {
                 </AlertHeader>
               </Card.Title>
               <Card.Body>
-                <Card.Img variant='top' src={head3}></Card.Img>
+                <Card.Img variant='top' src={head3}/>
                 <Card.Text>
                   <AlertHeader color='purple'>
                     <div>Contact Information:</div>
@@ -543,7 +551,6 @@ function App () {
           </GridCol1Row1>
         </GridWrapper>
       </StyledContainer>
-    </Fragment>
   )
 }
 //#endregion

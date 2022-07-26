@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 
 const StyledContainer = styled(Container)`
-  max-width: 1600px;
   padding: 20px;
 `;
 
@@ -16,16 +15,16 @@ const JustifyDiv = styled.div`
 `;
 
 const AlertHeader = styled.h1`
-  font-size: 11pt;
+  font-size: 12pt;
   color: ${props => props?.color ?? 'black'};
 `;
 const AlertSubHeader = styled.h1`
-  font-size: 10pt;
+  font-size: 11pt;
   color: ${props => props?.color ?? 'black'};
 `;
 
 const GridWrapper = styled.span`
-  font-size: 10pt;
+  font-size: 12pt;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 40% 60%;

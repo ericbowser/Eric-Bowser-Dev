@@ -13,7 +13,8 @@
     "react-calendly": "^4.0.1",
     "react-dom": "^18.1.0",
     "react-scripts": "^5.0.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "@react-buddy/ide-toolbox": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
