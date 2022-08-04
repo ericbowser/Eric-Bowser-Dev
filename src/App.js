@@ -230,30 +230,38 @@ function App () {
   function toolsAndLibraries () {
     return (
       <Fragment>
-        <AlertSubHeader color='purple'>Tools</AlertSubHeader>
+        <AlertSubHeader color='purple'>Microsoft Tools</AlertSubHeader>
         <ul className='list-group'>
           <li className='list-group-item'>
-            NET Framework / dotnet core / .NET Standard / C#
+           Microsoft NET Framework / dotnet core / .NET Standard
           </li>
           <li className='list-group-item'>Visual Studio 2019/2022</li>
           <li className='list-group-item'>Visual Studio Code</li>
           <li className='list-group-item'>Microsoft SQL Server</li>
-          <li className='list-group-item'>Github Source Control</li>
-          <li className='list-group-item'>JetBrains Rider</li>
-          <li className='list-group-item'>Postman / API Requests</li>
         </ul>
         <br />
-        <AlertSubHeader color='purple'>JS Libraries / Modules</AlertSubHeader>
+          
+        <AlertSubHeader color='purple'>JS and Related</AlertSubHeader>
         <ul className='list-group'>
           <li className='list-group-item'>React</li>
+            <li className='list-group-item'>React Query</li>
           <li className='list-group-item'>Jest Testing Framework</li>
           <li className='list-group-item'>React Testing Library</li>
-          <li className='list-group-item'>Webpack / Babel</li>
+          <li className='list-group-item'>Webpack</li>
+            <li className='list-group-item'>Babel</li>
         </ul>
         <br />
-        <AlertSubHeader color='purple'>
-          .NET Libraries / Nuget packages
-        </AlertSubHeader>
+          
+          <AlertSubHeader color='purple'>Logging</AlertSubHeader>
+        <ul className='list-group'>
+          <li className='list-group-item'>SumoLogic</li>
+          <li className='list-group-item'>Serilog</li>
+          <li className='list-group-item'>Sentry (UI Logging)</li>
+          <li className='list-group-item'>nLog</li>
+            </ul>
+          <br />
+          
+          <AlertSubHeader color='purple'>Testing</AlertSubHeader>
         <ul className='list-group'>
           <li className='list-group-item'>xUnit Testing Framework</li>
           <li className='list-group-item'>
@@ -261,50 +269,44 @@ function App () {
           </li>
           <li className='list-group-item'>React Testing Library</li>
           <li className='list-group-item'>Shouldly / Assert</li>
-          <li className='list-group-item'>SumoLogic / Serilog</li>
-          <li className='list-group-item'>Dapper ORM</li>
+            <li className='list-group-item'>Cypress</li>
+            <li className='list-group-item'>K6</li>
         </ul>
-        <br />
+          <br />
+          
         <AlertSubHeader color='purple'>Scripting / CLI</AlertSubHeader>
-
         <ul className='list-group'>
           <li className='list-group-item'>Git Bash</li>
           <li className='list-group-item'>Linux</li>
           <li className='list-group-item'>Powershell</li>
-          <li className='list-group-item'>Cake Build</li>
+          <li className='list-group-item'>Cake Make</li>
         </ul>
         <br />
+          
         <AlertSubHeader color='purple'>Data</AlertSubHeader>
         <ul className='list-group'>
           <li className='list-group-item'>PostgreSQL</li>
           <li className='list-group-item'>Cosmos DB</li>
           <li className='list-group-item'>Sql Server</li>
+            <li className='list-group-item'>Dapper</li>
+            <li className='list-group-item'>React Query</li>
+            <li className='list-group-item'>Entity Framework</li>
         </ul>
         <br />
+          
         <AlertSubHeader color='purple'>Misc</AlertSubHeader>
         <ul className='list-group'>
-          <li className='list-group-item'>TypeScript (learning..)</li>
-          <li className='list-group-item'>Docker (learning..)</li>
+          <li className='list-group-item'>TypeScript (newbie)</li>
+          <li className='list-group-item'>Docker (newbie)</li>
           <li className='list-group-item'>Octopus Deploy</li>
           <li className='list-group-item'>Team City Build</li>
-          <li className='list-group-item'>Azure</li>
+          <li className='list-group-item'>Azure Cosmos DB</li>
+            <li className='list-group-item'>Jira</li>
         </ul>
       </Fragment>
     )
   }
   //#endregion
-
-  //#region Functions
-  // function setExpandCollapse (direction) {
-  //   if (!direction) return
-  //   if (direction === PlusMinusDirection.Collapse) {
-  //     setAllState(PlusMinusDirection.Collapse)
-  //   } else if (PlusMinusDirection.Expand) {
-  //     setAllState(PlusMinusDirection.Expand)
-  //   } else {
-  //     setAllState(PlusMinusDirection.None)
-  //   }
-  // }
 
   const addLink = (href = '', linkText = '', alt = '') => {
     return (
@@ -316,36 +318,6 @@ function App () {
     )
   }
 
-  // function explandCollapse (state) {
-  //   return state ? '-' : '+'
-  // }
-
-  // function plusMinusButtons () {
-  //   return (
-  //     <div>
-  //       <Button
-  //         key='2895'
-  //         variant=''
-  //         size='sm'
-  //         alt='plus'
-  //         onClick={() => setExpandCollapse(PlusMinusDirection.Expand)}
-  //       >
-  //         <span style={{ fontSize: '21pt' }}>+</span>
-  //       </Button>
-  //       <Button
-  //         key='88997'
-  //         variant=''
-  //         size='sm'
-  //         alt='minus'
-  //         onClick={() => setExpandCollapse(PlusMinusDirection.Collapse)}
-  //       >
-  //         <span style={{ fontSize: '21pt' }}>-</span>
-  //       </Button>
-  //     </div>
-  //   )
-  // }
-  //#endregion
-
   //#region Extra Curricular / Hobbies
   function getExtraCurricularHobbies () {
     return (
@@ -353,7 +325,7 @@ function App () {
         <ul className='list-group'>
           <li className='list-group-item'>Rockclimbing</li>
           <li className='list-group-item'>3D Printing</li>
-          <li className='list-group-item'>MTG</li>
+          <li className='list-group-item'>MTG (Magic The Gathering)</li>
           <li className='list-group-item'>
             Raspberri Pi Projects and Tinkering
           </li>
