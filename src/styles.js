@@ -23,16 +23,17 @@ const AlertSubHeader = styled.h1`
   color: ${props => props?.color ?? 'black'};
 `;
 
-const GridWrapper = styled.span`
+const GridWrapper = styled.div`
   font-size: 12pt;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 40% 60%;
+  grid-gap: 15px;
   word-wrap: break-word;
   ul {
     color: black;
   }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 636px) {
     ul {
       padding: 0px;
     }

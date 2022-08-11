@@ -1,10 +1,11 @@
 //#region imports
 import React, {Fragment, useEffect, useState} from 'react'
 import head3 from './images/head3.jpg'
-import pdfIcon from './images/pdf.png'
+// import pdfIcon from './images/pdf.png'
 import docx from './images/docx.png'
-import ericPdf from './files/Eric-Bowser-Resume-2022.pdf'
+// import ericPdf from './files/Eric-Bowser-Resume-2022.pdf'
 import ericDocx from './files/Eric-Bowser-Resume-2022.docx'
+// import {Alert, Card, Tab, Tabs} from 'react-bootstrap';
 import {Alert, Card, Tab, Tabs} from 'react-bootstrap'
 import {
   AlertHeader,
@@ -285,14 +286,17 @@ function App () {
           
         <AlertSubHeader color='purple'>Data</AlertSubHeader>
         <ul className='list-group'>
-          <li className='list-group-item'>PostgreSQL</li>
-          <li className='list-group-item'>Cosmos DB</li>
+          <li className='list-group-item'>PostgreSQL (on-prem)</li>
           <li className='list-group-item'>Sql Server</li>
             <li className='list-group-item'>Dapper</li>
             <li className='list-group-item'>React Query</li>
             <li className='list-group-item'>Entity Framework</li>
+
+            <AlertSubHeader color='purple'>Cloud</AlertSubHeader>
+            <li className='list-group-item'>Cosmos DB</li>
         </ul>
         <br />
+          
           
         <AlertSubHeader color='purple'>Misc</AlertSubHeader>
         <ul className='list-group'>
@@ -345,8 +349,8 @@ function App () {
               id="resume-tabs"
               activeKey={tabbedKey}
               onSelect={k => setTabbedKey(k)}
-              className="mb-3"
-              fill
+              className=""
+              
             >
           <Tab eventKey="education" title="Education">
             {getEducationDetails()}
@@ -375,7 +379,7 @@ function App () {
         </Tabs>
           </GridCol2Row1>
           <GridCol1Row1 style={{marginTop: '15px'}}>
-            <Card style={{ width: '66%', height: 'auto' }}>
+            <Card>
               <Card.Title style={{ backgroundColor: 'aliceblue' }}>
                 <AlertHeader color='purple'>
                   Eric Ryan Bowser - Software Engineer
@@ -407,13 +411,13 @@ function App () {
                   <div>
                     <Card.Text>Eric Bowser Resume</Card.Text>
 
-                    <a href={ericPdf} download>
-                      <Card.Img
-                        variant='top'
-                        src={pdfIcon}
-                        style={{ width: '25%', height: '25%' }}
-                      />
-                    </a>
+                    {/*<a href={ericPdf} download>*/}
+                    {/*  <Card.Img*/}
+                    {/*    variant='top'*/}
+                    {/*    src={pdfIcon}*/}
+                    {/*    style={{ width: '25%', height: '25%' }}*/}
+                    {/*  />*/}
+                    {/*</a>*/}
                     <a href={ericDocx} download>
                       <Card.Img
                         variant='top'
