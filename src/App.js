@@ -1,11 +1,10 @@
 //#region imports
 import React, {Fragment, useEffect, useState} from 'react'
 import head3 from './images/head3.jpg'
-// import pdfIcon from './images/pdf.png'
-import docx from './images/docx.png'
-// import ericPdf from './files/Eric-Bowser-Resume-2022.pdf'
-import ericDocx from './files/Eric-Bowser-Resume-2022.docx'
-// import {Alert, Card, Tab, Tabs} from 'react-bootstrap';
+import pdfIcon from './images/pdf.png'
+import docxIcon from './images/docxIcon.png'
+import ericPdf from './files/Eric-Bowser-Resume.pdf'
+import ericDocx from './files/Eric-Bowser-Resume.docx'
 import {Alert, Card, Tab, Tabs} from 'react-bootstrap'
 import {
   AlertHeader,
@@ -21,59 +20,10 @@ import {
 
 function App () {
   //#region local state react hook
-  // const [showExperience, setShowExperience] = useState(false)
-  // const [showDevelopment, setShowDevelopment] = useState(false)
-  // const [showProjects, setShowProjects] = useState(false)
-  // const [showAspirations, setShowAspirations] = useState(false)
-  // const [showHobbies, setShowHobbies] = useState(false)
-  // const [showEducation, setShowEducation] = useState(false)
-  // const [allState, setAllState] = useState(PlusMinusDirection.None);
   const [tabbedKey, setTabbedKey] = useState('None');
   //#endregion
 
-  //#region Collapse / Expand Toggle
-  // function setAllCollapse () {
-  //   setShowExperience(false)
-  //   setShowDevelopment(false)
-  //   setShowHobbies(false)
-  //   setShowAspirations(false)
-  //   setShowProjects(false)
-  //   setShowEducation(false)
-  // }
-  //
-  // function setAllExpand () {
-  //   setShowExperience(true)
-  //   setShowDevelopment(true)
-  //   setShowHobbies(true)
-  //   setShowAspirations(true)
-  //   setShowProjects(true)
-  //   setShowEducation(true)
-  // }
-
-  //#endregion
-
-  //#region React Hooks
-  // useEffect(() => {
-  //   setAllState(PlusMinusDirection.None)
-  // }, [
-  //   showAspirations,
-  //   showDevelopment,
-  //   showExperience,
-  //   showProjects,
-  //   showHobbies,
-  //   showEducation
-  // ])
-
-  // useEffect(() => {
-  //   if (allState === PlusMinusDirection.Expand) {
-  //     setAllExpand()
-  //   } else if (allState === PlusMinusDirection.Collapse) {
-  //     setAllCollapse()
-  //   } else {
-  //     setAllState(PlusMinusDirection.None)
-  //   }
-  // }, [allState])
-  
+ //#region Side Effects 
   useEffect(() => {
     
   }, [tabbedKey])
@@ -95,7 +45,7 @@ function App () {
         <AlertSubHeader fontSize='10pt'>
           <ul className='list-group'>
             <li className='list-group-item'>
-              University Of Pheonix: 2010-2011 - Associates of Art
+              University Of Phoenix: 2010-2011 - Associates of Art
             </li>
           </ul>
         </AlertSubHeader>
@@ -311,7 +261,8 @@ function App () {
     )
   }
   //#endregion
-
+    
+  //#region Helper Functions   
   const addLink = (href = '', linkText = '', alt = '') => {
     return (
       <JustifyDiv key={href}>
@@ -321,6 +272,7 @@ function App () {
       </JustifyDiv>
     )
   }
+  //#endregion
 
   //#region Extra Curricular / Hobbies
   function getExtraCurricularHobbies () {
@@ -340,7 +292,6 @@ function App () {
   //#endregion
 
  // #region render method
-
   return (
       <StyledContainer>
         <GridWrapper>
@@ -410,18 +361,17 @@ function App () {
                   </div>
                   <div>
                     <Card.Text>Eric Bowser Resume</Card.Text>
-
-                    {/*<a href={ericPdf} download>*/}
-                    {/*  <Card.Img*/}
-                    {/*    variant='top'*/}
-                    {/*    src={pdfIcon}*/}
-                    {/*    style={{ width: '25%', height: '25%' }}*/}
-                    {/*  />*/}
-                    {/*</a>*/}
+                    <a href={ericPdf} download>
+                      <Card.Img
+                        variant='top'
+                        src={pdfIcon}
+                        style={{ width: '25%', height: '25%' }}
+                      />
+                    </a>
                     <a href={ericDocx} download>
                       <Card.Img
                         variant='top'
-                        src={docx}
+                        src={docxIcon}
                         style={{ width: '25%', height: '25%' }}
                       />
                     </a>
