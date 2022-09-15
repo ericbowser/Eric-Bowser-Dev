@@ -92,7 +92,7 @@ function App () {
         </AlertSubHeader>
         <ul className='list-group'>
           <li className='list-group-item'>Render unique reports for clients using existing data structure using recursion to traverse a binary tree with leafs and xml using
-              C# GAC `System.Xml` to read and write nodes to stistical analysis documents tailored to client institutions </li>
+              C# GAC `System.Xml` to read and write nodes to statistical analysis documents tailored to client institutions </li>
           <li className='list-group-item'>
             Write SQL scripts as an onboarding step for new clients and worked on WFP applications with extra features to queue scripts that would run in order and errors handled
               and rolled back without having to re-run saving time on deployments </li>
