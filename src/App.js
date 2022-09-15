@@ -1,10 +1,9 @@
-//#region imports
 import React, { useEffect, useState } from 'react'
 import head3 from './images/head3.jpg'
 import pdfIcon from './images/pdf.png'
 import docxIcon from './images/docxIcon.png'
 import ericPdf from './files/Eric-Bowser-Resume.pdf'
-import ericDocx from './files/Eric-Bowser-Resume.docx'
+import ericDocx from './files/Eric-Bowser-Resume-2022.docx'
 import { Alert, Card, Tab, Tabs } from 'react-bootstrap'
 import {
   AlertHeader,
@@ -16,27 +15,14 @@ import {
   StyledContainer
 } from './styles'
 
-//#endregion
-
 function App () {
-  //#region local state react hook
   const [tabbedKey, setTabbedKey] = useState('None')
-  //#endregion
-
-  //#region Side Effects
   useEffect(() => {}, [tabbedKey])
-  //#endregion
-
-  //#region Side Effects
   useEffect(() => {}, [tabbedKey])
-
-  //#endregion
-
-  //#region Education
-  // Arrow function - executes later or when invoked
+    
   const getEducationDetails = () => {
     return (
-      <Alert variant='primary'>
+      <Alert variant='Light'>
         <AlertSubHeader fontSize='10pt'>
           <ul className='list-group'>
             <li className='list-group-item'>
@@ -54,30 +40,25 @@ function App () {
       </Alert>
     )
   }
-  //#endregion
 
-  //#region Aspirations
   function getAspirations () {
     return (
-      <Alert variant='primary'>
+      <Alert variant='dark' style={{border: '2px solid green'}}>
         <ul className='list-group'>
-          <li className='list-group-item'>Find career growth</li>
-          <li className='list-group-item'>Increase passion</li>
-          <li className='list-group-item'>Learn new things</li>
-          <li className='list-group-item'>Networking</li>
-          <li className='list-group-item'>Advance career</li>
-          <li className='list-group-item'>More experience</li>
-          <li className='list-group-item'>Trusting and engaging culture</li>
+          <li className='list-group-item'>Find company or sole proprietor that works well with my 
+          life balance as a typical 8am - 5pm MDT/MST in office schedule (now remote with built office)
+              <ul>
+                  <li>Good communication initiation and expectations setting</li>
+              </ul>
+          </li>
         </ul>
       </Alert>
     )
   }
-  //#endregion
 
-  //#region Pro Edge
   function proEdgeInfo () {
     return (
-      <Alert variant='primary'>
+      <Alert variant='Light'>
         <AlertSubHeader>Pro Edge Tec, LLC: 2013-2015</AlertSubHeader>
         <AlertSubHeader>IT Technician</AlertSubHeader>
         <ul className='list-group'>
@@ -101,80 +82,76 @@ function App () {
       </Alert>
     )
   }
-  //#endregion
 
-  //#region GOLDPoint Info
   function goldPointInfo () {
     return (
-      <Alert variant='primary'>
-        <AlertSubHeader>GoldPoint Systems: 2013-2015</AlertSubHeader>
-        <AlertSubHeader>
-          C# backend developer and SQL data analyst
+      <Alert variant='Light'>
+        <AlertHeader>GoldPoint Systems: 2013-2015</AlertHeader>
+        <AlertSubHeader color={'salmon'}>
+          C# backend developer and SQL data analyst for GOLDPOINT Systems as a Junior Software Develeper / Programmer
         </AlertSubHeader>
         <ul className='list-group'>
-          <li className='list-group-item'>SQL Server & SSRS Reporting</li>
-          <li className='list-group-item'>Render unique reports for clients</li>
+          <li className='list-group-item'>Render unique reports for clients using existing data structure using recursion to traverse a binary tree with leafs and xml using
+              C# GAC `System.Xml` to read and write nodes to stistical analysis documents tailored to client institutions </li>
           <li className='list-group-item'>
-            SQL Scripting and Automation for Deployments
-          </li>
-          <li className='list-group-item'>Microsoft Extensibility Framework</li>
-          <li className='list-group-item'>MSTest</li>
+            Write SQL scripts as an onboarding step for new clients and worked on WFP applications with extra features to queue scripts that would run in order and errors handled
+              and rolled back without having to re-run saving time on deployments </li>
+          <li className='list-group-item'>Write back-end C# unit tests using MSTest and Assertion library</li>
+            <ul>Open Source Mocking library -- {addLink('https://github.com/moq/moq4', 'moq')}</ul>
         </ul>
       </Alert>
     )
   }
-  //#endregion
 
-  //#region TEK Systems
   function tekSystemsInfo () {
     return (
-      <Alert variant='primary'>
+      <Alert variant='Light'>
         <AlertSubHeader>2015-2016: Contract To Hire</AlertSubHeader>
         <AlertSubHeader>Contract to Hire</AlertSubHeader>
       </Alert>
     )
   }
-  //#endregion
 
-  //#region WTW
   function wtwInfo () {
     return (
-      <Alert variant='primary'>
-        <AlertSubHeader>Willis Towers Watson: 2016 - 06/2022</AlertSubHeader>
-        <AlertSubHeader>
+      <Alert variant='Light'>
+        <AlertHeader>Willis Towers Watson: 2016 - 06/2022</AlertHeader>
+        <AlertSubHeader color={'green'}>
           <span>Full Stack Software Engineer</span>
         </AlertSubHeader>
-        <AlertSubHeader>
-          <div>React.js Front-End </div>
-          <div>C# / .NET back-end</div>
-        </AlertSubHeader>
+          <AlertSubHeader color={'green'}>
+        <span>Private Healthcare Exchange</span>
+          </AlertSubHeader>
         <ul className='list-group'>
-          <li className='list-group-item'>Bounded Contexts</li>
           <li className='list-group-item'>
-            Dynamic applications / configurations
+            Worked on internal application to build dynamic applications for carriers and participants. Used in pre-season
+              to build out applications for  based on CMS rules and guidelines. This is quite complicated, so there is a 
+              lot that goes into this internal SPA (React.js) application
           </li>
-          <li className='list-group-item'>Microservices and Microfrontend</li>
-          <li className='list-group-item'>REST API</li>
-          <li className='list-group-item'>Pub / Sub</li>
-          <li className='list-group-item'>NoSql on Azure platform</li>
+          <li className='list-group-item'>Worked on bootstrapping, testing, and deploying new micro-services to communicate with
+            both front-end and back-end services</li>
+          <li className='list-group-item'>Build out RESTful clients using HTTP/S messaging and tokens to ensure messages are sent
+            securely</li>
+          <li className='list-group-item'>Maintain legacy publish and subscribe MVC-style framework and messeging bus</li>
+          <li className='list-group-item'>Migrated on premise PostgreSQL database to Azure Cosmos DB ensuring data integrity and no loss
+            of data</li>
         </ul>
         <br />
-        <AlertSubHeader>Organization Style: Scrum</AlertSubHeader>
+        <AlertSubHeader>Methodoligy and Process</AlertSubHeader>
         <ul className='list-group'>
-          <li className='list-group-item'>Scrum and Sprints</li>
-          <li className='list-group-item'>Kanban</li>
+          <li className='list-group-item'>Scrum and two-week iterations or sprints</li>
+          <li className='list-group-item'>Kanban style approach</li>
           <li className='list-group-item'>Jira Ticket Management</li>
+            <li className='list-group-item'>Team</li>
           <li className='list-group-item'>Quality Assurance</li>
         </ul>
       </Alert>
     )
   }
-  //#endregion
 
-  //#region Tools and Libraries
   function toolsAndLibraries () {
     return (
-      <Alert variant='primary'>
+      <Alert variant='Light'>
         <AlertSubHeader>Microsoft Tools</AlertSubHeader>
         <ul className='list-group'>
           <li className='list-group-item'>
@@ -183,17 +160,15 @@ function App () {
           <li className='list-group-item'>Visual Studio 2019/2022</li>
           <li className='list-group-item'>Visual Studio Code</li>
           <li className='list-group-item'>Microsoft SQL Server</li>
+            <li className='list-group-item'>Microsoft Azure </li>
         </ul>
         <br />
 
-        <AlertSubHeader>JS and Related</AlertSubHeader>
+        <AlertSubHeader>JavaScript and Libraries</AlertSubHeader>
         <ul className='list-group'>
           <li className='list-group-item'>React</li>
           <li className='list-group-item'>React Query</li>
-          <li className='list-group-item'>Jest Testing Framework</li>
           <li className='list-group-item'>React Testing Library</li>
-          <li className='list-group-item'>Webpack</li>
-          <li className='list-group-item'>Babel</li>
         </ul>
         <br />
 
@@ -255,38 +230,17 @@ function App () {
       </Alert>
     )
   }
-  //#endregion
 
-  //#region Helper Functions
-  const addLink = (href = '', linkText = '', alt = '') => {
-    return (
-      <JustifyDiv key={href}>
-        <a alt={alt} href={href}>
-          {linkText}
-        </a>
-      </JustifyDiv>
-    )
+  const addLink = (href = '', linkText = '', alt = '', newLine = false) => {
+      return newLine ? (
+          <JustifyDiv key={href}>
+              <a alt={alt} href={href}>
+                  {linkText}
+              </a>
+          </JustifyDiv>
+          ) : (   <><a alt={alt} href={href}> {linkText} </a></> )
   }
-  //#endregion
 
-  //#region Extra Curricular / Hobbies
-  function getExtraCurricularHobbies () {
-    return (
-      <Alert variant='primary'>
-        <ul className='list-group'>
-          <li className='list-group-item'>Rockclimbing</li>
-          <li className='list-group-item'>3D Printing</li>
-          <li className='list-group-item'>MTG (Magic The Gathering)</li>
-          <li className='list-group-item'>
-            Raspberri Pi Projects and Tinkering
-          </li>
-        </ul>
-      </Alert>
-    )
-  }
-  //#endregion
-
-  // #region render method
   return (
     <React.Fragment>
       <StyledContainer>
@@ -316,9 +270,6 @@ function App () {
               </Tab>
               <Tab eventKey='aspirations' title='Aspirations'>
                 {getAspirations()}
-              </Tab>
-              <Tab eventKey='hobbies' title='Hobbies'>
-                {getExtraCurricularHobbies()}
               </Tab>
             </Tabs>
           </GridCol2Row1>
