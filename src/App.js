@@ -4,7 +4,7 @@ import pdfIcon from './images/pdf.ico'
 import docxIcon from './images/docxIcon.ico'
 import ericPdf from './files/Eric-Bowser-Resume.pdf'
 import ericDocx from './files/Eric-Bowser-Resume.docx'
-import {Alert, Card, Tab, Tabs} from 'react-bootstrap'
+import {Alert, Card, Navbar, NavItem, Tab, Tabs} from 'react-bootstrap'
 import {
     AlertHeader,
     AlertSubHeader,
@@ -23,7 +23,7 @@ function App() {
 
     const getEducationDetails = () => {
         return (
-            <Alert>
+            <Alert variant={'success'}>
                 <AlertSubHeader fontSize='10pt'>
                     <ul>
                         <li >
@@ -44,7 +44,7 @@ function App() {
 
     function getAspirations() {
         return (
-            <Alert variant={"light"}>
+            <Alert variant={'success'}>
                 <ul>
                     <AlertSubHeader color={''}>
                         <ul>
@@ -103,12 +103,12 @@ function App() {
     function goldPointInfo() {
         return (
             <Alert variant={'success'}>
-                <AlertHeader>GoldPoint Systems: 2013-2015</AlertHeader>
+                <AlertHeader color={'darkBlue'}>GoldPoint Systems: 2013-2015</AlertHeader>
                 <AlertSubHeader color={'darkBlue'}>
                     C# backend developer and SQL data analyst for GOLDPOINT Systems as a Junior Software Develeper /
                     Programmer
                 </AlertSubHeader>
-                <ul >
+                <ul>
                     <li >Render unique SQL analysis reports for clients </li>
                     <li >
                         Write SQL scripts as an onboarding step for new clients and worked on WFP applications for data analysis
@@ -121,8 +121,10 @@ function App() {
 
     function tekSystemsInfo() {
         return (
-        <Alert variant='dark'>
-                <AlertSubHeader>2015-2016: Contract To Hire</AlertSubHeader>
+            <Alert variant='success'>
+                <AlertSubHeader color={'darkBlue'}>
+                    2015-2016: Contract To Hire
+                </AlertSubHeader>
                 <AlertSubHeader>Contract to Hire</AlertSubHeader>
             </Alert>
         )
@@ -130,7 +132,7 @@ function App() {
 
     function wtwInfo() {
         return (
-            <Alert variant='darkBlue'>
+            <Alert variant='success'>
                 <AlertHeader>Willis Towers Watson: 2016 - 06/2022</AlertHeader>
                 <AlertSubHeader color={'darkBlue'}>
                     <span>Full Stack Software Engineer</span>
@@ -177,7 +179,7 @@ function App() {
 
     function toolsAndLibraries() {
         return (
-            <Alert variant='Light'>
+            <Alert variant='success'>
                 <AlertSubHeader>Microsoft Tools</AlertSubHeader>
                 <ul >
                     <li >
@@ -270,8 +272,15 @@ function App() {
     return (
         <React.Fragment>
             <StyledContainer>
+                <Navbar variant={'light'}>
+                    <img src={head} alt='headshot' style={{width: '10%', height: '10%', borderRadius: '25%'}}/>
+                        Eric R Bowser
+
+                    <NavItem>
+                    </NavItem>
+                </Navbar>
                 <GridWrapper>
-                    <GridCol2Row1>
+                    {/*<GridCol2Row1>*/}
                         <Tabs
                             variant={'mb-3'}
                             id='resume-tabs'
@@ -299,50 +308,45 @@ function App() {
                                 {getAspirations()}
                             </Tab>
                         </Tabs>
-                    </GridCol2Row1>
-                    <GridCol1Row1>
-                        <Card>
-                            <Card.Title>
-                                <Alert variant='info'>
-                                    Eric Ryan Bowser - Software Engineer
-                                </Alert>
-                            </Card.Title>
-                            <AlertHeader>
-                                <AlertSubHeader color={"purple"}>
-                                    <div>Contact Information:</div>
-                                    <div>Mobile: 435-494-8030</div>
-
-                                </AlertSubHeader>
-                                <Card.Img
-                                    variant='bottom'
-                                    src={head}
-                                    style={{width: '100%'}}
-                                />
-                                <AlertSubHeader>
-                                    {addLink(
-                                        'https://github.com/ericbowser',
-                                        'Github',
-                                        'Github for Eric Bowser',
-                                        true
-                                    )}
-                                    <a href={ericPdf} download>
-                                        <Card.Img
-                                            variant='top'
-                                            src={pdfIcon}
-                                            style={{width: '13%', borderRadius: '15px'}}
-                                        />
-                                    </a>
-                                    <a href={ericDocx} download>
-                                        <Card.Img
-                                            variant='top'
-                                            src={docxIcon}
-                                            style={{width: '10%', height: '10%'}}
-                                        />
-                                    </a>
-                                </AlertSubHeader>
-                            </AlertHeader>
-                        </Card>
-                    </GridCol1Row1>
+                    {/*</GridCol2Row1>*/}
+                    {/*<GridCol1Row1>*/}
+                        {/*<Card>*/}
+                        {/*    <AlertHeader>*/}
+                        {/*        <AlertSubHeader color={"purple"}>*/}
+                        {/*            <div>Contact Information:</div>*/}
+                        {/*            <div>Mobile: 435-494-8030</div>*/}
+                        
+                        {/*        </AlertSubHeader>*/}
+                        {/*        <Card.Img*/}
+                        {/*            variant='bottom'*/}
+                        {/*            src={head}*/}
+                        {/*            style={{width: '100%'}}*/}
+                        {/*        />*/}
+                        {/*        <AlertSubHeader>*/}
+                        {/*            {addLink(*/}
+                        {/*                'https://github.com/ericbowser',*/}
+                        {/*                'Github',*/}
+                        {/*                'Github for Eric Bowser',*/}
+                        {/*                true*/}
+                        {/*            )}*/}
+                        {/*            <a href={ericPdf} download>*/}
+                        {/*                <Card.Img*/}
+                        {/*                    variant='top'*/}
+                        {/*                    src={pdfIcon}*/}
+                        {/*                    style={{width: '13%', borderRadius: '15px'}}*/}
+                        {/*                />*/}
+                        {/*            </a>*/}
+                        {/*            <a href={ericDocx} download>*/}
+                        {/*                <Card.Img*/}
+                        {/*                    variant='top'*/}
+                        {/*                    src={docxIcon}*/}
+                        {/*                    style={{width: '10%', height: '10%'}}*/}
+                        {/*                />*/}
+                        {/*            </a>*/}
+                        {/*        </AlertSubHeader>*/}
+                        {/*    </AlertHeader>*/}
+                        {/*</Card>*/}
+                    {/*</GridCol1Row1>*/}
                 </GridWrapper>
             </StyledContainer>
         </React.Fragment>
