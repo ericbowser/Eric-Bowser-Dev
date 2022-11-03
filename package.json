@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
     "lodash": "^4.17.21",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
@@ -16,12 +14,6 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "ci": "react-scripts build -p"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -39,8 +31,6 @@
     "@babel/core": "^7.19.1",
     "@babel/preset-env": "^7.19.1",
     "babel-loader": "^8.2.5",
-    "eslint": "^8.19.0",
-    "nodemon": "^2.0.20",
     "webpack": "^4.46.0"
   }
 }
