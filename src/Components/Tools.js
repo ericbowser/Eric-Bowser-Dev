@@ -19,7 +19,7 @@ const Tools = () => {
                 <li>SumoLogic</li>
                 <li>Serilog</li>
                 <li>Sentry (UI Logging)</li>
-                <li>list-group-item'>NLog</li>
+                <li>NLog</li>
             </ul>
             <MarginDiv>
                 <Alert variant={'info'}>Scripting / CLI</Alert>
