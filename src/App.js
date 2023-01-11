@@ -19,13 +19,13 @@ function App () {
   useEffect(() => {}, [tabbedKey])
 
   return (
-    <Container>
+    <Container style={{marginTop: '25px'}}>
       <Navbar bg='dark'>
         <Navbar.Brand>
           <img
             src={head}
-            width='75'
-            height='100'
+            width='175'
+            height='215'
             className='d-inline-block align-top'
             alt='my head shot'
             title={'Eric R Bowser'}
@@ -71,11 +71,6 @@ function App () {
           <Aspirations />
         </Tab>
       </Tabs>
-      <link
-        rel='apple-touch-icon'
-        sizes='57x57'
-        href='//img1.wsimg.com/isteam/ip/static/pwa-app/logo-default.png/:/rs=w:57,h:57,m'
-      />
     </Container>
   )
 }

@@ -2,18 +2,18 @@
 import {Alert} from 'react-bootstrap';
 
 const AlertHeader = styled(Alert)`
-  font-size: 14pt;
+  font-size: 18pt;
   color: ${props => props?.color ?? 'black'};
 `
 const AlertSubHeader = styled(Alert)`
-  font-size: 12pt;
+  font-size: 16pt;
   color: ${props => props.color || 'black'};
 `
 const Desc = styled.div`
     color: black;
-    font-size: 10pt;
+    font-size: 14pt;
 `;
 const MarginDiv = styled.div`
-    margin: 15px 0 15px 0;
+    margin: 15px;
 `;
 export {AlertHeader, AlertSubHeader, Desc, MarginDiv};
