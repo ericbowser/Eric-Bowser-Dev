@@ -2,7 +2,6 @@
   "https": true,
   "name": "eric",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "dotenv": "^16.0.3",
     "lodash": "^4.17.21",
@@ -15,7 +14,8 @@
   "scripts": {
     "dev": "react-scripts start",
     "build": "react-scripts build",
-    "ci": "react-scripts build -p"
+    "ci": "react-scripts build -p",
+    "clean": "rm node_modules -R && npm install"
   },
   "browserslist": {
     "production": [
@@ -28,11 +28,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/core": "^7.19.1",
-    "@babel/preset-env": "^7.19.1",
-    "babel-loader": "^8.2.5",
-    "webpack": "^4.46.0"
   }
 }
