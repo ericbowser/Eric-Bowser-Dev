@@ -12,18 +12,20 @@ import {
 import Aspirations from './Components/Aspirations'
 import head from './images/head.jpg'
 import ericDocx from './files/Eric-Bowser-Resume-2023.docx'
+import styled from "styled-components";
+
+const NavbarContainer = styled(Container)`
+  color: white;
+  margin: 1%;
+`;
 
 function App () {
-  const [tabbedKey, setTabbedKey] = useState('None')
-
-  useEffect(() => {}, [tabbedKey])
 
   return (
-    <Container style={{marginTop: '25px'}}>
-      <Navbar bg='dark'>
+    <NavbarContainer style={{backgroundColor: 'azure', border: 'solid 1px blue', borderRadius:'1%', width: 'auto'}}>
+      <Navbar variant={'dark'}>
         <Navbar.Brand>
           <img
-            src={head}
             width='175'
             height='215'
             className='d-inline-block align-top'
@@ -44,60 +46,16 @@ function App () {
           >
             Github
           </NavLink>
+          <NavLink
+            style={{ color: 'white' }}
+            href='/webresume'
+          >
+            Experience
+          </NavLink>
+          
         </div>
       </Navbar>
-      <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-          <Accordion.Header>Accordion Item #1</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-        <Accordion.Item eventKey="1">
-          <Accordion.Header>Accordion Item #2</Accordion.Header>
-          <Accordion.Body>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </Accordion.Body>
-        </Accordion.Item>
-      </Accordion>
-      <Tabs
-        variant={'tabs'}
-        id='resume-tabs'
-        activeKey={tabbedKey}
-        onSelect={key => setTabbedKey(key)}
-      >
-        <Tab eventKey='education' title='Education'>
-          <EducationDetails />
-        </Tab>
-        <Tab eventKey='experience' title='Experience'>
-          <WtwInfo />
-          <TekSystemsInfo />
-          <GoldPointInfo />
-          <ProEdgeInfo />
-        </Tab>
-        <Tab eventKey='frameworks' title='Frameworks'>
-          <Frameworks />
-        </Tab>
-        <Tab eventKey='tools' title='tools'>
-          <Tools />
-        </Tab>
-        <Tab eventKey='aspirations' title={'Aspirations'}>
-          <Aspirations />
-        </Tab>
-      </Tabs>
-    </Container>
+    </NavbarContainer>
   )
 }
 

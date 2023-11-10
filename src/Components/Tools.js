@@ -5,7 +5,7 @@ import {MarginDiv} from "../Styles/styles";
 const Tools = () => {
     return (
         <MarginDiv>
-            <Alert variant={'info'}>Microsoft Tools</Alert>
+            <div>Microsoft Tools</div>
             <ul>
                 <li>Visual Studio 2019/2022</li>
                 <li>Visual Studio Code</li>
