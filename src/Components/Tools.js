@@ -1,11 +1,12 @@
 import React from 'react';
-import {Alert} from 'react-bootstrap';
-import {MarginDiv} from "../Styles/styles";
+import {AlertHeader, MarginDiv} from "../Styles/styles";
 
 const Tools = () => {
     return (
-        <MarginDiv>
-            <div>Microsoft Tools</div>
+        <>
+          <MarginDiv>
+            <AlertHeader>Microsoft Tools</AlertHeader>
+          </MarginDiv>
             <ul>
                 <li>Visual Studio 2019/2022</li>
                 <li>Visual Studio Code</li>
@@ -13,7 +14,7 @@ const Tools = () => {
                 <li>Microsoft Azure</li>
             </ul>
             <MarginDiv>
-                <Alert variant={'info'}>Logging</Alert>
+                <AlertHeader variant={'primary'}>Logging</AlertHeader>
             </MarginDiv>
             <ul>
                 <li>SumoLogic</li>
@@ -22,7 +23,7 @@ const Tools = () => {
                 <li>NLog</li>
             </ul>
             <MarginDiv>
-                <Alert variant={'info'}>Scripting / CLI</Alert>
+                <AlertHeader variant={'primary'}>Scripting / CLI</AlertHeader>
             </MarginDiv>
             <ul>
                 <li>Git Bash</li>
@@ -31,13 +32,13 @@ const Tools = () => {
                 <li>Cake Make</li>
             </ul>
             <MarginDiv>
-                <Alert variant={'info'}>Data</Alert>
+                <AlertHeader variant={'primary'}>Data</AlertHeader>
                 <ul>
                     <li>Cosmos DB</li>
                     <li>Microsoft SQL Server</li>
                 </ul>
             </MarginDiv>
-        </MarginDiv>
+        </>
     )
 };
 

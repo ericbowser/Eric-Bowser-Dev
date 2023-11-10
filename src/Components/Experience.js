@@ -5,7 +5,7 @@ import {AlertHeader, Desc, MarginDiv} from "../Styles/styles";
 const ProEdgeInfo = () => {
     return (
         <MarginDiv>
-            <Alert variant={'info'}>
+            <Alert variant={'success'}>
                 Pro Edge Tec, LLC: 2013-2015
                 <Desc>IT Technician</Desc>
             </Alert>
@@ -25,7 +25,7 @@ const ProEdgeInfo = () => {
 const GoldPointInfo = () => {
     return (
         <MarginDiv>
-            <Alert variant={'info'}>
+            <Alert variant={'success'}>
                 GoldPoint Systems: 2013-2015
                 <Desc>C# backend developer and SQL data analyst</Desc>
             </Alert>
@@ -41,7 +41,7 @@ const GoldPointInfo = () => {
 const TekSystemsInfo = () => {
     return (
         <MarginDiv>
-            <Alert variant={'info'}>TEKSystems: 2015-2016
+            <Alert variant={'success'}>TEKSystems: 2015-2016
                 <Desc>Contract To Hire for WTW</Desc>
             </Alert>
         </MarginDiv>
@@ -51,7 +51,7 @@ const TekSystemsInfo = () => {
 const WtwInfo = () => {
     return (
         <MarginDiv>
-            <AlertHeader variant='info'>Willis Towers Watson: 2016 - 06/2022
+            <AlertHeader variant='success'>Willis Towers Watson: 2016 - 06/2022
                 <Desc>Fullstack Software Engineer</Desc>
             </AlertHeader>
             <ul>

@@ -1,18 +1,18 @@
 import React from 'react';
 import {Alert} from 'react-bootstrap';
-import {MarginDiv} from "../Styles/styles";
+import {AlertHeader, MarginDiv} from "../Styles/styles";
 
 function Frameworks() {
     return (
         <MarginDiv>
-            <Alert variant={'info'}>JavaScript</Alert>
+            <AlertHeader variant={'success'}>JavaScript</AlertHeader>
             <ul>
                 <li>React</li>
                 <li>React Query</li>
                 <li>React Testing Library</li>
             </ul>
             <MarginDiv>
-                <Alert variant={'info'}>Data</Alert>
+                <AlertHeader variant={'success'}>Data</AlertHeader>
             </MarginDiv>
             <ul>
                 <li>PostgreSQL</li>
@@ -21,7 +21,7 @@ function Frameworks() {
                 <li>React Query</li>
                 <li>Entity Framework</li>
             </ul>
-            <Alert variant={'info'}>Testing</Alert>
+            <AlertHeader variant={'success'}>Testing</AlertHeader>
             <ul>
                 <li>xUnit Testing Framework</li>
                 <li>Moq / NSubstitute / (mocking libraries)</li>
