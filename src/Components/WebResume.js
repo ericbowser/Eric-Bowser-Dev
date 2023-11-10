@@ -1,5 +1,4 @@
 import Aspirations from "./Aspirations";
-import Education from "./Education";
 import Tools from "./Tools";
 import {WtwInfo, GoldPointInfo, ProEdgeInfo, TekSystemsInfo} from "./Experience";
 import {Container, Tab, Tabs} from "react-bootstrap";

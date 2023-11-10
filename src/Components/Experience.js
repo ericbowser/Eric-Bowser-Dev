@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import {Alert} from "react-bootstrap";
-import {Desc, MarginDiv} from "../Styles/styles";
+import {AlertHeader, Desc, MarginDiv} from "../Styles/styles";
 
 const ProEdgeInfo = () => {
     return (
@@ -51,9 +51,9 @@ const TekSystemsInfo = () => {
 const WtwInfo = () => {
     return (
         <MarginDiv>
-            <Alert variant='info'>Willis Towers Watson: 2016 - 06/2022
+            <AlertHeader variant='info'>Willis Towers Watson: 2016 - 06/2022
                 <Desc>Fullstack Software Engineer</Desc>
-            </Alert>
+            </AlertHeader>
             <ul>
                 <li>Internal application to build dynamic applications for carriers and participants</li>
                 <li>Featues for stakeholders for public facing web site</li>

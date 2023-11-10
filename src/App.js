@@ -1,34 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import {Accordion, Container, Navbar, NavLink, Tab, Tabs} from 'react-bootstrap'
-import Frameworks from './Components/Frameworks'
-import Tools from './Components/Tools'
-import EducationDetails from './Components/Education'
-import {
-  GoldPointInfo,
-  ProEdgeInfo,
-  TekSystemsInfo,
-  WtwInfo
-} from './Components/Experience'
-import Aspirations from './Components/Aspirations'
-import head from './images/head.jpg'
+import head2 from './images/head2.jpg'
 import ericDocx from './files/Eric-Bowser-Resume-2023.docx'
 import styled from "styled-components";
 
 const NavbarContainer = styled(Container)`
-  color: white;
+  color: black;
   margin: 1%;
 `;
 
 function App () {
 
   return (
-    <NavbarContainer style={{backgroundColor: 'azure', border: 'solid 1px blue', borderRadius:'1%', width: 'auto'}}>
+    <NavbarContainer style={{backgroundColor: '#65FF', border: 'solid 2px pink', borderRadius:'2%', width: 'auto'}}>
       <Navbar variant={'dark'}>
         <Navbar.Brand>
           <img
-            width='175'
-            height='215'
-            className='d-inline-block align-top'
+            width={'200px'}
+            src={head2}
             alt='my head shot'
             title={'Eric R Bowser'}
           />
