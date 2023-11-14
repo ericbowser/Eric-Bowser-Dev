@@ -3,71 +3,77 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import {
   createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
+  RouterProvider
 } from "react-router-dom";
 import Frameworks from "./Components/Frameworks";
-import {WtwInfo, ProEdgeInfo, GoldPointInfo, TekSystemsInfo} from "./Components/Experience";
+import Experience from "./Components/Experience";
 import Tools from "./Components/Tools";
 import Education from "./Components/Education";
 import Aspirations from "./Components/Aspirations";
-import {Container} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import Navigation from "./Components/Navigation";
+import Hobbies from "./Components/Hobbies";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <Container>
         <App />
-      </div>
+      </Container>
     )
   },
   {
     path: "/experience",
     element:(
-      <Container>
+      <>
         <Navigation />
-          <WtwInfo />
-          <GoldPointInfo />
-          <ProEdgeInfo />
-          <TekSystemsInfo />
-      </Container>
+        <Experience />
+      </>
     )
   },
   {
     path: "/tools",
     element:(
-    <Container>
+    <>
       <Navigation />
-        <Tools />
-    </Container>)
+      <Tools />
+    </>)
   },
   {
     path: "/frameworks",
     element: (
-      <Container>
+      <>
         <Navigation/>
-          <Frameworks/>
-      </Container>
+        <Frameworks/>
+      </>
     )
   },
   {
     path: "/education",
     element: (
-      <Container>
+      <>
         <Navigation/>
-          <Education />
-      </Container>
+        <Education />
+      </>
     )
   },
   {
     path: "/aspirations",
     element: (
-      <Container>
+      <>
         <Navigation/>
-          <Aspirations />
+        <Aspirations />
+      </>
+    )
+  },
+  {
+    path: "/hobbies",
+    element: (
+      <Container >
+        <Navigation/>
+        <Hobbies />
       </Container>
     )
   },

@@ -1,6 +1,12 @@
 ﻿import styled from 'styled-components';
 import {Alert} from 'react-bootstrap';
 
+export const Heading = styled.span`
+  border: 5px outset blue;
+  margin: 5px;
+  padding: 5px;
+`;
+
 const MainWrapper = styled.div`
 	background-color: black;
 `;

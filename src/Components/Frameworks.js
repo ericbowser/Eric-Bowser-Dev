@@ -1,10 +1,9 @@
 import React from 'react';
-import {Alert} from 'react-bootstrap';
-import {AlertHeader, MarginDiv} from "../Styles/styles";
-
+import {Alert, Container} from 'react-bootstrap';
 function Frameworks() {
     return (
-        <MarginDiv>
+      <Container style={{fontSize: '1em'}}>
+        
             <Alert>JavaScript</Alert>
             <ul>
                 <li>React</li>
@@ -28,7 +27,7 @@ function Frameworks() {
                 <li>Cypress</li>
                 <li>K6</li>
             </ul>
-        </MarginDiv>
+      </Container>
     );
 }
 

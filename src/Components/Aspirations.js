@@ -1,10 +1,10 @@
 ﻿import React from "react";
 import {Alert} from "react-bootstrap";
-import {MarginDiv} from "../Styles/styles";
+import {MarginDiv} from "../styles/styles";
 
-const Aspirations = () => {
+function Aspirations() {
     return (
-        <MarginDiv>
+      <>
             <Alert>Aspirations</Alert>
             <ul>
                 <li>
@@ -12,17 +12,14 @@ const Aspirations = () => {
                     practice to the next level by working at a great company that values their
                     employees, in all aspects, to become a refined engineer by enabling trust and
                     empowering hard work with collaboration in a psychologically safe environment.
-                    <MarginDiv>
-                        <li>
-                            Foster many facets of development to further refine character by creating positive
-                            relationships to evolve career to the next level in an environment where innovation
-                            and creativity are embraced.
-                        </li>
-                    </MarginDiv>
+                    <br/>
+                    Foster many facets of development to further refine character by creating positive
+                    relationships to evolve career to the next level in an environment where innovation
+                    and creativity are embraced.
                 </li>
             </ul>
-        </MarginDiv>
+          </>
     )
-};
+}
 
 export default Aspirations;

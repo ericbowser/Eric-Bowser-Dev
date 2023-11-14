@@ -1,6 +1,5 @@
 import React from 'react'
-import ascii from './images/erb_home.png';
-import {Container} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import Navigation from './Components/Navigation';
 
 function App () {
