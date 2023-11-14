@@ -5,15 +5,13 @@ import {AlertHeader, MarginDiv} from "../Styles/styles";
 function Frameworks() {
     return (
         <MarginDiv>
-            <AlertHeader variant={'success'}>JavaScript</AlertHeader>
+            <Alert>JavaScript</Alert>
             <ul>
                 <li>React</li>
                 <li>React Query</li>
                 <li>React Testing Library</li>
             </ul>
-            <MarginDiv>
-                <AlertHeader variant={'success'}>Data</AlertHeader>
-            </MarginDiv>
+                <Alert>Data</Alert>
             <ul>
                 <li>PostgreSQL</li>
                 <li>Sql Server</li>
@@ -21,12 +19,12 @@ function Frameworks() {
                 <li>React Query</li>
                 <li>Entity Framework</li>
             </ul>
-            <AlertHeader variant={'success'}>Testing</AlertHeader>
+            <Alert>Testing</Alert>
             <ul>
                 <li>xUnit Testing Framework</li>
                 <li>Moq / NSubstitute / (mocking libraries)</li>
                 <li>React Testing Library</li>
-                <li> Shouldly / Assert</li>
+                <li>Shouldly / Assert</li>
                 <li>Cypress</li>
                 <li>K6</li>
             </ul>

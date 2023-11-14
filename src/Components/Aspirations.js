@@ -5,7 +5,7 @@ import {MarginDiv} from "../Styles/styles";
 const Aspirations = () => {
     return (
         <MarginDiv>
-            <Alert variant={'info'}>Aspirations</Alert>
+            <Alert>Aspirations</Alert>
             <ul>
                 <li>
                     Full stack engineer looking for a new opportunity to take software engineering

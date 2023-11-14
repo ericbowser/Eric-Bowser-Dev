@@ -5,7 +5,7 @@ import {AlertHeader, MarginDiv} from "../Styles/styles";
 const EducationDetails = () => {
     return (
         <MarginDiv>
-            <AlertHeader variant={'success'}>Education</AlertHeader>
+            <AlertHeader>Education</AlertHeader>
             <ul>
                 <li>Weber State University: 2011-2013 - BA Computer Science</li>
                 <li>University Of Phoenix: 2010-2011 - Associates of Art</li>
