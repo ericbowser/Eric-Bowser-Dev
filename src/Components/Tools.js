@@ -5,7 +5,7 @@ function Tools()  {
     return (
       <Container>
       <HeaderLine>Microsoft Tools</HeaderLine>
-        <div style={{margin: '2em'}}>
+        <div>
           <ul>
             <li>Visual Studio 2019/2022-23</li>
             <li>Visual Studio Code</li>
@@ -16,7 +16,7 @@ function Tools()  {
           </ul>
         </div>
         <HeaderLine>Logging</HeaderLine>
-        <div style={{margin: '2em'}}>
+        <div>
         <ul>
           <li>SumoLogic</li>
           <li>Serilog</li>
@@ -25,7 +25,7 @@ function Tools()  {
         </ul>
         </div>
       <HeaderLine>ScriptingAlert</HeaderLine>
-       <div style={{margin: '2em'}}>
+       <div>
       <ul>
           <li>Git Bash</li>
           <li>Linux</li>
@@ -34,7 +34,7 @@ function Tools()  {
       </ul>
         </div>
       <HeaderLine>Data</HeaderLine>
-      <div style={{margin: '2em'}}>
+      <div>
       <ul>
           <li>Cosmos DB</li>
           <li>Microsoft SQL Server</li>

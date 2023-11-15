@@ -5,7 +5,7 @@ function Experience() {
     return (
       <Container>
         <HeaderLine>Maersk - A.P. Moller</HeaderLine>
-        <i>Software Engineer</i>
+        <div><i>Software Engineer</i></div>
         <ul>
           <li>E-commerce application using REST and SOAP</li>
           <li>Shipping services</li>
@@ -21,7 +21,7 @@ function Experience() {
             </ul>
         </ul>
         <HeaderLine>Willis Towers Watson</HeaderLine>
-        <i>Fullstack Software Engineer</i>
+        <div><i>Fullstack Software Engineer</i></div>
           <ul>
             <li>Internal application to build dynamic applications for carriers and participants</li>
             <li>Features for stakeholders for public facing web site</li>
@@ -30,14 +30,14 @@ function Experience() {
             <li>Migrate on premise PostgreSQL database to Azure Cosmos DB ensuring data integrity</li>
           </ul>
         <HeaderLine>GoldPoint Systems: 2013-2015</HeaderLine>
-        <i>C# backend developer and SQL data analyst</i>
+        <div><i>C# backend developer and SQL data analyst</i></div>
         <ul>
           <li>Render unique SQL reports for clients</li>
           <li>Write SQL scripts as an onboarding step for new clients using WFP</li>
           <li>Manage errors and rollbacks</li>
         </ul>
         <HeaderLine>Pro Edge Tec, LLC: 2013-2015 </HeaderLine>
-        <i>IT Technician</i>
+        <div><i>IT Technician</i></div>
         <ul>
           <li>Troubleshoot client hardware</li>
           <li>Network configuration</li>
