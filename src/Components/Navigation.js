@@ -8,16 +8,14 @@ import email from '../images/email.png';
 import linkedIn from '../images/linkedin.png';
 import docx from '../files/Eric-Bowser-Resume-2023.docx';
 import doc from '../icons/docxIcon.ico';
-import pi from '../images/rasp_48.png';
 import React from "react";
 import Container from "react-bootstrap/Container";
 
 function Navigation () {
 	return (
-		/*<Card>
+		<Card>
 			<Card.Body>
-				<Card.Img src={EbHome} alt={'Me'}  />*/
-		<Container>
+				<Card.Img src={EbHome} style={{width: '25%'}} alt={'Me'}  />
 					<Navbar>
 						<Navbar.Brand title={'E.R.B'}></Navbar.Brand>
 						<Nav.Item>
@@ -33,12 +31,9 @@ function Navigation () {
 							<a href={'https://github.com/ericbowser'} title={'GitHub'} >
 								<img src={github}  alt={'GitHub'}/>
 							</a>
-							<a href={''} title={'GitHub'} >
-								<img src={pi}  alt={'ras pi'}/>
-							</a>
 						</Nav.Item>
 							<Nav.Item style={{padding: '1em'}}>
-								<NavLink href="/frameworks">Frameworks</NavLink>
+								<NavLink href={"/frameworks"}>Frameworks</NavLink>
 							</Nav.Item>
 							<Nav.Item style={{padding: '1em'}}>
 								<NavLink href={'/tools'} title={'tools'}>Tools</NavLink>
@@ -46,7 +41,7 @@ function Navigation () {
 							<Nav.Item style={{padding: '1em'}}>
 								<NavLink href={'/experience'}  title={'experience'}>Experience</NavLink>
 							</Nav.Item>
-							<Nav.Item>
+							<Nav.Item style={{padding: '1em'}}>
 								<NavLink href={'/education'}  title={'education'}>Education</NavLink>
 							</Nav.Item>
 							<Nav.Item style={{padding: '1em'}}>
@@ -59,7 +54,8 @@ function Navigation () {
 								<NavLink href={'/hobbies'} title={'hobbies'}/>
 							</Nav.Item>
 					</Navbar>
-		</Container>
+			</Card.Body>
+		</Card>
 	)
 }
 

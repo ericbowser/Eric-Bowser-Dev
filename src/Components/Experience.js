@@ -1,10 +1,10 @@
 ﻿import React from 'react';
 import Container from "react-bootstrap/Container";
-import Alert from 'react-bootstrap/Alert';
+import {HeaderLine} from '../styles/styles';
 function Experience() {
     return (
       <Container>
-        <Alert>Willis Towers Watson</Alert>
+        <HeaderLine>Willis Towers Watson</HeaderLine>
         <i>Fullstack Software Engineer</i>
           <ul>
             <li>Internal application to build dynamic applications for carriers and participants</li>
@@ -13,14 +13,14 @@ function Experience() {
             <li>Maintain legacy pub / sub message bus</li>
             <li>Migrate on premise PostgreSQL database to Azure Cosmos DB ensuring data integrity</li>
           </ul>
-        <Alert>GoldPoint Systems: 2013-2015</Alert>
+        <HeaderLine>GoldPoint Systems: 2013-2015</HeaderLine>
         <i>C# backend developer and SQL data analyst</i>
         <ul>
           <li>Render unique SQL reports for clients</li>
           <li>Write SQL scripts as an onboarding step for new clients using WFP</li>
           <li>Manage errors and rollbacks</li>
         </ul>
-        <Alert>Pro Edge Tec, LLC: 2013-2015 </Alert>
+        <HeaderLine>Pro Edge Tec, LLC: 2013-2015 </HeaderLine>
         <i>IT Technician</i>
         <ul>
           <li>Troubleshoot client hardware</li>

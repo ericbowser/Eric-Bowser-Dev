@@ -5,14 +5,14 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
+import Hobbies from "./Hobbies/Hobbies";
+import Aspirations from "./Hobbies/Aspirations";
 import Frameworks from "./Components/Frameworks";
 import Experience from "./Components/Experience";
 import Tools from "./Components/Tools";
 import Education from "./Components/Education";
-import Aspirations from "./Components/Aspirations";
 import Container from "react-bootstrap/Container";
 import Navigation from "./Components/Navigation";
-import Hobbies from "./Components/Hobbies";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([

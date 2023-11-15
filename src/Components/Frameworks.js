@@ -1,16 +1,17 @@
 import React from 'react';
-import {Alert, Container} from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import {HeaderLine} from "../styles/styles";
 function Frameworks() {
     return (
       <Container style={{fontSize: '1em'}}>
         
-            <Alert>JavaScript</Alert>
+            <HeaderLine>JavaScript</HeaderLine>
             <ul>
                 <li>React</li>
                 <li>React Query</li>
                 <li>React Testing Library</li>
             </ul>
-                <Alert>Data</Alert>
+            <HeaderLine>Data</HeaderLine>
             <ul>
                 <li>PostgreSQL</li>
                 <li>Sql Server</li>
@@ -18,7 +19,7 @@ function Frameworks() {
                 <li>React Query</li>
                 <li>Entity Framework</li>
             </ul>
-            <Alert>Testing</Alert>
+            <HeaderLine>Testing</HeaderLine>
             <ul>
                 <li>xUnit Testing Framework</li>
                 <li>Moq / NSubstitute / (mocking libraries)</li>

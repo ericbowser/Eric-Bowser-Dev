@@ -1,6 +1,9 @@
 ﻿import styled from 'styled-components';
 import {Alert} from 'react-bootstrap';
 
+export const HeaderLine = styled.span`
+  border-bottom: 3px solid black;
+`
 export const Heading = styled.span`
   border: 5px outset blue;
   margin: 5px;

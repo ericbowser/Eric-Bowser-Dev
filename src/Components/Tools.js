@@ -1,27 +1,31 @@
 import React from 'react';
-import {Alert} from "react-bootstrap";
+import Alert from "react-bootstrap/Alert";
+import Container from "react-bootstrap/Container";
+import {HeaderLine} from '../styles/styles';
 const Tools = () => {
     return (
-      <>
-      <Alert>Microsoft Tools</Alert>
+      <Container>
+      <HeaderLine>Microsoft Tools</HeaderLine>
         <div style={{margin: '2em'}}>
           <ul>
-            <li>Visual Studio 2019/2022</li>
+            <li>Visual Studio 2019/2022-23</li>
             <li>Visual Studio Code</li>
             <li>Microsoft SQL Server</li>
             <li>Microsoft Azure</li>
+            <li>Azure Data Studio</li>
+            <l>dotnet tools / dotnet scripts</l>
           </ul>
         </div>
-        <Alert>Logging</Alert>
+        <HeaderLine>Logging</HeaderLine>
         <div style={{margin: '2em'}}>
         <ul>
           <li>SumoLogic</li>
           <li>Serilog</li>
-          <li>Sentry (UI Logging)</li>
+          <li>Sentry</li>
           <li>NLog</li>
         </ul>
         </div>
-      <Alert>ScriptingAlert</Alert>
+      <HeaderLine>ScriptingAlert</HeaderLine>
        <div style={{margin: '2em'}}>
       <ul>
           <li>Git Bash</li>
@@ -30,14 +34,14 @@ const Tools = () => {
           <li>Cake Make</li>
       </ul>
         </div>
-      <Alert>Data</Alert>
+      <HeaderLine>Data</HeaderLine>
       <div style={{margin: '2em'}}>
       <ul>
           <li>Cosmos DB</li>
           <li>Microsoft SQL Server</li>
       </ul>
         </div>
-      </>
+      </Container>
     )
 };
 
