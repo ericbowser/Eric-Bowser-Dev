@@ -4,6 +4,22 @@ import {HeaderLine} from '../styles/styles';
 function Experience() {
     return (
       <Container>
+        <HeaderLine>Maersk - A.P. Moller</HeaderLine>
+        <i>Software Engineer</i>
+        <ul>
+          <li>E-commerce application using REST and SOAP</li>
+          <li>Shipping services</li>
+          <li>Web API</li>
+          <li>ASP.NET / .NET Standard</li>
+          <li>Shipping Tools: Encode / Decode / Produce label</li>
+            <ul>
+              <li>Label generation</li>
+              <li>Tracking</li>
+              <li>Address validation</li>
+              <li>Manifests</li>
+              <li>Rates</li>
+            </ul>
+        </ul>
         <HeaderLine>Willis Towers Watson</HeaderLine>
         <i>Fullstack Software Engineer</i>
           <ul>
