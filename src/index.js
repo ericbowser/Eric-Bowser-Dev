@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import {
+/*import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
@@ -12,10 +12,10 @@ import Experience from "./Components/Experience";
 import Tools from "./Components/Tools";
 import Education from "./Components/Education";
 import Container from "react-bootstrap/Container";
-import Navigation from "./Components/Navigation";
+import Navigation from "./route/Navigation";*/
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const router = createBrowserRouter([
+/*const router = createBrowserRouter([
   {
     path: "/",
     element: (
@@ -77,13 +77,16 @@ const router = createBrowserRouter([
       </>
     )
   },
-]);
+]);*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router}>
-      <App />
-  </RouterProvider>
+  /*<RouterProvider router={router}>*/
+  <React.StrictMode>
+    
+    <App />
+  </React.StrictMode>
+  /*</RouterProvider>*/
 );
 
 export default root;

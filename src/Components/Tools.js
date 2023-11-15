@@ -1,8 +1,7 @@
 import React from 'react';
-import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
 import {HeaderLine} from '../styles/styles';
-const Tools = () => {
+function Tools()  {
     return (
       <Container>
       <HeaderLine>Microsoft Tools</HeaderLine>
@@ -43,6 +42,6 @@ const Tools = () => {
         </div>
       </Container>
     )
-};
+}
 
 export default Tools;

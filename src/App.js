@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from "react-bootstrap/Container";
-import Navigation from './Components/Navigation';
+import Navigation from './route/Navigation';
 
 function App () {
   return (

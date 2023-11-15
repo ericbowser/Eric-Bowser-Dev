@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import  Container from "react-bootstrap/Container";
 import {HeaderLine} from "../styles/styles";
-const EducationDetails = () => {
+const Education = () => {
     return (
       <Container>
         <HeaderLine>Education</HeaderLine>
@@ -13,4 +13,4 @@ const EducationDetails = () => {
     )
 }
 
-export default EducationDetails;
+export default Education;
