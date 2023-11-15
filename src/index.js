@@ -71,10 +71,10 @@ const router = createBrowserRouter([
   {
     path: "/hobbies",
     element: (
-      <Container >
+      < >
         <Navigation/>
         <Hobbies />
-      </Container>
+      </>
     )
   },
 ]);

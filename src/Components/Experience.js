@@ -1,8 +1,9 @@
 ﻿import React from 'react';
-import {Alert} from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Alert from 'react-bootstrap/Alert';
 function Experience() {
     return (
-      <>
+      <Container>
         <Alert>Willis Towers Watson</Alert>
         <i>Fullstack Software Engineer</i>
           <ul>
@@ -30,7 +31,7 @@ function Experience() {
           <li>Prepare engineering employee computers</li>
           <li>Install engineering software: SolidWorks, CNC Tooling software, etc</li>
         </ul>
-      </>
+      </Container>
     )
 }
 
