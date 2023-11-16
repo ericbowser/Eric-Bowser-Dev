@@ -23,7 +23,9 @@ import linkedIn from '../images/linkedin.png';
 import docx from '../files/Eric-Bowser-Resume-2023.docx';
 import doc from '../icons/docxIcon.ico';
 import EbHome from '../images/erb_home.png';
-import {HeaderLine} from "../styles/styles";
+import {Image} from "../styles/styles";
+
+
 
 function Navigation() {
 	const [tabbedKey, setTabbedKey] = useState('None')
@@ -31,29 +33,25 @@ function Navigation() {
 	useEffect(() => {
 	}, [tabbedKey])
 	return (
-		<Container style={{margin: '25px'}}>
-			<Card>
-			{/*	<CardHeader title={'Eric Ryan Bowser'}>
-					Eric Bowser : Full Stack Software Engineer
-				</CardHeader>*/}
+		<Container style={{padding: '2em'}}>
+			<Card style={{padding: '2em'}}>
+				<Navbar.Brand title={'Eric Ryan Bowser - Software Engineer'} style={{padding: '0em 0em 1em 0em'}}>Eric Ryan Bowser - Software Engineer</Navbar.Brand>
 				<span >
-					<Card.Img src={head} alt={'head shot'} style={{width: '25%'}} />
-					<Card.Img src={EbHome} alt={'azcii art'} style={{width: '30%'}}/>
+					<Card.Img src={head} alt={'head shot'} style={{width: '15%'}} />
 				</span>
-				<Navbar>
-					<Navbar.Brand title={'E.R.B'}  ></Navbar.Brand>
+				<Navbar >
 					<Nav.Item>
-						<a href={docx}>
-							<img src={doc} alt={'document'} style={{width: '5em'}}/>
+						<a href={docx} title={'resume document'}>
+							<Image src={doc} alt={'document'} style={{width: '2em'}}/>
 						</a>
-						<a href={'mailto:ericryanbowser@gmail.com'} title={'email'}>
-							<img src={email} alt={'email'}/>
+						<a href={'mailto:ericryanbowser@gmail.com'} title={'email'} >
+							<Image src={email} alt={'email'} style={{width: '2em', margin:'2px'}}/>
 						</a>
 						<a href={'https://www.linkedin.com/in/eric-bowser-dev/'} title={'LinkIn'}>
-							<img src={linkedIn} alt={'linkedIn'}/>
+							<Image src={linkedIn} alt={'linkedIn'} style={{width: '2em'}}/>
 						</a>
-						<a href={'https://github.com/ericbowser'} title={'GitHub'}>
-							<img src={github} alt={'GitHub'}/>
+						<a href={'https://github.com/ericbowser'} title={'GitHub'} >
+							<img src={github} alt={'GitHub'} style={{width: '2em'}}/>
 						</a>
 					</Nav.Item>
 				</Navbar>

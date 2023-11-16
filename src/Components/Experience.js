@@ -4,7 +4,7 @@ import {HeaderLine} from '../styles/styles';
 function Experience() {
     return (
       <Container>
-        <HeaderLine>Maersk - A.P. Moller</HeaderLine>
+        <HeaderLine>Visible Supply Chain --> Maersk - A.P. Moller</HeaderLine>
         <div><i>Software Engineer</i></div>
         <ul>
           <li>E-commerce application using REST and SOAP</li>
