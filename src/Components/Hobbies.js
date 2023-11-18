@@ -1,5 +1,5 @@
 ﻿import Container from "react-bootstrap/Container";
-import ras from '../Hobbies/rasp_pi.png';
+import ras from '../images/rasp_pi.png';
 import {HeaderLine} from "../styles/styles";
 import EbHome from "../images/erb_home.png";
 import React from "react";
