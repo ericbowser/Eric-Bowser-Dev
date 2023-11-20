@@ -15,7 +15,7 @@ console.log('environment', environment)
 const config = {
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, './build'),
+		path: path.resolve(__dirname, './build/'),
 		filename: 'index_bundle.js'
 	},
 	devServer: {
