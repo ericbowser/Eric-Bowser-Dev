@@ -1,12 +1,12 @@
 ﻿import React from "react";
 import flip from '../images/flip_3.jpg';
-import {HeaderLine} from "../styles/styles";
+import {HeaderLine, StyledContainer} from '../styles/styled-component-styles'
 
 function Aspirations() {
   return (
-    <>
+    <StyledContainer>
+      <img src={flip} style={{width: '25%', float: 'right'}} alt={'kick flip'} />
     <div style={{margin: '1em 1em 1em 1em'}}>
-      <img src={flip} style={{width: '10em'}} alt={'kick flip'} />
       <div>
         <HeaderLine>Aspirations</HeaderLine>
       </div>
@@ -17,7 +17,7 @@ function Aspirations() {
         </li>
       </ul>
     </div>
-  </>
+  </StyledContainer>
   )
 }
 

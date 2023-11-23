@@ -1,10 +1,9 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import {HeaderLine} from "../styles/styles";
+import {HeaderLine, StyledContainer} from "../styles/styled-component-styles";
+
 function Frameworks() {
     return (
-      <Container style={{fontSize: '1em'}}>
-        
+      <StyledContainer>
             <HeaderLine>JavaScript</HeaderLine>
             <ul>
                 <li>React</li>
@@ -22,13 +21,14 @@ function Frameworks() {
             <HeaderLine>Testing</HeaderLine>
             <ul>
                 <li>xUnit Testing Framework</li>
-                <li>Moq / NSubstitute / (mocking libraries)</li>
+                <li>Moq / NSubstitute</li>
                 <li>React Testing Library</li>
                 <li>Shouldly / Assert</li>
                 <li>Cypress</li>
-                <li>K6</li>
+                <li>K6 load testing</li>
+                <li>Integration Testing</li>
             </ul>
-      </Container>
+      </StyledContainer>
     );
 }
 

@@ -1,9 +1,9 @@
 ﻿import React from 'react';
-import Container from "react-bootstrap/Container";
-import {HeaderLine} from '../styles/styles';
+import {HeaderLine, StyledContainer} from "../styles/styled-component-styles";
+
 function Experience() {
     return (
-      <Container>
+      <StyledContainer>
         <HeaderLine>Visible Supply Chain --> Maersk - A.P. Moller</HeaderLine>
         <div><i>Software Engineer</i></div>
         <ul>
@@ -47,7 +47,7 @@ function Experience() {
           <li>Prepare engineering employee computers</li>
           <li>Install engineering software: SolidWorks, CNC Tooling software, etc</li>
         </ul>
-      </Container>
+      </StyledContainer>
     )
 }
 

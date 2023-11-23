@@ -1,6 +1,7 @@
 ﻿const HtmlWebpackPlugin = require('html-webpack-plugin')
 const env_config = require('dotenv').config()
 const path = require('path')
+const webpack = require('webpack')
 
 console.log('config', env_config)
 
@@ -29,42 +30,46 @@ const config = {
 		new HtmlWebpackPlugin({template: "./public/index.html"})
 	],
 	module: {
-		rules: [
-			{
-				test: /\.(js|jsx)$/,
-				use: {
-					loader: 'babel-loader',
+		rules: [{
+			test: /\.(gif|png|jpe?g|svg)$/i,
+			use: [
+				'file-loader',
+				{
+					loader: 'image-webpack-loader',
 					options: {
-						presets: ['@babel/preset-env', '@babel/preset-react']
+						bypassOnDebug: true, // webpack@1.x
+						disable: true, // webpack@2.x and newer
+					},
+				},
+				]},
+				{
+					test: /\.(js|jsx)$/,
+					use: {
+						loader: 'babel-loader',
+						options: {
+							presets: ['@babel/preset-env', '@babel/preset-react']
+						}
+					},
+				},
+				{
+					test: /\.(css)$/,
+					use: ['css-loader', 'style-loader']
+				},
+				{
+					test: /\.(ico)$/i,
+					loader: 'file-loader',
+					options: {
+						name: './src/icons/[name].[ext]',
 					}
 				},
-			},
-			{
-				test: /\.(css)$/,
-				use: ['css-loader', 'style-loader']
-			},
-			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
-				loader: 'file-loader',
-				options: {
-					name: './src/images/[name].[ext]',
+				{
+					test: /\.(docx)$/i,
+					loader: 'file-loader',
+					options: {
+						name: './src/files/[name].[ext]',
+					}
 				}
-			},
-			{
-				test: /\.(ico)$/i,
-				loader: 'file-loader',
-				options: {
-					name: './src/icons/[name].[ext]',
-				}
-			},
-			{
-				test: /\.(docx)$/i,
-				loader: 'file-loader',
-				options: {
-					name: './src/files/[name].[ext]',
-				}
-			}
-		],
+			]
 	}
 }
 

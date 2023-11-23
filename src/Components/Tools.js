@@ -1,18 +1,20 @@
 import React from 'react';
-import Container from "react-bootstrap/Container";
-import {HeaderLine} from '../styles/styles';
+import {HeaderLine, StyledContainer} from "../styles/styled-component-styles";
+
 function Tools()  {
     return (
-      <Container>
-      <HeaderLine>Microsoft Tools</HeaderLine>
+      <StyledContainer>
+      <HeaderLine>Tools</HeaderLine>
         <div>
           <ul>
-            <li>Visual Studio 2019/2022-23</li>
+            <li>Visual Studio 2019/22/23</li>
             <li>Visual Studio Code</li>
             <li>Microsoft SQL Server</li>
             <li>Microsoft Azure</li>
             <li>Azure Data Studio</li>
             <l>dotnet tools / dotnet scripts</l>
+            <l>ReSharper / Rider</l>
+            <l>pgAdmin</l>
           </ul>
         </div>
         <HeaderLine>Logging</HeaderLine>
@@ -24,11 +26,11 @@ function Tools()  {
           <li>NLog</li>
         </ul>
         </div>
-      <HeaderLine>ScriptingAlert</HeaderLine>
+      <HeaderLine>Scripting</HeaderLine>
        <div>
       <ul>
-          <li>Git Bash</li>
-          <li>Linux</li>
+          <li>Git Bash / Bash</li>
+          <li>Linux / Raspbian / Ubuntu</li>
           <li>Powershell</li>
           <li>Cake Make</li>
       </ul>
@@ -38,9 +40,10 @@ function Tools()  {
       <ul>
           <li>Cosmos DB</li>
           <li>Microsoft SQL Server</li>
+          <li>PostgreSQL</li>
       </ul>
         </div>
-      </Container>
+      </StyledContainer>
     )
 }
 
