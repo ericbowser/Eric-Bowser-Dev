@@ -1,10 +1,10 @@
 ﻿import React from 'react';
-import {HeaderLine, StyledContainer} from "../styles/styled-component-styles";
 
 function Experience() {
+  
     return (
-      <StyledContainer>
-        <HeaderLine>Visible Supply Chain --> Maersk - A.P. Moller</HeaderLine>
+      <div className={'container m-5'}>
+        <span className={'h5'}>Visible Supply Chain --> Maersk - A.P. Moller</span>
         <div><i>Software Engineer</i></div>
         <ul>
           <li>E-commerce application using REST and SOAP</li>
@@ -20,7 +20,7 @@ function Experience() {
               <li>Rates</li>
             </ul>
         </ul>
-        <HeaderLine>Willis Towers Watson</HeaderLine>
+        <span className={'h5'}>Willis Towers Watson</span>
         <div><i>Fullstack Software Engineer</i></div>
           <ul>
             <li>Internal application to build dynamic applications for carriers and participants</li>
@@ -29,14 +29,14 @@ function Experience() {
             <li>Maintain legacy pub / sub message bus</li>
             <li>Migrate on premise PostgreSQL database to Azure Cosmos DB ensuring data integrity</li>
           </ul>
-        <HeaderLine>GoldPoint Systems: 2013-2015</HeaderLine>
+        <span className={'h5'}>GoldPoint Systems: 2013-2015</span>
         <div><i>C# backend developer and SQL data analyst</i></div>
         <ul>
           <li>Render unique SQL reports for clients</li>
           <li>Write SQL scripts as an onboarding step for new clients using WFP</li>
           <li>Manage errors and rollbacks</li>
         </ul>
-        <HeaderLine>Pro Edge Tec, LLC: 2013-2015 </HeaderLine>
+        <span className={'h5'} >Pro Edge Tec, LLC: 2013-2015 </span>
         <div><i>IT Technician</i></div>
         <ul>
           <li>Troubleshoot client hardware</li>
@@ -47,7 +47,7 @@ function Experience() {
           <li>Prepare engineering employee computers</li>
           <li>Install engineering software: SolidWorks, CNC Tooling software, etc</li>
         </ul>
-      </StyledContainer>
+      </div>
     )
 }
 

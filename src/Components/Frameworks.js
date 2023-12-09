@@ -1,16 +1,15 @@
 import React from 'react';
-import {HeaderLine, StyledContainer} from "../styles/styled-component-styles";
 
 function Frameworks() {
     return (
-      <StyledContainer>
-            <HeaderLine>JavaScript</HeaderLine>
+      <div className={'container m-5'}>
+            <span className={'h5'}>JavaScript</span>
             <ul>
                 <li>React</li>
                 <li>React Query</li>
                 <li>React Testing Library</li>
             </ul>
-            <HeaderLine>Data</HeaderLine>
+            <span className={'h5'}>Data</span>
             <ul>
                 <li>PostgreSQL</li>
                 <li>Sql Server</li>
@@ -18,7 +17,7 @@ function Frameworks() {
                 <li>React Query</li>
                 <li>Entity Framework</li>
             </ul>
-            <HeaderLine>Testing</HeaderLine>
+            <span className={'h5'}>Testing</span>
             <ul>
                 <li>xUnit Testing Framework</li>
                 <li>Moq / NSubstitute</li>
@@ -28,7 +27,7 @@ function Frameworks() {
                 <li>K6 load testing</li>
                 <li>Integration Testing</li>
             </ul>
-      </StyledContainer>
+      </div>
     );
 }
 

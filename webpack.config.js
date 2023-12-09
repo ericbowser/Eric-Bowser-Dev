@@ -1,7 +1,6 @@
 ﻿const HtmlWebpackPlugin = require('html-webpack-plugin')
 const env_config = require('dotenv').config()
 const path = require('path')
-const webpack = require('webpack')
 
 console.log('config', env_config)
 
@@ -27,21 +26,10 @@ const config = {
 	},
 	mode: environment,
 	plugins: [
-		new HtmlWebpackPlugin({template: "./public/index.html"})
+		new HtmlWebpackPlugin({template: "./public/index.html"}),
 	],
 	module: {
-		rules: [{
-			test: /\.(gif|png|jpe?g|svg)$/i,
-			use: [
-				'file-loader',
-				{
-					loader: 'image-webpack-loader',
-					options: {
-						bypassOnDebug: true, // webpack@1.x
-						disable: true, // webpack@2.x and newer
-					},
-				},
-				]},
+		rules: [
 				{
 					test: /\.(js|jsx)$/,
 					use: {
@@ -56,7 +44,7 @@ const config = {
 					use: ['css-loader', 'style-loader']
 				},
 				{
-					test: /\.(ico)$/i,
+					test: /\.(ico|jpg|png)$/i,
 					loader: 'file-loader',
 					options: {
 						name: './src/icons/[name].[ext]',
