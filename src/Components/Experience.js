@@ -3,10 +3,10 @@
 function Experience() {
   
     return (
-      <div className={'container m-5'}>
+      <div className={'p-4'}>
         <span className={'h5'}>Visible Supply Chain --> Maersk - A.P. Moller</span>
         <div><i>Software Engineer</i></div>
-        <ul>
+        <ul className={'p-3'}>
           <li>E-commerce application using REST and SOAP</li>
           <li>Shipping services</li>
           <li>Web API</li>
@@ -20,7 +20,7 @@ function Experience() {
               <li>Rates</li>
             </ul>
         </ul>
-        <span className={'h5'}>Willis Towers Watson</span>
+        <span className={'h5 m-1'}>Willis Towers Watson</span>
         <div><i>Fullstack Software Engineer</i></div>
           <ul>
             <li>Internal application to build dynamic applications for carriers and participants</li>
@@ -29,14 +29,14 @@ function Experience() {
             <li>Maintain legacy pub / sub message bus</li>
             <li>Migrate on premise PostgreSQL database to Azure Cosmos DB ensuring data integrity</li>
           </ul>
-        <span className={'h5'}>GoldPoint Systems: 2013-2015</span>
+        <span className={'h5 p-1'}>GoldPoint Systems: 2013-2015</span>
         <div><i>C# backend developer and SQL data analyst</i></div>
         <ul>
           <li>Render unique SQL reports for clients</li>
           <li>Write SQL scripts as an onboarding step for new clients using WFP</li>
           <li>Manage errors and rollbacks</li>
         </ul>
-        <span className={'h5'} >Pro Edge Tec, LLC: 2013-2015 </span>
+        <span className={'h5 p-1'} >Pro Edge Tec, LLC: 2013-2015 </span>
         <div><i>IT Technician</i></div>
         <ul>
           <li>Troubleshoot client hardware</li>

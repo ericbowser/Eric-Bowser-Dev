@@ -2,7 +2,7 @@ import React from 'react';
 
 function Frameworks() {
     return (
-      <div className={'container m-5'}>
+      <div className={'p-2'}>
             <span className={'h5'}>JavaScript</span>
             <ul>
                 <li>React</li>

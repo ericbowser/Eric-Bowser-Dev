@@ -41,7 +41,10 @@ const config = {
 				},
 				{
 					test: /\.(css)$/,
-					use: ['css-loader', 'style-loader']
+					use: ['style-loader', 'css-loader', 'postcss-loader']
+					// options: {
+					// 	name: './src/styles/input.css'
+					// }
 				},
 				{
 					test: /\.(ico|jpg|png)$/i,

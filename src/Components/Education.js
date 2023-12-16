@@ -2,7 +2,7 @@
 
 const Education = () => {
     return (
-      <div className={'container m-5'}>
+      <div className={'p-4'}>
         <span className={'h5'}>Education</span>
         <ul>
           <li>Weber State University: 2011-2013 - BA Computer Science</li>

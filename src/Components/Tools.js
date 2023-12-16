@@ -2,7 +2,7 @@ import React from 'react';
 
 function Tools()  {
     return (
-      <div className={'container m-5'}>
+      <div className={'p-3'}>
       <span className={'h5'}>Tools</span>
         <div>
           <ul>

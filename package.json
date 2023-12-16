@@ -3,10 +3,15 @@
   "name": "erb-dev",
   "version": "0.1.0",
   "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "flowbite": "^2.2.0",
+    "postcss": "^8.4.32",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-icons": "^4.12.0",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.9.0",
+    "react-tabs": "^6.0.2",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {

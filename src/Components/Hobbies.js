@@ -3,11 +3,11 @@ import React from "react";
 
 function Hobbies() {
 	return (
-		<div className={'container'}>
+		<div className={'m-5'}>
+			<img src={ras} alt={'raspberry pi icon'}  className={'p-4'} />
 			<span className={'h5'} title={'Hobbies'}>Hobbies</span>
 			<ul>
 				<li>
-					<img src={ras} alt={'raspberry pi icon'}  />
 					Raspberry Pi tinkering
 				</li>
 				<span>
