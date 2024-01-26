@@ -2,7 +2,6 @@
 
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
 import Frameworks from "../Components/Frameworks";
@@ -11,15 +10,14 @@ import Hobbies from "../Components/Hobbies";
 import Tools from "../Components/Tools";
 import Experience from "../Components/Experience";
 import Education from "../Components/Education";
-import head from '../images/head2_2023.jpg';
+import head from '../images/head.jpg';
 
 // images
 import github from '../images/github.png';
 import email from '../images/email.png';
 import linkedIn from '../images/linkedin.png';
-import docx from '../files/Eric-Bowser-Resume-2023.docx';
+import docx from '../files/E.R.B-Resume.docx';
 import doc from '../icons/docxIcon.ico';
-import EbHome from "../images/erb_home.png";
 import {StyledContainer} from "../styles/styled-component-styles";
 
 function Navigation() {
@@ -30,10 +28,7 @@ function Navigation() {
 	return (
 		<StyledContainer>
 			<Card style={{padding: '1em'}}>
-				<span style={{margin: '1em'}}>
-					<Card.Img src={EbHome} alt={'Ascii Art'} style={{width: '45%', color: '#f0f8ff', border: '3px double black', padding: '1em'}} />
-					<Card.Img src={head} alt={'head shot'} style={{width: '35%', float: 'right', border: '3px double black', borderRadius: '1em', boxShadow: 'solid'}} />
-				</span>
+					<Card.Img src={head} alt={'head shot'} style={{width: '20%', marginBottom: '15px', textAlign: "center", border: '3px double black', borderRadius: '1em', boxShadow: 'black 3px 5px 5px'}} />
 				<Card.Header title={'E.R.B'} style={{backgroundColor: '#f0f8ff'}}>
 					<div >
 						<a href={'https://www.linkedin.com/in/eric-bowser-dev/'} title={'LinkIn'}>

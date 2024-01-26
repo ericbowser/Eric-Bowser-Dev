@@ -2,10 +2,11 @@
 import Container from 'react-bootstrap/Container'
 
 export const StyledContainer = styled(Container)`
-	padding: 1em;
+	padding: 2em;
+	box-shadow: black 3px 3px 3px 3px;
 `
 
 export const HeaderLine = styled.h5`
-  border-bottom: 1px solid black;
-	padding: 10px;
+  box-shadow: black 3px 3px 3px;
+	padding: 5px;
 `
