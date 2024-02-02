@@ -12,9 +12,9 @@ function Tools()  {
             <li>Microsoft SQL Server</li>
             <li>Microsoft Azure</li>
             <li>Azure Data Studio</li>
-            <l>dotnet tools / dotnet scripts</l>
-            <l>ReSharper / Rider</l>
-            <l>pgAdmin</l>
+            <li>dotnet tools / dotnet scripts</li>
+            <li>ReSharper / Rider</li>
+            <li>pgAdmin</li>
           </ul>
         </div>
         <HeaderLine>Logging</HeaderLine>

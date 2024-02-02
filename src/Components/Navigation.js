@@ -18,34 +18,72 @@ import email from '../images/email.png';
 import linkedIn from '../images/linkedin.png';
 import docx from '../files/E.R.B-Resume.docx';
 import doc from '../icons/docxIcon.ico';
-import {StyledContainer} from "../styles/styled-component-styles";
+import styled from "styled-components";
+import Container from "react-bootstrap/Container";
+import {Figure} from "react-bootstrap";
+
+export const Grid = styled.div`
+  margin: 1em;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 250px auto;
+  grid-template-rows: auto auto;
+`;
+
+export const GridCol1 = styled.div`
+  padding: 15px;
+  text-align: center;
+  grid-column: 1;
+  grid-row: -1;
+`;
+
+export const GridCol2 = styled.div`
+  grid-column: 2;
+  grid-row: -1;
+`;
+
+export const StyledContainer = styled(Container)`
+  box-shadow: black 13px 13px 20px;
+  padding: 3em;
+`;
 
 function Navigation() {
 	const [tabbedKey, setTabbedKey] = useState('None')
-		useEffect(() => {
+	useEffect(() => {
 	}, [tabbedKey])
 	
 	return (
 		<StyledContainer>
-			<Card style={{padding: '1em'}}>
-					<Card.Img src={head} alt={'head shot'} style={{width: '20%', marginBottom: '15px', textAlign: "center", border: '3px double black', borderRadius: '1em', boxShadow: 'black 3px 5px 5px'}} />
-				<Card.Header title={'E.R.B'} style={{backgroundColor: '#f0f8ff'}}>
-					<div >
-						<a href={'https://www.linkedin.com/in/eric-bowser-dev/'} title={'LinkIn'}>
-							<img src={linkedIn} alt={'linkedIn'} style={{width: '3em'}}/>
-						</a>
-						<a href={'https://github.com/ericbowser'} title={'GitHub'} >
-							<img src={github} alt={'GitHub'} style={{width: '3em'}}/>
-						</a>
-						<a href={'mailto:ericryanbowser@gmail.com'} title={'email'} >
-							<img src={email} alt={'email'} style={{width: '3em', margin:'2px'}}/>
-						</a>
-						<a href={docx} title={'resume document'}>
-							<img src={doc} alt={'document'} style={{width: '3em', margin:'2px'}}/>
-						</a>
-					</div>
-				</Card.Header>
-				<Card.Body>
+			<Grid>
+				<GridCol1>
+					<Figure>
+						<Figure.Image src={head}
+							style={{
+								width: '100%',
+								marginBottom: '15px',
+								boxShadow: 'blue 0 7px 15px 0',
+								borderRadius: '8px'
+							}}
+						/>
+						<Figure.Caption >
+								<div style={{margin: '15px'}}>
+									<a href={'https://www.linkedin.com/in/eric-bowser-dev/'} title={'LinkIn'}>
+										<img src={linkedIn} alt={'linkedIn'} style={{width: '3em'}}/>
+									</a>
+									<a href={'https://github.com/ericbowser'} title={'GitHub'}>
+										<img src={github} alt={'GitHub'} style={{width: '3em'}}/>
+									</a>
+									<a href={'mailto:ericryanbowser@gmail.com'} title={'email'}>
+										<img src={email} alt={'email'} style={{width: '3em', margin: '2px'}}/>
+									</a>
+									<a href={docx} title={'resume document'}>
+										<img src={doc} alt={'document'} style={{width: '3em', margin: '2px'}}/>
+									</a>
+								</div>
+						</Figure.Caption>
+					</Figure>
+				</GridCol1>
+				<GridCol2>
 					<Tabs
 						variant={'tabs'}
 						id='resume-tabs'
@@ -71,9 +109,10 @@ function Navigation() {
 							<Hobbies/>
 						</Tab>
 					</Tabs>
-				</Card.Body>
-			</Card>
+				</GridCol2>
+			</Grid>
 		</StyledContainer>
-	);
+	)
 }
+
 export default Navigation;

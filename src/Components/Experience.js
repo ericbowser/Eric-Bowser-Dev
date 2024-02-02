@@ -4,8 +4,8 @@ import {HeaderLine, StyledContainer} from "../styles/styled-component-styles";
 function Experience() {
     return (
       <StyledContainer>
-        <HeaderLine>Visible Supply Chain / Maersk - A.P. Moller</HeaderLine>
-        <div><i>Software Engineer</i></div>
+        <HeaderLine>Maersk</HeaderLine>
+        <div style={{color: 'grey'}}>Software Engineer: 2023 - 2024</div>
         <ul>
           <li>E-commerce application using REST and SOAP</li>
           <li>Shipping services</li>
@@ -21,7 +21,7 @@ function Experience() {
             </ul>
         </ul>
         <HeaderLine>Willis Towers Watson</HeaderLine>
-        <div><i>Fullstack Software Engineer</i></div>
+        <div>Fullstack Software Engineer: 2016 - 2022</div>
           <ul>
             <li>Internal application to build dynamic applications for carriers and participants</li>
             <li>Features for stakeholders for public facing web site</li>
@@ -29,15 +29,15 @@ function Experience() {
             <li>Maintain legacy pub / sub message bus</li>
             <li>Migrate on premise PostgreSQL database to Azure Cosmos DB ensuring data integrity</li>
           </ul>
-        <HeaderLine>GoldPoint Systems: 2013-2015</HeaderLine>
-        <div><i>C# backend developer and SQL data analyst</i></div>
+        <HeaderLine>GoldPoint Systems</HeaderLine>
+        <div>C# backend developer: 2013 - 2015</div>
         <ul>
           <li>Render unique SQL reports for clients</li>
           <li>Write SQL scripts as an onboarding step for new clients using WFP</li>
           <li>Manage errors and rollbacks</li>
         </ul>
-        <HeaderLine>Pro Edge Tec, LLC: 2013-2015 </HeaderLine>
-        <div><i>IT Technician</i></div>
+        <HeaderLine>Pro Edge Tec, LLC</HeaderLine>
+        <div>IT Technician: 2012 - 2013</div>
         <ul>
           <li>Troubleshoot client hardware</li>
           <li>Network configuration</li>
