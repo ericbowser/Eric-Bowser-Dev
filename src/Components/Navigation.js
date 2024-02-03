@@ -2,7 +2,6 @@
 
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import Card from "react-bootstrap/Card";
 
 import Frameworks from "../Components/Frameworks";
 import Aspirations from "../Components/Aspirations";
@@ -28,6 +27,10 @@ export const Grid = styled.div`
   grid-gap: 15px;
   grid-template-columns: 250px auto;
   grid-template-rows: auto auto;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
 `;
 
 export const GridCol1 = styled.div`
@@ -48,71 +51,71 @@ export const StyledContainer = styled(Container)`
 `;
 
 function Navigation() {
-	const [tabbedKey, setTabbedKey] = useState('None')
-	useEffect(() => {
-	}, [tabbedKey])
-	
-	return (
-		<StyledContainer>
-			<Grid>
-				<GridCol1>
-					<Figure>
-						<Figure.Image src={head}
-							style={{
-								width: '100%',
-								marginBottom: '15px',
-								boxShadow: 'blue 0 7px 15px 0',
-								borderRadius: '8px'
-							}}
-						/>
-						<Figure.Caption >
-								<div style={{margin: '15px'}}>
-									<a href={'https://www.linkedin.com/in/eric-bowser-dev/'} title={'LinkIn'}>
-										<img src={linkedIn} alt={'linkedIn'} style={{width: '3em'}}/>
-									</a>
-									<a href={'https://github.com/ericbowser'} title={'GitHub'}>
-										<img src={github} alt={'GitHub'} style={{width: '3em'}}/>
-									</a>
-									<a href={'mailto:ericryanbowser@gmail.com'} title={'email'}>
-										<img src={email} alt={'email'} style={{width: '3em', margin: '2px'}}/>
-									</a>
-									<a href={docx} title={'resume document'}>
-										<img src={doc} alt={'document'} style={{width: '3em', margin: '2px'}}/>
-									</a>
-								</div>
-						</Figure.Caption>
-					</Figure>
-				</GridCol1>
-				<GridCol2>
-					<Tabs
-						variant={'tabs'}
-						id='resume-tabs'
-						activeKey={tabbedKey}
-						onSelect={key => setTabbedKey(key)}
-					>
-						<Tab eventKey='education' title='Education'>
-							<Education/>
-						</Tab>
-						<Tab eventKey='experience' title='Experience'>
-							<Experience/>
-						</Tab>
-						<Tab eventKey='frameworks' title='Frameworks'>
-							<Frameworks/>
-						</Tab>
-						<Tab eventKey='tools' title='Tools'>
-							<Tools/>
-						</Tab>
-						<Tab eventKey='aspirations' title={'Aspirations'}>
-							<Aspirations/>
-						</Tab>
-						<Tab eventKey='hobbies' title={'Hobbies'}>
-							<Hobbies/>
-						</Tab>
-					</Tabs>
-				</GridCol2>
-			</Grid>
-		</StyledContainer>
-	)
+    const [tabbedKey, setTabbedKey] = useState('None')
+    useEffect(() => {
+    }, [tabbedKey])
+
+    return (
+        <StyledContainer>
+            <Grid>
+                <GridCol1>
+                    <Figure>
+                        <Figure.Image src={head}
+                                      style={{
+                                          width: '100%',
+                                          marginBottom: '15px',
+                                          boxShadow: 'blue 0 7px 15px 0',
+                                          borderRadius: '8px'
+                                      }}
+                        />
+                        <Figure.Caption>
+                            <div style={{margin: '15px'}}>
+                                <a href={'https://www.linkedin.com/in/eric-bowser-dev/'} title={'LinkIn'}>
+                                    <img src={linkedIn} alt={'linkedIn'} style={{width: '3em'}}/>
+                                </a>
+                                <a href={'https://github.com/ericbowser'} title={'GitHub'}>
+                                    <img src={github} alt={'GitHub'} style={{width: '3em'}}/>
+                                </a>
+                                <a href={'mailto:ericryanbowser@gmail.com'} title={'email'}>
+                                    <img src={email} alt={'email'} style={{width: '3em', margin: '2px'}}/>
+                                </a>
+                                <a href={docx} title={'resume document'}>
+                                    <img src={doc} alt={'document'} style={{width: '3em', margin: '2px'}}/>
+                                </a>
+                            </div>
+                        </Figure.Caption>
+                    </Figure>
+                </GridCol1>
+                <GridCol2>
+                    <Tabs
+                        variant={'tabs'}
+                        id='resume-tabs'
+                        activeKey={tabbedKey}
+                        onSelect={key => setTabbedKey(key)}
+                    >
+                        <Tab eventKey='education' title='Education'>
+                            <Education/>
+                        </Tab>
+                        <Tab eventKey='experience' title='Experience'>
+                            <Experience/>
+                        </Tab>
+                        <Tab eventKey='frameworks' title='Frameworks'>
+                            <Frameworks/>
+                        </Tab>
+                        <Tab eventKey='tools' title='Tools'>
+                            <Tools/>
+                        </Tab>
+                        <Tab eventKey='aspirations' title={'Aspirations'}>
+                            <Aspirations/>
+                        </Tab>
+                        <Tab eventKey='hobbies' title={'Hobbies'}>
+                            <Hobbies/>
+                        </Tab>
+                    </Tabs>
+                </GridCol2>
+            </Grid>
+        </StyledContainer>
+    )
 }
 
 export default Navigation;
