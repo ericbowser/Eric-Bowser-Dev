@@ -27,8 +27,12 @@ export const Grid = styled.div`
   grid-gap: 15px;
   grid-template-columns: 250px auto;
   grid-template-rows: auto auto;
-  @media only screen and (max-width: 768px) {
+  @media (max-width: 530px) {
     display: block;
+    .responsive.image {
+      width: 35%; /* Reduces the size to 75% of the parent element, effectively reducing the image size by 25% */
+      height: auto; /* Maintain the aspect ratio */
+    }
   }
 `;
 
