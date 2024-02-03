@@ -28,8 +28,7 @@ export const Grid = styled.div`
   grid-template-columns: 250px auto;
   grid-template-rows: auto auto;
   @media only screen and (max-width: 768px) {
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    display: block;
   }
 `;
 
