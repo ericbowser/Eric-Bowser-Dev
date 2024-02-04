@@ -28,6 +28,8 @@ function Frameworks() {
                 <li>K6 load testing</li>
                 <li>Integration Testing</li>
             </ul>
+          <br/>
+          <br/>
       </StyledContainer>
     );
 }

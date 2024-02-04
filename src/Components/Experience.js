@@ -47,6 +47,8 @@ function Experience() {
           <li>Prepare engineering employee computers</li>
           <li>Install engineering software: SolidWorks, CNC Tooling software, etc</li>
         </ul>
+          <br/>
+          <br/>
       </StyledContainer>
     )
 }

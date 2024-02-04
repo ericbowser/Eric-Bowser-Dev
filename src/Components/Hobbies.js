@@ -20,6 +20,8 @@ function Hobbies() {
 				</li>
 			</ul>
 			<img src={EbHome} alt={'ascii art'} style={{width: '35%'}}/>
+			<br/>
+			<br/>
 		</StyledContainer>
 	);
 }

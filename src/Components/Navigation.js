@@ -91,6 +91,7 @@ function Navigation() {
                 </GridCol1>
                 <GridCol2>
                     <Tabs
+                        style={{margin: '5px'}}
                         variant={'tabs'}
                         id='resume-tabs'
                         activeKey={tabbedKey}

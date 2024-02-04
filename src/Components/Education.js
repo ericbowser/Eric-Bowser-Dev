@@ -9,6 +9,8 @@ const Education = () => {
           <li>Weber State University: 2011-2013 - BA Computer Science</li>
           <li>University Of Phoenix: 2010-2011 - Associates of Art</li>
         </ul>
+          <br/>
+          <br/>
       </StyledContainer>
     )
 }
