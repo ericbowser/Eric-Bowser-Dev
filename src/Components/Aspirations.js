@@ -15,8 +15,6 @@ function Aspirations() {
 					</li>
 				</ul>
 			</div>
-			<br/>
-			<br/>
 		</StyledContainer>
 	)
 }

@@ -43,8 +43,6 @@ function Tools() {
                     <li>PostgreSQL</li>
                 </ul>
             </div>
-            <br/>
-            <br/>
         </StyledContainer>
     )
 }

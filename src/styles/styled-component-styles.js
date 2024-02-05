@@ -22,9 +22,9 @@ export const GridCol2 = styled.div`
 `;
 
 export const StyledContainer = styled(Container)`
-  box-shadow: red 3px 3px 3px;
+  box-shadow: black 3px 3px 3px;
 `;
 
 export const HeaderLine = styled.h5`
-  box-shadow: orange 3px 3px 3px;
+  box-shadow: blue 3px 3px 3px;
 `

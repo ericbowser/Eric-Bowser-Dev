@@ -1,4 +1,4 @@
-﻿import React, {useEffect, useState} from "react";
+﻿import React, {useEffect, useState, lazy} from "react";
 
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -7,7 +7,6 @@ import Frameworks from "../Components/Frameworks";
 import Aspirations from "../Components/Aspirations";
 import Hobbies from "../Components/Hobbies";
 import Tools from "../Components/Tools";
-import Experience from "../Components/Experience";
 import Education from "../Components/Education";
 import head from '../images/head.jpg';
 
@@ -21,6 +20,9 @@ import styled from "styled-components";
 import Container from "react-bootstrap/Container";
 import {Figure} from "react-bootstrap";
 
+const Experience = lazy(() => import('../Components/Experience'));
+
+
 export const Grid = styled.div`
   margin: 1em;
   display: grid;
@@ -31,7 +33,6 @@ export const Grid = styled.div`
     display: block;
     .responsive.image {
       width: 35%; /* Reduces the size to 75% of the parent element, effectively reducing the image size by 25% */
-      height: auto; /* Maintain the aspect ratio */
     }
   }
 `;
@@ -50,7 +51,7 @@ export const GridCol2 = styled.div`
 
 export const StyledContainer = styled(Container)`
   box-shadow: black 13px 13px 20px;
-  padding: 3em;
+  margin: 1em;
 `;
 
 function Navigation() {
@@ -63,13 +64,14 @@ function Navigation() {
             <Grid>
                 <GridCol1>
                     <Figure>
-                        <Figure.Image src={head}
-                                      style={{
-                                          width: '100%',
-                                          marginBottom: '15px',
-                                          boxShadow: 'blue 0 7px 15px 0',
-                                          borderRadius: '8px'
-                                      }}
+                        <Figure.Image
+                            src={head}
+                            style={{
+                                width: '100%',
+                                marginBottom: '15px',
+                                boxShadow: 'black 0 7px 15px 0',
+                                borderRadius: '8px'
+                            }}
                         />
                         <Figure.Caption>
                             <div style={{margin: '15px'}}>
@@ -101,6 +103,7 @@ function Navigation() {
                             <Education/>
                         </Tab>
                         <Tab eventKey='experience' title='Experience'>
+                            
                             <Experience/>
                         </Tab>
                         <Tab eventKey='frameworks' title='Frameworks'>
