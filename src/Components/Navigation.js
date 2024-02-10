@@ -24,17 +24,17 @@ const Experience = lazy(() => import('../Components/Experience'));
 
 
 export const Grid = styled.div`
-  margin: 1em;
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: 250px auto;
-  grid-template-rows: auto auto;
-  @media (max-width: 530px) {
-    display: block;
-    .responsive.image {
-      width: 35%; /* Reduces the size to 75% of the parent element, effectively reducing the image size by 25% */
+    margin: 1em;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto auto;
+    @media (max-width: 530px) {
+        display: block;
+        .responsive.image {
+            width: 35%; /* Reduces the size to 75% of the parent element, effectively reducing the image size by 25% */
+        }
     }
-  }
 `;
 
 export const GridCol1 = styled.div`
@@ -55,7 +55,7 @@ export const StyledContainer = styled(Container)`
 `;
 
 function Navigation() {
-    const [tabbedKey, setTabbedKey] = useState('None')
+    const [tabbedKey, setTabbedKey] = useState('None');
     useEffect(() => {
     }, [tabbedKey])
 
@@ -103,7 +103,6 @@ function Navigation() {
                             <Education/>
                         </Tab>
                         <Tab eventKey='experience' title='Experience'>
-                            
                             <Experience/>
                         </Tab>
                         <Tab eventKey='frameworks' title='Frameworks'>

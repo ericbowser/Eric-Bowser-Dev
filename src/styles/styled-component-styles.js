@@ -2,11 +2,11 @@
 import Container from 'react-bootstrap/Container'
 
 export const Grid = styled.div`
-  margin: 1em;
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: 300px 800px;
-  grid-template-rows: 800px auto;
+    margin: 1em;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 300px 800px;
+    grid-template-rows: 800px auto;
 `;
 
 export const GridCol1 = styled.div`
@@ -22,7 +22,8 @@ export const GridCol2 = styled.div`
 `;
 
 export const StyledContainer = styled(Container)`
-  box-shadow: black 3px 3px 3px;
+    background-image: linear-gradient(to right, red, orange 30%, yellow 50%, green 70%, blue);
+    box-shadow: black 3px 3px 3px;
 `;
 
 export const HeaderLine = styled.h5`

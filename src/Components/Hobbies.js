@@ -19,7 +19,6 @@ function Hobbies() {
 					AI for Assisted Research
 				</li>
 			</ul>
-			<img src={EbHome} alt={'ascii art'} style={{width: '35%'}}/>
 		</StyledContainer>
 	);
 }
