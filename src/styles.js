@@ -6,13 +6,12 @@ const StyledContainer = styled(Container)`
   padding: 20px;
 `;
 const TextWrapper = styled.div`
-  margin: 3px;
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.3;
 `;
 const JustifyDiv = styled.div`
-  text-align: justify;
+  text-align: left;
   padding: 0 0 10px 0;
 `;
 
@@ -21,9 +20,11 @@ const AlertSubHeader = styled.h6`
 `;
 
 const GridWrapper = styled.span`
+  /*
   box-sizing: border-box;
+  */
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% 60%;
   word-wrap: break-word;
   @media only screen and (max-width: 600px) {
     ul {
