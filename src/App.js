@@ -7,6 +7,7 @@ import {Button, Alert, Card} from "react-bootstrap";
 import {
     GridCol1Row1,
     GridCol2Row1,
+    GridCol3Row1,
     JustifyDiv,
     GridWrapper,
     TextWrapper,
@@ -295,6 +296,9 @@ function App() {
 
     return (
         <StyledContainer>
+            <h1 style={{backgroundColor: "Black", color: "white"}}>
+                UNDER CONSTRUCTION - WIP
+            </h1>
             <GridWrapper>
                 <GridCol2Row1>
                     <div>
@@ -311,7 +315,6 @@ function App() {
                                     <strong>{explandCollapse(showEducation)} Education</strong>
                                 </div>
                             </Button>
-                            {showEducation ? <div>{getEducationDetails()}</div> : null}
                         </ul>
                     </React.Fragment>
                     <React.Fragment>
@@ -325,14 +328,6 @@ function App() {
                                     <strong>{explandCollapse(showExperience)} Experience</strong>
                                 </div>
                             </Button>
-                            {showExperience ? (
-                                <React.Fragment>
-                                    <TextWrapper>{proEdgeInfo()}</TextWrapper>
-                                    <TextWrapper>{goldPointInfo()}</TextWrapper>
-                                    <TextWrapper>{tekSystemsInfo()}</TextWrapper>
-                                    <TextWrapper>{wtwInfo()}</TextWrapper>
-                                </React.Fragment>
-                            ) : null}
                         </ul>
                     </React.Fragment>
                     <React.Fragment>
@@ -347,9 +342,7 @@ function App() {
                                     {explandCollapse(showDevelopment)} Tools / libraries
                                 </strong>
                             </Button>
-                            {showDevelopment ? (
-                                <TextWrapper>{toolsAndLibraries()}</TextWrapper>
-                            ) : null}
+                        
                         </ul>
                         <ul>
                             <Button
@@ -360,9 +353,6 @@ function App() {
                             >
                                 <strong>{explandCollapse(showAspirations)} Aspirations</strong>
                             </Button>
-                            {showAspirations ? (
-                                <TextWrapper>{getAspirations()}</TextWrapper>
-                            ) : null}
                         </ul>
                         <ul>
                             <Button
@@ -378,21 +368,38 @@ function App() {
                                     {explandCollapse(showHobbies)} Extra Curricular / Hobbies
                                 </strong>
                             </Button>
-                            {showHobbies ? (
-                                <Alert key="33" variant="light">
-                                    <TextWrapper>
-                                        <ul>
-                                            <li>Rockclimbing</li>
-                                            <li>3D Printing</li>
-                                            <li>MTG</li>
-                                            <li>Raspberri Pi Projects and Tinkering</li>
-                                        </ul>
-                                    </TextWrapper>
-                                </Alert>
-                            ) : null}
                         </ul>
                     </React.Fragment>
                 </GridCol2Row1>
+                <GridCol3Row1>
+                    {showEducation ? <div>{getEducationDetails()}</div> : null}
+                    {showHobbies ? (
+                        <Alert key="33" variant="light">
+                            <TextWrapper>
+                                <ul>
+                                    <li>Rockclimbing</li>
+                                    <li>3D Printing</li>
+                                    <li>MTG</li>
+                                    <li>Raspberri Pi Projects and Tinkering</li>
+                                </ul>
+                            </TextWrapper>
+                        </Alert>
+                    ) : null}
+                    {showDevelopment ? (
+                        <TextWrapper>{toolsAndLibraries()}</TextWrapper>
+                    ) : null}
+                    {showAspirations ? (
+                        <TextWrapper>{getAspirations()}</TextWrapper>
+                    ) : null}
+                    {showExperience ? (
+                        <React.Fragment>
+                            <TextWrapper>{proEdgeInfo()}</TextWrapper>
+                            <TextWrapper>{goldPointInfo()}</TextWrapper>
+                            <TextWrapper>{tekSystemsInfo()}</TextWrapper>
+                            <TextWrapper>{wtwInfo()}</TextWrapper>
+                        </React.Fragment>
+                    ) : null}
+                </GridCol3Row1>
                 <GridCol1Row1>
                     <React.Fragment>
                         <Card style={{width: "66%", height: "auto"}}>
@@ -442,7 +449,6 @@ function App() {
                     </React.Fragment>
                 </GridCol1Row1>
             </GridWrapper>
-            <footer></footer>
         </StyledContainer>
     );
 }
