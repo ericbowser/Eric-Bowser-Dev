@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { Container } from "react-bootstrap";
 
 const StyledContainer = styled.div`
-  max-width: 1800px;
+  .card {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
   padding: 25px;
 `;
 const TextWrapper = styled.div`
@@ -24,8 +28,11 @@ const GridWrapper = styled.span`
   box-sizing: border-box;
   */
   display: grid;
-  grid-template-columns: 30% 35% 40%;
+  grid-template-columns: auto 30% 30%;
   word-wrap: break-word;
+  grid-gap: 50px;
+  padding: 50px;
+  margin: 0 12em 0 12em;
   @media only screen and (max-width: 600px) {
     ul {
       padding: 5px 15px 0 3px;
@@ -46,7 +53,8 @@ const GridCol2Row1 = styled.div`
   grid-column-end: 3;
 `;
 
-const GridCol3Row1 = styled.div`
+const GridCol3Row1 = styled(Container)`
+  box-shadow: white 12px 12px 10px 0;
   color: antiquewhite;
   grid-row: 1;
   grid-column-start: 3;

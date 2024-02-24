@@ -15,6 +15,7 @@ import {
     StyledContainer,
 } from "./styles";
 import {PlusMinusDirection} from "./common";
+import './styles.css';
 
 function App() {
     const [showExperience, setShowExperience] = useState(false);
@@ -74,7 +75,7 @@ function App() {
                         Weber State University: 2011-2013 - BA Computer Science
                     </AlertSubHeader>
                     <AlertSubHeader>
-                        University Of Pheonix: 2010-2011 - Associates of Art
+                        University Of Phoenix: 2010-2011 - Associates of Art
                     </AlertSubHeader>
                 </Alert>
             </React.Fragment>
@@ -103,7 +104,7 @@ function App() {
                 <Alert.Heading>Pro Edge Tec, LLC: 2013-2015</Alert.Heading>
                 <AlertSubHeader>IT Technician</AlertSubHeader>
                 <ul>
-                    <li>Troublshoot client hardware</li>
+                    <li>Troubleshoot client hardware</li>
                     <li>Network configuration</li>
                     <li>Inventory tracking</li>
                     <li>Nagios server health monitoring</li>
@@ -160,7 +161,7 @@ function App() {
                 <ul>
                     <li>Bounded Contexts</li>
                     <li>Dynamic applications / configurations</li>
-                    <li>Microservices and Microfrontend</li>
+                    <li>Microservices and Micro-frontend</li>
                     <li>REST API</li>
                     <li>Pub / Sub</li>
                     <li>NoSql on Azure platform</li>
@@ -296,7 +297,7 @@ function App() {
 
     return (
         <StyledContainer>
-            <h1 style={{backgroundColor: "Black", color: "white"}}>
+            <h1 id={'h1'}>
                 UNDER CONSTRUCTION - WIP
             </h1>
             <GridWrapper>
@@ -421,16 +422,15 @@ function App() {
                                         {addLink(
                                             "mailto:ericryanbowser@gmail.com",
                                             "ericryanbowser@gmail.com",
-                                            "Email address",
-                                            true
+                                            "Email address"
                                         )}
                                     </div>
                                     <div>
+                                        <a href={"https://github.com/ericbowser"} >GitHub</a>
                                         {addLink(
-                                            "https://github.com/ericbowser",
+                                            "",
                                             "Github",
-                                            "Github for Eric Bowser",
-                                            true
+                                            "Github for Eric Bowser"
                                         )}
                                     </div>
                                     <div>
