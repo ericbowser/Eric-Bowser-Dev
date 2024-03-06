@@ -1,7 +1,7 @@
 import React from 'react';
 import {HeaderLine} from "../styles";
 
-export const Tools = () => (
+const Tools = () => (
     <React.Fragment>
         <HeaderLine>Tools</HeaderLine>
         <ul>
@@ -56,3 +56,4 @@ export const Tools = () => (
         </ul>
     </React.Fragment>
 );
+export default Tools;

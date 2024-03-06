@@ -1,7 +1,7 @@
 ﻿import React from 'react';
-import {HeaderLine, StyledContainer} from "../styles";
+import {HeaderLine} from "../styles";
 
-export const Education = () => (
+const Education = () => (
     <React.Fragment>
         <HeaderLine>Education</HeaderLine>
         <ul>
@@ -10,3 +10,4 @@ export const Education = () => (
         </ul>
     </React.Fragment>
 );
+export default Education;

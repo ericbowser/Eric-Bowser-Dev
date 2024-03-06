@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import {HeaderLine, StyledDiv} from "../styles";
 
-export const Experience = () => (
+const Experience = () => (
     <React.Fragment>
         <HeaderLine>Maersk</HeaderLine>
         <StyledDiv>Software Engineer: 2023 - 2024</StyledDiv>
@@ -48,3 +48,4 @@ export const Experience = () => (
         </ul>
     </React.Fragment>
 );
+export default Experience;

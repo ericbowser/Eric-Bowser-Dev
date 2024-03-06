@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import {HeaderLine} from '../styles'
 
-export const Aspirations = () => (
+const Aspirations = () => (
     <React.Fragment>
         <HeaderLine>Aspirations</HeaderLine>
         <ul>
@@ -15,3 +15,4 @@ export const Aspirations = () => (
         </ul>
     </React.Fragment>
 );
+export default Aspirations;
