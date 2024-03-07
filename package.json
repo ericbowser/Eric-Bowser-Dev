@@ -24,10 +24,12 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
+    "build": "webpack --mode=production --node-env=production",
+    "clean": "rm node_modules -R && rm package-lock.json && rm build/ -R && npm install",
+    "watch": "webpack --watch",
+    "serve": "webpack serve",
     "start": "webpack-dev-server --watch",
-    "build": "react-scripts build",
-    "ci": "npm install && react-scripts build -p",
-    "clean": "rm node_modules -R && rm package-lock.json && npm install"
+    "ci": "npm install && react-scripts build -p"
   },
   "browserslist": {
     "production": [
