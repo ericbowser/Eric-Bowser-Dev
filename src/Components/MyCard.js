@@ -5,7 +5,7 @@ import ericDocx from "../files/E.R.B-Resume.docx";
 import docx from "../icons/docxIcon.ico";
 import React from "react";
 
-export const MyCard = () => (
+const MyCard = () => (
     <Card style={{width: "69%"}}>
         <Card.Title style={{backgroundColor: "aliceblue"}}>
             <AlertSubHeader style={{textAlign: "center"}}>
@@ -41,3 +41,4 @@ export const MyCard = () => (
         </Card.Body>
     </Card>
 );
+export default MyCard;

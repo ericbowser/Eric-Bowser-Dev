@@ -13,7 +13,7 @@ import {
     NavContainer
 } from "./styles";
 import Education from "./components/Education";
-import {MyCard} from "./components/MyCard";
+import MyCard from "./components/MyCard";
 import Aspirations from "./components/Aspirations";
 import Tools from "./components/Tools";
 import Experience from "./components/Experience";
