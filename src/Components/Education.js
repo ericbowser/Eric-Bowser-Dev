@@ -1,16 +1,15 @@
 ﻿import React from 'react';
-import {HeaderLine, StyledContainer} from "../styles/styled-component-styles";
+import {HeaderLine} from "../styles";
 
-const Education = () => {
+function Education() {
     return (
-      <StyledContainer>
-        <HeaderLine>Education</HeaderLine>
-        <ul>
-          <li>Weber State University: 2011-2013 - BA Computer Science</li>
-          <li>University Of Phoenix: 2010-2011 - Associates of Art</li>
-        </ul>
-      </StyledContainer>
-    )
+        <React.Fragment>
+            <HeaderLine>Education</HeaderLine>
+            <ul>
+                <li>Weber State University: 2011-2013 - BA Computer Science</li>
+                <li>University Of Phoenix: 2010-2011 - Associates of Art</li>
+            </ul>
+        </React.Fragment>
+    );
 }
-
 export default Education;
