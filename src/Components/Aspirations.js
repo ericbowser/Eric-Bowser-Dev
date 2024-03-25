@@ -1,22 +1,18 @@
 ﻿import React from "react";
-import {HeaderLine, StyledContainer} from '../styles/styled-component-styles'
+import {HeaderLine} from '../styles'
 
-function Aspirations() {
-	return (
-		<StyledContainer>
-			<div>
-				<div>
-					<HeaderLine>Aspirations</HeaderLine>
-				</div>
-				<ul>
-					<li>
-						Full stack engineer looking for a new opportunity to take software engineering
-						to the next level
-					</li>
-				</ul>
-			</div>
-		</StyledContainer>
-	)
-}
-
+const Aspirations = () => (
+    <React.Fragment>
+        <HeaderLine>Aspirations</HeaderLine>
+        <ul>
+            <li>Find career growth</li>
+            <li>Increase passion</li>
+            <li>Learn new things</li>
+            <li>Networking</li>
+            <li>Advance career</li>
+            <li>More experience</li>
+            <li>Trusting and engaging culture</li>
+        </ul>
+    </React.Fragment>
+);
 export default Aspirations;
