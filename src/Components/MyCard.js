@@ -6,7 +6,7 @@ import docx from "../icons/docxIcon.ico";
 import React from "react";
 
 const MyCard = () => (
-    <Card style={{width: "69%"}}>
+    <Card className={'bg-custom-color'}>
         <Card.Title style={{backgroundColor: "aliceblue"}}>
             <AlertSubHeader style={{textAlign: "center"}}>
                 <TextWrapper>
@@ -15,7 +15,7 @@ const MyCard = () => (
             </AlertSubHeader>
         </Card.Title>
         <Card.Body>
-            <Card.Img variant={"top"} src={head3}/>
+            <Card.Img variant={"top"} src={head3} />
             <Card.Text>
                 <TextWrapper>
                     <div>Contact Information:</div>

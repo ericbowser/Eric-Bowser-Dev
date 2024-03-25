@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const GridWrapper = styled.span`
     display: grid;
-    grid-template-columns: 35% 50%;
+    grid-template-columns: 25% 75%;
     grid-gap: 15px;
     word-wrap: break-word;
-    @media only screen and (max-width: 650px) {
+    @media only screen and (max-width: 767px) {
         ul {
             padding: 5px 15px 0 3px;
         }
